@@ -13,7 +13,6 @@ export default function Home() {
       </Head>
 
       <main style={styles.main}>
-        <div style={styles.overlay} />
         <div style={styles.content}>
           <h1 style={styles.title}>GENESIS IS COMING</h1>
           <p style={styles.subtitle}>Prepárate para la nueva era del fitness</p>
@@ -44,33 +43,19 @@ export default function Home() {
 
 const styles = {
   main: {
-    position: "relative",
+    backgroundColor: "#000000",
+    color: "#FFFFFF",
     minHeight: "100vh",
-    backgroundImage:
-      "radial-gradient(circle at top left, #0A84FF22, transparent), #000",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    overflow: "hidden",
     padding: "2rem",
-  },
-  overlay: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background: "linear-gradient(to bottom, #000000dd, #000000f6)",
-    zIndex: 1,
+    fontFamily: "'Segoe UI', 'Roboto', sans-serif",
   },
   content: {
-    position: "relative",
-    zIndex: 2,
     textAlign: "center",
-    color: "#fff",
     maxWidth: "700px",
+    width: "100%",
   },
   title: {
     fontSize: "clamp(2.2rem, 6vw, 4rem)",
