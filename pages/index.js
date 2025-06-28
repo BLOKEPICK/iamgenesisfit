@@ -2,26 +2,40 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-4">
-      <h1 className="text-4xl font-bold mb-6 text-center">Estamos construyendo algo grande</h1>
-      <p className="text-gray-400 mb-8 text-center">Muy pronto estarás en la mejor plataforma de fitness personalizada.</p>
-
-      <div className="flex space-x-6">
+    <main style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "100vh",
+      backgroundColor: "#000",
+      color: "#fff",
+      fontFamily: "sans-serif",
+      textAlign: "center",
+      padding: "1rem"
+    }}>
+      <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>
+        Estamos construyendo algo grande
+      </h1>
+      <p style={{ color: "#ccc", marginBottom: "2rem" }}>
+        Muy pronto estarás en la mejor plataforma de fitness personalizada.
+      </p>
+      <div style={{ display: "flex", gap: "2rem" }}>
         <a
           href="https://www.instagram.com/iamgenesisfit/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-pink-500 transition-transform transform hover:scale-110"
+          style={{ color: "#fff", fontSize: "2.5rem" }}
         >
-          <FaInstagram size={40} />
+          <FaInstagram />
         </a>
         <a
           href="https://wa.me/18292520244"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-green-500 transition-transform transform hover:scale-110"
+          style={{ color: "#fff", fontSize: "2.5rem" }}
         >
-          <FaWhatsapp size={40} />
+          <FaWhatsapp />
         </a>
       </div>
     </main>
