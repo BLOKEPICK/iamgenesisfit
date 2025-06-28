@@ -9,28 +9,18 @@ export default function Home() {
         <meta name="description" content="Estamos trabajando en algo grande. Muy pronto lo verás." />
       </Head>
 
-      <main style={styles.container}>
-        <div style={styles.card}>
-          <h1 style={styles.title}>Estamos construyendo algo grande</h1>
-          <p style={styles.description}>
+      <main style={styles.main}>
+        <div style={styles.wrapper}>
+          <h1 style={styles.heading}>Estamos construyendo algo grande</h1>
+          <p style={styles.subtext}>
             Muy pronto lanzaremos la plataforma definitiva para transformar tu cuerpo y tu vida.
           </p>
-          <div style={styles.iconContainer}>
-            <a
-              href="https://www.instagram.com/iamgenesisfit/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ ...styles.iconLink, color: "#0A84FF" }}
-            >
-              <FaInstagram size={36} />
+          <div style={styles.icons}>
+            <a href="https://www.instagram.com/iamgenesisfit/" target="_blank" rel="noopener noreferrer" style={styles.icon}>
+              <FaInstagram size={40} />
             </a>
-            <a
-              href="https://wa.me/18292520244"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ ...styles.iconLink, color: "#0A84FF" }}
-            >
-              <FaWhatsapp size={36} />
+            <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={styles.icon}>
+              <FaWhatsapp size={40} />
             </a>
           </div>
         </div>
@@ -40,44 +30,40 @@ export default function Home() {
 }
 
 const styles = {
-  container: {
-    backgroundColor: "#000",
-    color: "#fff",
+  main: {
+    backgroundColor: "#000000",
+    color: "#FFFFFF",
     minHeight: "100vh",
-    padding: "2rem",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    padding: "2rem",
     fontFamily: "'Segoe UI', 'Roboto', sans-serif",
   },
-  card: {
-    maxWidth: "500px",
-    width: "100%",
+  wrapper: {
     textAlign: "center",
-    padding: "2rem",
-    borderRadius: "1rem",
-    background: "linear-gradient(to bottom right, #0A84FF15, #ffffff05)",
-    boxShadow: "0 0 30px #0A84FF20",
-    backdropFilter: "blur(4px)",
+    maxWidth: "600px",
+    width: "100%",
   },
-  title: {
-    fontSize: "2rem",
-    marginBottom: "1rem",
+  heading: {
+    fontSize: "2.5rem",
     fontWeight: "700",
-    lineHeight: "1.3",
+    marginBottom: "1rem",
+    lineHeight: "1.2",
   },
-  description: {
-    color: "#ccc",
-    fontSize: "1rem",
-    marginBottom: "2rem",
+  subtext: {
+    fontSize: "1.125rem",
+    color: "#CCCCCC",
+    marginBottom: "2.5rem",
     lineHeight: "1.6",
   },
-  iconContainer: {
+  icons: {
     display: "flex",
     justifyContent: "center",
     gap: "2rem",
   },
-  iconLink: {
-    transition: "transform 0.3s ease",
+  icon: {
+    color: "#0A84FF",
+    transition: "transform 0.2s ease-in-out",
   },
 };
