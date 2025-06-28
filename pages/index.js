@@ -44,7 +44,7 @@ export default function Home() {
 const styles = {
   main: {
     backgroundColor: "#000000",
-    color: "#FFFFFF",
+    color: "#000000",
     minHeight: "100vh",
     display: "flex",
     alignItems: "center",
