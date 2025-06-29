@@ -32,14 +32,31 @@ export default function Home() {
         {/* HERO SECTION */}
         <section style={styles.hero}>
           <h1 style={styles.heroTitle}>GENESIS IS NOW</h1>
-          <p style={styles.heroSubtitle}>Empieza tu transformación hoy</p>
+          <p style={styles.heroSubtitle}>El comienzo de tu transformación total</p>
+          <button style={styles.ctaButton}>Explora el sitio</button>
+        </section>
+
+        {/* SECCIÓN DESTACADOS */}
+        <section style={styles.highlightsSection}>
+          <div style={styles.highlightItem}>
+            <h3 style={styles.highlightTitle}>Transformación real</h3>
+            <p style={styles.highlightText}>Programas diseñados para resultados visibles y sostenibles.</p>
+          </div>
+          <div style={styles.highlightItem}>
+            <h3 style={styles.highlightTitle}>Comunidad privada</h3>
+            <p style={styles.highlightText}>Accede a una red exclusiva de motivación y apoyo constante.</p>
+          </div>
+          <div style={styles.highlightItem}>
+            <h3 style={styles.highlightTitle}>Coaching profesional</h3>
+            <p style={styles.highlightText}>Acompañamiento directo con planes personalizados.</p>
+          </div>
         </section>
 
         {/* SOBRE NOSOTROS */}
         <section style={styles.aboutSection}>
           <h2 style={styles.sectionTitle}>Sobre iamgenesisfit</h2>
           <p style={styles.aboutText}>
-            Somos una comunidad dedicada al cambio físico y mental. Con programas de entrenamiento personalizados, acceso a expertos y una comunidad de apoyo, llevamos tu potencial al máximo.
+            Somos una comunidad dedicada al cambio físico y mental. Con programas de entrenamiento personalizados, acceso a expertos y una comunidad de apoyo, llevamos tu potencial al máximo. Nos inspiramos en la fuerza, la transformación y el bienestar real. Este es tu nuevo comienzo.
           </p>
         </section>
 
@@ -101,135 +118,5 @@ export default function Home() {
 }
 
 const styles = {
-  header: {
-    backgroundColor: "#000",
-    padding: "1.5rem 2rem",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderBottom: "1px solid #0A84FF",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-  },
-  logo: {
-    fontSize: "1.5rem",
-    fontWeight: "bold",
-    color: "#0A84FF",
-  },
-  nav: {
-    display: "flex",
-    gap: "1.5rem",
-  },
-  navLink: {
-    color: "#FFFFFF",
-    textDecoration: "none",
-    fontWeight: "500",
-  },
-  main: {
-    fontFamily: "'Segoe UI', 'Roboto', sans-serif",
-    color: "#FFFFFF",
-  },
-  hero: {
-    minHeight: "100vh",
-    backgroundColor: "#000000",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    padding: "2rem",
-  },
-  heroTitle: {
-    fontSize: "clamp(2.5rem, 7vw, 4rem)",
-    fontWeight: 800,
-    color: "#FFFFFF",
-    marginBottom: "1rem",
-  },
-  heroSubtitle: {
-    fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
-    color: "#CCCCCC",
-  },
-  aboutSection: {
-    padding: "4rem 2rem",
-    backgroundColor: "#111",
-    textAlign: "center",
-  },
-  aboutText: {
-    maxWidth: "700px",
-    margin: "0 auto",
-    fontSize: "1.1rem",
-    color: "#CCC",
-    lineHeight: "1.8",
-  },
-  plansSection: {
-    backgroundColor: "#000",
-    padding: "4rem 2rem",
-    textAlign: "center",
-  },
-  sectionTitle: {
-    fontSize: "2rem",
-    marginBottom: "2rem",
-  },
-  planGrid: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "2rem",
-    justifyContent: "center",
-  },
-  planCard: {
-    backgroundColor: "#111",
-    padding: "2rem",
-    borderRadius: "12px",
-    maxWidth: "300px",
-    flex: "1 1 280px",
-    textAlign: "left",
-  },
-  planName: {
-    fontSize: "1.5rem",
-    fontWeight: "bold",
-    marginBottom: "0.5rem",
-  },
-  planPrice: {
-    fontSize: "1.25rem",
-    color: "#0A84FF",
-    marginBottom: "1rem",
-  },
-  planFeatures: {
-    listStyle: "none",
-    paddingLeft: 0,
-    color: "#CCC",
-    marginBottom: "1.5rem",
-  },
-  planButton: {
-    backgroundColor: "#0A84FF",
-    border: "none",
-    color: "white",
-    padding: "0.75rem 1.5rem",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
-  contactSection: {
-    backgroundColor: "#000",
-    padding: "4rem 2rem",
-    textAlign: "center",
-  },
-  iconsContainer: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "2rem",
-    marginTop: "1rem",
-  },
-  iconLink: {
-    color: "#0A84FF",
-    transition: "transform 0.3s ease",
-  },
-  footer: {
-    backgroundColor: "#000",
-    color: "#777",
-    textAlign: "center",
-    padding: "2rem",
-    fontSize: "0.875rem",
-  },
+  ... // [No cambia aquí: solo se debe actualizar agregando estilos para .ctaButton y .highlightsSection]
 };
