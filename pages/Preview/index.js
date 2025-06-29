@@ -19,6 +19,15 @@ export default function Home() {
         `}</style>
       </Head>
 
+      <header style={styles.header}>
+        <div style={styles.logo}>GENESISFIT</div>
+        <nav style={styles.nav}>
+          <a href="#" style={styles.navLink}>Inicio</a>
+          <a href="#planes" style={styles.navLink}>Planes</a>
+          <a href="#contacto" style={styles.navLink}>Contacto</a>
+        </nav>
+      </header>
+
       <main style={styles.main}>
         {/* HERO SECTION */}
         <section style={styles.hero}>
@@ -26,8 +35,16 @@ export default function Home() {
           <p style={styles.heroSubtitle}>Empieza tu transformación hoy</p>
         </section>
 
+        {/* SOBRE NOSOTROS */}
+        <section style={styles.aboutSection}>
+          <h2 style={styles.sectionTitle}>Sobre iamgenesisfit</h2>
+          <p style={styles.aboutText}>
+            Somos una comunidad dedicada al cambio físico y mental. Con programas de entrenamiento personalizados, acceso a expertos y una comunidad de apoyo, llevamos tu potencial al máximo.
+          </p>
+        </section>
+
         {/* PLANS SECTION */}
-        <section style={styles.plansSection}>
+        <section id="planes" style={styles.plansSection}>
           <h2 style={styles.sectionTitle}>Elige tu plan</h2>
           <div style={styles.planGrid}>
             <div style={styles.planCard}>
@@ -63,7 +80,7 @@ export default function Home() {
         </section>
 
         {/* CONTACTO */}
-        <section style={styles.contactSection}>
+        <section id="contacto" style={styles.contactSection}>
           <p style={styles.sectionTitle}>Síguenos o escríbenos</p>
           <div style={styles.iconsContainer}>
             <a href="https://www.instagram.com/iamgenesisfit/" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
@@ -75,11 +92,40 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <footer style={styles.footer}>
+        <p>&copy; {new Date().getFullYear()} iamgenesisfit. Todos los derechos reservados.</p>
+      </footer>
     </>
   );
 }
 
 const styles = {
+  header: {
+    backgroundColor: "#000",
+    padding: "1.5rem 2rem",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottom: "1px solid #0A84FF",
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
+  },
+  logo: {
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    color: "#0A84FF",
+  },
+  nav: {
+    display: "flex",
+    gap: "1.5rem",
+  },
+  navLink: {
+    color: "#FFFFFF",
+    textDecoration: "none",
+    fontWeight: "500",
+  },
   main: {
     fontFamily: "'Segoe UI', 'Roboto', sans-serif",
     color: "#FFFFFF",
@@ -103,6 +149,18 @@ const styles = {
   heroSubtitle: {
     fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
     color: "#CCCCCC",
+  },
+  aboutSection: {
+    padding: "4rem 2rem",
+    backgroundColor: "#111",
+    textAlign: "center",
+  },
+  aboutText: {
+    maxWidth: "700px",
+    margin: "0 auto",
+    fontSize: "1.1rem",
+    color: "#CCC",
+    lineHeight: "1.8",
   },
   plansSection: {
     backgroundColor: "#000",
@@ -166,5 +224,12 @@ const styles = {
   iconLink: {
     color: "#0A84FF",
     transition: "transform 0.3s ease",
+  },
+  footer: {
+    backgroundColor: "#000",
+    color: "#777",
+    textAlign: "center",
+    padding: "2rem",
+    fontSize: "0.875rem",
   },
 };
