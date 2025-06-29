@@ -6,279 +6,113 @@ export default function Home() {
     <>
       <Head>
         <title>iamgenesisfit | Página oficial</title>
-        <meta
-          name="description"
-          content="Transforma tu cuerpo y tu mente con iamgenesisfit. Programas, comunidad y resultados reales."
-        />
+        <meta name="description" content="Transforma tu cuerpo y tu mente con iamgenesisfit. Programas, comunidad y resultados reales." />
         <style>{`
           html, body {
             margin: 0;
             padding: 0;
             background-color: #000000;
+            font-family: 'Poppins', sans-serif;
           }
         `}</style>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
       </Head>
 
-      <header style={styles.header}>
-        <div style={styles.logo}>GENESISFIT</div>
-        <nav style={styles.nav}>
-          <a href="#" style={styles.navLink}>Inicio</a>
-          <a href="#planes" style={styles.navLink}>Planes</a>
-          <a href="#contacto" style={styles.navLink}>Contacto</a>
-        </nav>
-      </header>
-
-      <main style={styles.main}>
-        {/* HERO SECTION */}
-        <section style={styles.hero}>
-          <h1 style={styles.heroTitle}>GENESIS IS NOW</h1>
-          <p style={styles.heroSubtitle}>El comienzo de tu transformación total</p>
-          <button style={styles.ctaButton}>Explora el sitio</button>
-        </section>
-
-        {/* SECCIÓN DESTACADOS */}
-        <section style={styles.highlightsSection}>
-          <div style={styles.highlightItem}>
-            <h3 style={styles.highlightTitle}>Transformación real</h3>
-            <p style={styles.highlightText}>Programas diseñados para resultados visibles y sostenibles.</p>
-          </div>
-          <div style={styles.highlightItem}>
-            <h3 style={styles.highlightTitle}>Comunidad privada</h3>
-            <p style={styles.highlightText}>Accede a una red exclusiva de motivación y apoyo constante.</p>
-          </div>
-          <div style={styles.highlightItem}>
-            <h3 style={styles.highlightTitle}>Coaching profesional</h3>
-            <p style={styles.highlightText}>Acompañamiento directo con planes personalizados.</p>
-          </div>
-        </section>
-
-        {/* SOBRE NOSOTROS */}
-        <section style={styles.aboutSection}>
-          <h2 style={styles.sectionTitle}>Sobre iamgenesisfit</h2>
-          <p style={styles.aboutText}>
-            Somos una comunidad dedicada al cambio físico y mental. Con programas de entrenamiento personalizados, acceso a expertos y una comunidad de apoyo, llevamos tu potencial al máximo. Nos inspiramos en la fuerza, la transformación y el bienestar real. Este es tu nuevo comienzo.
+      <main>
+        {/* HERO */}
+        <section style={{ backgroundColor: "#000", color: "#fff", padding: "6rem 2rem", textAlign: "center" }}>
+          <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", marginBottom: "1rem", fontWeight: "700", letterSpacing: "1px" }}>
+            GENESIS IS NOW
+          </h1>
+          <p style={{ color: "#ccc", fontSize: "1.2rem", maxWidth: "600px", margin: "0 auto 2rem" }}>
+            Tu transformación comienza hoy. Elige el camino. Construye tu mejor versión.
           </p>
         </section>
 
-        {/* PLANS SECTION */}
-        <section id="planes" style={styles.plansSection}>
-          <h2 style={styles.sectionTitle}>Elige tu plan</h2>
-          <div style={styles.planGrid}>
-            <div style={styles.planCard}>
-              <h3 style={styles.planName}>Plan Básico</h3>
-              <p style={styles.planPrice}>$49/mes</p>
-              <ul style={styles.planFeatures}>
-                <li>Acceso a entrenamientos</li>
-                <li>Grupo privado</li>
-              </ul>
-              <button style={styles.planButton}>Elegir</button>
-            </div>
-
-            <div style={{ ...styles.planCard, border: "2px solid #0A84FF" }}>
-              <h3 style={styles.planName}>Plan Pro</h3>
-              <p style={styles.planPrice}>$99/mes</p>
-              <ul style={styles.planFeatures}>
-                <li>Todo en Plan Básico</li>
-                <li>Coaching personalizado</li>
-              </ul>
-              <button style={styles.planButton}>Más popular</button>
-            </div>
-
-            <div style={styles.planCard}>
-              <h3 style={styles.planName}>Plan Elite</h3>
-              <p style={styles.planPrice}>$199/mes</p>
-              <ul style={styles.planFeatures}>
-                <li>Todo en Plan Pro</li>
-                <li>1 a 1 mensual</li>
-              </ul>
-              <button style={styles.planButton}>Elegir</button>
-            </div>
+        {/* BEFORE & AFTER */}
+        <section style={{ backgroundColor: '#000', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Logra tus metas conmigo</h2>
+          <p style={{ color: '#ccc', maxWidth: '600px', margin: '0 auto 2rem' }}>
+            Estos son solo algunos de los muchos resultados que hemos conseguido con dedicación, esfuerzo y el plan adecuado.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.5rem' }}>
+            {[1, 2, 3].map((i) => (
+              <div key={i} style={{ background: '#111', borderRadius: '10px', overflow: 'hidden', maxWidth: '300px' }}>
+                <img src={`/beforeafter${i}.jpg`} alt={`Transformación ${i}`} style={{ width: '100%', display: 'block' }} />
+                <div style={{ padding: '1rem' }}>
+                  <h4 style={{ margin: 0, fontSize: '1.1rem', color: '#0A84FF' }}>Transformación #{i}</h4>
+                  <p style={{ fontSize: '0.9rem', color: '#ccc' }}>Antes y después tras 12 semanas de programa personalizado.</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* CONTACTO */}
-        <section id="contacto" style={styles.contactSection}>
-          <p style={styles.sectionTitle}>Síguenos o escríbenos</p>
-          <div style={styles.iconsContainer}>
-            <a href="https://www.instagram.com/iamgenesisfit/" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
+        {/* FAQ */}
+        <section style={{ backgroundColor: '#111', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Preguntas frecuentes</h2>
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
+            {[...Array(5)].map((_, i) => (
+              <div key={i} style={{ marginBottom: '1.5rem' }}>
+                <h4 style={{ margin: 0, color: '#0A84FF', fontSize: '1rem' }}>¿Pregunta ejemplo #{i + 1}?</h4>
+                <p style={{ color: '#ccc', fontSize: '0.95rem' }}>
+                  Esta es una respuesta de ejemplo para demostrar cómo se verá el texto real en el sitio.
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* PLANES (estructura simple de prueba) */}
+        <section style={{ backgroundColor: '#000', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Planes disponibles</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
+            {["Básico", "Pro", "Elite"].map((nombre, i) => (
+              <div key={i} style={{
+                background: '#111', padding: '2rem', borderRadius: '10px', maxWidth: '300px',
+                flex: '1 1 250px', border: i === 1 ? '2px solid #0A84FF' : 'none'
+              }}>
+                <h3 style={{ fontSize: '1.4rem', color: '#0A84FF' }}>{`Plan ${nombre}`}</h3>
+                <p style={{ color: '#ccc' }}>$XX.XX / mes</p>
+                <ul style={{ listStyle: 'none', padding: 0, color: '#aaa', textAlign: 'left', fontSize: '0.95rem' }}>
+                  <li>✔ Beneficio 1</li>
+                  <li>✔ Beneficio 2</li>
+                  <li>✔ Beneficio 3</li>
+                </ul>
+                <button style={{
+                  marginTop: '1rem', backgroundColor: '#0A84FF', color: '#fff', border: 'none',
+                  padding: '0.6rem 1.2rem', borderRadius: '8px', cursor: 'pointer', fontWeight: '600'
+                }}>Elegir</button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* REDES */}
+        <section style={{ backgroundColor: '#111', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
+          <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>Síguenos o escríbenos</p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+            <a href="https://www.instagram.com/iamgenesisfit/" target="_blank" rel="noopener noreferrer" style={{ color: "#0A84FF" }}>
               <FaInstagram size={36} />
             </a>
-            <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
+            <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={{ color: "#0A84FF" }}>
               <FaWhatsapp size={36} />
             </a>
           </div>
         </section>
-      </main>
 
-      <footer style={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} iamgenesisfit. Todos los derechos reservados.</p>
-      </footer>
+        {/* FOOTER */}
+        <footer style={{
+          backgroundColor: '#000',
+          color: '#666',
+          textAlign: 'center',
+          padding: '2rem',
+          fontSize: '0.9rem',
+          fontFamily: 'Poppins, sans-serif'
+        }}>
+          &copy; {new Date().getFullYear()} iamgenesisfit. Todos los derechos reservados.
+        </footer>
+      </main>
     </>
   );
 }
-
-const styles = {
-  header: {
-    backgroundColor: "#000",
-    padding: "1.5rem 2rem",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderBottom: "1px solid #0A84FF",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-  },
-  logo: {
-    fontSize: "1.5rem",
-    fontWeight: "bold",
-    color: "#0A84FF",
-  },
-  nav: {
-    display: "flex",
-    gap: "1.5rem",
-  },
-  navLink: {
-    color: "#FFFFFF",
-    textDecoration: "none",
-    fontWeight: "500",
-  },
-  main: {
-    fontFamily: "'Segoe UI', 'Roboto', sans-serif",
-    color: "#FFFFFF",
-  },
-  hero: {
-    minHeight: "80vh",
-    backgroundColor: "#000000",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    padding: "2rem",
-  },
-  heroTitle: {
-    fontSize: "clamp(2.5rem, 7vw, 4rem)",
-    fontWeight: 800,
-    color: "#FFFFFF",
-    marginBottom: "1rem",
-  },
-  heroSubtitle: {
-    fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
-    color: "#CCCCCC",
-    marginBottom: "1.5rem",
-  },
-  ctaButton: {
-    backgroundColor: "#0A84FF",
-    color: "#FFFFFF",
-    border: "none",
-    padding: "0.75rem 1.5rem",
-    borderRadius: "8px",
-    fontSize: "1rem",
-    fontWeight: "bold",
-    cursor: "pointer",
-  },
-  highlightsSection: {
-    backgroundColor: "#111",
-    padding: "4rem 2rem",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    gap: "2rem",
-    textAlign: "center",
-  },
-  highlightItem: {
-    maxWidth: "280px",
-  },
-  highlightTitle: {
-    fontSize: "1.25rem",
-    marginBottom: "0.5rem",
-    color: "#0A84FF",
-  },
-  highlightText: {
-    color: "#CCC",
-    fontSize: "1rem",
-  },
-  aboutSection: {
-    padding: "4rem 2rem",
-    backgroundColor: "#111",
-    textAlign: "center",
-  },
-  aboutText: {
-    maxWidth: "700px",
-    margin: "0 auto",
-    fontSize: "1.1rem",
-    color: "#CCC",
-    lineHeight: "1.8",
-  },
-  plansSection: {
-    backgroundColor: "#000",
-    padding: "4rem 2rem",
-    textAlign: "center",
-  },
-  sectionTitle: {
-    fontSize: "2rem",
-    marginBottom: "2rem",
-  },
-  planGrid: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "2rem",
-    justifyContent: "center",
-  },
-  planCard: {
-    backgroundColor: "#111",
-    padding: "2rem",
-    borderRadius: "12px",
-    maxWidth: "300px",
-    flex: "1 1 280px",
-    textAlign: "left",
-  },
-  planName: {
-    fontSize: "1.5rem",
-    fontWeight: "bold",
-    marginBottom: "0.5rem",
-  },
-  planPrice: {
-    fontSize: "1.25rem",
-    color: "#0A84FF",
-    marginBottom: "1rem",
-  },
-  planFeatures: {
-    listStyle: "none",
-    paddingLeft: 0,
-    color: "#CCC",
-    marginBottom: "1.5rem",
-  },
-  planButton: {
-    backgroundColor: "#0A84FF",
-    border: "none",
-    color: "white",
-    padding: "0.75rem 1.5rem",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
-  contactSection: {
-    backgroundColor: "#000",
-    padding: "4rem 2rem",
-    textAlign: "center",
-  },
-  iconsContainer: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "2rem",
-    marginTop: "1rem",
-  },
-  iconLink: {
-    color: "#0A84FF",
-    transition: "transform 0.3s ease",
-  },
-  footer: {
-    backgroundColor: "#000",
-    color: "#777",
-    textAlign: "center",
-    padding: "2rem",
-    fontSize: "0.875rem",
-  },
-};
