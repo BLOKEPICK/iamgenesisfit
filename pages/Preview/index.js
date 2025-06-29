@@ -118,5 +118,167 @@ export default function Home() {
 }
 
 const styles = {
-  ... // [No cambia aquí: solo se debe actualizar agregando estilos para .ctaButton y .highlightsSection]
+  header: {
+    backgroundColor: "#000",
+    padding: "1.5rem 2rem",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottom: "1px solid #0A84FF",
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
+  },
+  logo: {
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    color: "#0A84FF",
+  },
+  nav: {
+    display: "flex",
+    gap: "1.5rem",
+  },
+  navLink: {
+    color: "#FFFFFF",
+    textDecoration: "none",
+    fontWeight: "500",
+  },
+  main: {
+    fontFamily: "'Segoe UI', 'Roboto', sans-serif",
+    color: "#FFFFFF",
+  },
+  hero: {
+    minHeight: "80vh",
+    backgroundColor: "#000000",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    padding: "2rem",
+  },
+  heroTitle: {
+    fontSize: "clamp(2.5rem, 7vw, 4rem)",
+    fontWeight: 800,
+    color: "#FFFFFF",
+    marginBottom: "1rem",
+  },
+  heroSubtitle: {
+    fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
+    color: "#CCCCCC",
+    marginBottom: "1.5rem",
+  },
+  ctaButton: {
+    backgroundColor: "#0A84FF",
+    color: "#FFFFFF",
+    border: "none",
+    padding: "0.75rem 1.5rem",
+    borderRadius: "8px",
+    fontSize: "1rem",
+    fontWeight: "bold",
+    cursor: "pointer",
+  },
+  highlightsSection: {
+    backgroundColor: "#111",
+    padding: "4rem 2rem",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "2rem",
+    textAlign: "center",
+  },
+  highlightItem: {
+    maxWidth: "280px",
+  },
+  highlightTitle: {
+    fontSize: "1.25rem",
+    marginBottom: "0.5rem",
+    color: "#0A84FF",
+  },
+  highlightText: {
+    color: "#CCC",
+    fontSize: "1rem",
+  },
+  aboutSection: {
+    padding: "4rem 2rem",
+    backgroundColor: "#111",
+    textAlign: "center",
+  },
+  aboutText: {
+    maxWidth: "700px",
+    margin: "0 auto",
+    fontSize: "1.1rem",
+    color: "#CCC",
+    lineHeight: "1.8",
+  },
+  plansSection: {
+    backgroundColor: "#000",
+    padding: "4rem 2rem",
+    textAlign: "center",
+  },
+  sectionTitle: {
+    fontSize: "2rem",
+    marginBottom: "2rem",
+  },
+  planGrid: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "2rem",
+    justifyContent: "center",
+  },
+  planCard: {
+    backgroundColor: "#111",
+    padding: "2rem",
+    borderRadius: "12px",
+    maxWidth: "300px",
+    flex: "1 1 280px",
+    textAlign: "left",
+  },
+  planName: {
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    marginBottom: "0.5rem",
+  },
+  planPrice: {
+    fontSize: "1.25rem",
+    color: "#0A84FF",
+    marginBottom: "1rem",
+  },
+  planFeatures: {
+    listStyle: "none",
+    paddingLeft: 0,
+    color: "#CCC",
+    marginBottom: "1.5rem",
+  },
+  planButton: {
+    backgroundColor: "#0A84FF",
+    border: "none",
+    color: "white",
+    padding: "0.75rem 1.5rem",
+    borderRadius: "8px",
+    cursor: "pointer",
+    fontWeight: "bold",
+  },
+  contactSection: {
+    backgroundColor: "#000",
+    padding: "4rem 2rem",
+    textAlign: "center",
+  },
+  iconsContainer: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "2rem",
+    marginTop: "1rem",
+  },
+  iconLink: {
+    color: "#0A84FF",
+    transition: "transform 0.3s ease",
+  },
+  footer: {
+    backgroundColor: "#000",
+    color: "#777",
+    textAlign: "center",
+    padding: "2rem",
+    fontSize: "0.875rem",
+  },
 };
