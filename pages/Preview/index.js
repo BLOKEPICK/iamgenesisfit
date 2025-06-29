@@ -38,7 +38,7 @@ export default function Home() {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.5rem' }}>
             {[1, 2, 3].map((i) => (
               <div key={i} style={{ background: '#111', borderRadius: '10px', overflow: 'hidden', maxWidth: '300px' }}>
-                <img src={`/beforeafter${i}.jpg`} alt={`Transformación ${i}`} style={{ width: '100%', display: 'block' }} />
+                <div style={{ width: '100%', height: '300px', backgroundColor: '#222' }} />
                 <div style={{ padding: '1rem' }}>
                   <h4 style={{ margin: 0, fontSize: '1.1rem', color: '#0A84FF' }}>Transformación #{i}</h4>
                   <p style={{ fontSize: '0.9rem', color: '#ccc' }}>Antes y después tras 12 semanas de programa personalizado.</p>
@@ -63,31 +63,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PLANES (estructura simple de prueba) */}
-        <section style={{ backgroundColor: '#000', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Planes disponibles</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
-            {["Básico", "Pro", "Elite"].map((nombre, i) => (
-              <div key={i} style={{
-                background: '#111', padding: '2rem', borderRadius: '10px', maxWidth: '300px',
-                flex: '1 1 250px', border: i === 1 ? '2px solid #0A84FF' : 'none'
-              }}>
-                <h3 style={{ fontSize: '1.4rem', color: '#0A84FF' }}>{`Plan ${nombre}`}</h3>
-                <p style={{ color: '#ccc' }}>$XX.XX / mes</p>
-                <ul style={{ listStyle: 'none', padding: 0, color: '#aaa', textAlign: 'left', fontSize: '0.95rem' }}>
-                  <li>✔ Beneficio 1</li>
-                  <li>✔ Beneficio 2</li>
-                  <li>✔ Beneficio 3</li>
-                </ul>
-                <button style={{
-                  marginTop: '1rem', backgroundColor: '#0A84FF', color: '#fff', border: 'none',
-                  padding: '0.6rem 1.2rem', borderRadius: '8px', cursor: 'pointer', fontWeight: '600'
-                }}>Elegir</button>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* REDES */}
         <section style={{ backgroundColor: '#111', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
           <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>Síguenos o escríbenos</p>
@@ -107,8 +82,7 @@ export default function Home() {
           color: '#666',
           textAlign: 'center',
           padding: '2rem',
-          fontSize: '0.9rem',
-          fontFamily: 'Poppins, sans-serif'
+          fontSize: '0.9rem'
         }}>
           &copy; {new Date().getFullYear()} iamgenesisfit. Todos los derechos reservados.
         </footer>
