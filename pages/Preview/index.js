@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>iamgenesisfit | Coming Soon</title>
+        <title>iamgenesisfit | Página oficial</title>
         <meta
           name="description"
-          content="Plataforma en desarrollo. Prepárate para llevar tu transformación al siguiente nivel."
+          content="Transforma tu cuerpo y tu mente con iamgenesisfit. Programas, comunidad y resultados reales."
         />
         <style>{`
           html, body {
@@ -20,29 +20,60 @@ export default function Home() {
       </Head>
 
       <main style={styles.main}>
-        <div style={styles.content}>
-          <h1 style={styles.title}>GENESIS IS COMING</h1>
-          <p style={styles.subtitle}>Prepárate para la nueva era del fitness</p>
+        {/* HERO SECTION */}
+        <section style={styles.hero}>
+          <h1 style={styles.heroTitle}>GENESIS IS NOW</h1>
+          <p style={styles.heroSubtitle}>Empieza tu transformación hoy</p>
+        </section>
 
+        {/* PLANS SECTION */}
+        <section style={styles.plansSection}>
+          <h2 style={styles.sectionTitle}>Elige tu plan</h2>
+          <div style={styles.planGrid}>
+            <div style={styles.planCard}>
+              <h3 style={styles.planName}>Plan Básico</h3>
+              <p style={styles.planPrice}>$49/mes</p>
+              <ul style={styles.planFeatures}>
+                <li>Acceso a entrenamientos</li>
+                <li>Grupo privado</li>
+              </ul>
+              <button style={styles.planButton}>Elegir</button>
+            </div>
+
+            <div style={{ ...styles.planCard, border: "2px solid #0A84FF" }}>
+              <h3 style={styles.planName}>Plan Pro</h3>
+              <p style={styles.planPrice}>$99/mes</p>
+              <ul style={styles.planFeatures}>
+                <li>Todo en Plan Básico</li>
+                <li>Coaching personalizado</li>
+              </ul>
+              <button style={styles.planButton}>Más popular</button>
+            </div>
+
+            <div style={styles.planCard}>
+              <h3 style={styles.planName}>Plan Elite</h3>
+              <p style={styles.planPrice}>$199/mes</p>
+              <ul style={styles.planFeatures}>
+                <li>Todo en Plan Pro</li>
+                <li>1 a 1 mensual</li>
+              </ul>
+              <button style={styles.planButton}>Elegir</button>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACTO */}
+        <section style={styles.contactSection}>
+          <p style={styles.sectionTitle}>Síguenos o escríbenos</p>
           <div style={styles.iconsContainer}>
-            <a
-              href="https://www.instagram.com/iamgenesisfit/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={styles.iconLink}
-            >
+            <a href="https://www.instagram.com/iamgenesisfit/" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
               <FaInstagram size={36} />
             </a>
-            <a
-              href="https://wa.me/18292520244"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={styles.iconLink}
-            >
+            <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
               <FaWhatsapp size={36} />
             </a>
           </div>
-        </div>
+        </section>
       </main>
     </>
   );
@@ -50,37 +81,87 @@ export default function Home() {
 
 const styles = {
   main: {
-    backgroundColor: "#000000",
+    fontFamily: "'Segoe UI', 'Roboto', sans-serif",
     color: "#FFFFFF",
+  },
+  hero: {
     minHeight: "100vh",
+    backgroundColor: "#000000",
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    padding: "0",
-    fontFamily: "'Segoe UI', 'Roboto', sans-serif",
-  },
-  content: {
     textAlign: "center",
-    maxWidth: "700px",
-    width: "100%",
     padding: "2rem",
   },
-  title: {
-    fontSize: "clamp(2.2rem, 6vw, 4rem)",
+  heroTitle: {
+    fontSize: "clamp(2.5rem, 7vw, 4rem)",
     fontWeight: 800,
+    color: "#FFFFFF",
     marginBottom: "1rem",
-    letterSpacing: "0.1em",
   },
-  subtitle: {
-    fontSize: "clamp(1rem, 3vw, 1.5rem)",
+  heroSubtitle: {
+    fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
     color: "#CCCCCC",
-    marginBottom: "2.5rem",
-    fontWeight: 300,
+  },
+  plansSection: {
+    backgroundColor: "#000",
+    padding: "4rem 2rem",
+    textAlign: "center",
+  },
+  sectionTitle: {
+    fontSize: "2rem",
+    marginBottom: "2rem",
+  },
+  planGrid: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "2rem",
+    justifyContent: "center",
+  },
+  planCard: {
+    backgroundColor: "#111",
+    padding: "2rem",
+    borderRadius: "12px",
+    maxWidth: "300px",
+    flex: "1 1 280px",
+    textAlign: "left",
+  },
+  planName: {
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    marginBottom: "0.5rem",
+  },
+  planPrice: {
+    fontSize: "1.25rem",
+    color: "#0A84FF",
+    marginBottom: "1rem",
+  },
+  planFeatures: {
+    listStyle: "none",
+    paddingLeft: 0,
+    color: "#CCC",
+    marginBottom: "1.5rem",
+  },
+  planButton: {
+    backgroundColor: "#0A84FF",
+    border: "none",
+    color: "white",
+    padding: "0.75rem 1.5rem",
+    borderRadius: "8px",
+    cursor: "pointer",
+    fontWeight: "bold",
+  },
+  contactSection: {
+    backgroundColor: "#000",
+    padding: "4rem 2rem",
+    textAlign: "center",
   },
   iconsContainer: {
     display: "flex",
     justifyContent: "center",
     gap: "2rem",
+    marginTop: "1rem",
   },
   iconLink: {
     color: "#0A84FF",
