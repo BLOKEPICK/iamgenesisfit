@@ -10,6 +10,13 @@ export default function Home() {
           name="description"
           content="Plataforma en desarrollo. Prepárate para llevar tu transformación al siguiente nivel."
         />
+        <style>{`
+          html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+          }
+        `}</style>
       </Head>
 
       <main style={styles.main}>
@@ -49,13 +56,14 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: "2rem",
+    padding: "0",
     fontFamily: "'Segoe UI', 'Roboto', sans-serif",
   },
   content: {
     textAlign: "center",
     maxWidth: "700px",
     width: "100%",
+    padding: "2rem",
   },
   title: {
     fontSize: "clamp(2.2rem, 6vw, 4rem)",
