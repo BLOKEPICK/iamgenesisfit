@@ -34,16 +34,33 @@ export default function Home() {
 
       <main>
         {/* HERO */}
-        <section style={{ background: "linear-gradient(180deg, #000 0%, #0A0A0A 100%)", color: "#fff", padding: "6rem 2rem", textAlign: "center" }}>
-          <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", marginBottom: "1rem", fontWeight: "700", letterSpacing: "1px", color: "#0A84FF" }}>
-            TRANSFORMA TU VIDA HOY
-          </h1>
-          <p style={{ color: "#bbb", fontSize: "1.15rem", maxWidth: "700px", margin: "0 auto 2rem", lineHeight: 1.6 }}>
-            Descubre un enfoque único de entrenamiento físico y mental diseñado para ayudarte a alcanzar tu mejor versión. Resultados reales. Cambios sostenibles. Comunidad que te respalda.
-          </p>
-          <a href="#" style={{ display: 'inline-block', marginTop: '1rem', padding: '0.75rem 2rem', backgroundColor: '#0A84FF', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: '500' }}>
-            Comienza tu cambio
-          </a>
+        <section style={{
+          backgroundImage: "url('/trainer_main.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          position: "relative",
+          color: "#fff",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center"
+        }}>
+          <div style={{
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            padding: "4rem 2rem",
+            borderRadius: "12px",
+            maxWidth: "700px"
+          }}>
+            <h1 style={{ fontSize: "3rem", fontWeight: "700", marginBottom: "1rem" }}>Genesis Fit</h1>
+            <p style={{ fontSize: "1.1rem", color: "#ccc", lineHeight: 1.6 }}>
+              Bienvenida a tu nueva versión. Más fuerte, más sana, más segura. Este es el primer paso.
+            </p>
+            <a href="#planes" style={{ marginTop: "2rem", display: "inline-block", padding: "0.9rem 2rem", backgroundColor: "#0A84FF", color: "#fff", borderRadius: "6px", textDecoration: "none" }}>
+              Empezar
+            </a>
+          </div>
         </section>
 
         {/* SOBRE MÍ */}
