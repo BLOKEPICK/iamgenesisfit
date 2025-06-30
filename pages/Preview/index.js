@@ -33,11 +33,11 @@ export default function Home() {
       </Head>
 
       <main>
-        {/* HERO - Opción B con degradado expandido */}
+        {/* HERO - Ajustado con degradado arriba y abajo */}
         <section style={{
-          background: "radial-gradient(circle at center, #0A84FF 0%, #000 100%)",
+          background: "linear-gradient(to bottom, #0A84FF 0%, #000 30%, #000 70%, #0A84FF 100%)",
           color: "#fff",
-          padding: "8rem 2rem 10rem",
+          padding: "5rem 2rem",
           textAlign: "center",
           position: "relative"
         }}>
