@@ -178,19 +178,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* REDES */}
-        <section style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
-          <p style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Síguenos o escríbenos</p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5rem' }}>
-            <a href="https://www.instagram.com/iamgenesisfit/" target="_blank" rel="noopener noreferrer" style={{ color: "#0A84FF" }}>
-              <FaInstagram size={36} />
-            </a>
-            <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={{ color: "#0A84FF" }}>
-              <FaWhatsapp size={36} />
-            </a>
-          </div>
-        </section>
-
         {/* PLANES */}
 <section id="planes" style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem' }}>
   <h2 style={{
