@@ -7,6 +7,9 @@ export default function Home() {
       <Head>
         <title>iamgenesisfit | Página oficial</title>
         <meta name="description" content="Transforma tu cuerpo y tu mente con iamgenesisfit. Programas, comunidad y resultados reales." />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:title" content="iamgenesisfit | Página oficial" />
+        <meta property="og:description" content="Transforma tu cuerpo y tu mente con iamgenesisfit. Programas, comunidad y resultados reales." />
         <style>{`
           html, body {
             margin: 0;
@@ -38,7 +41,11 @@ export default function Home() {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.5rem' }}>
             {[1, 2, 3].map((i) => (
               <div key={i} style={{ background: '#111', borderRadius: '10px', overflow: 'hidden', maxWidth: '300px' }}>
-                <div style={{ width: '100%', height: '300px', backgroundColor: '#222' }} />
+                <img
+                  src={`/transformation_${i}.webp`}
+                  alt={`Transformación ${i}`}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
                 <div style={{ padding: '1rem' }}>
                   <h4 style={{ margin: 0, fontSize: '1.1rem', color: '#0A84FF' }}>Transformación #{i}</h4>
                   <p style={{ fontSize: '0.9rem', color: '#ccc' }}>Antes y después tras 12 semanas de programa personalizado.</p>
@@ -86,6 +93,29 @@ export default function Home() {
         }}>
           &copy; {new Date().getFullYear()} iamgenesisfit. Todos los derechos reservados.
         </footer>
+
+        {/* BOTÓN FLOTANTE WHATSAPP */}
+        <a
+          href="https://wa.me/18292520244"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            backgroundColor: '#0A84FF',
+            borderRadius: '50%',
+            width: '60px',
+            height: '60px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            boxShadow: '0 0 15px rgba(0,0,0,0.3)',
+            zIndex: 999
+          }}
+        >
+          <FaWhatsapp size={28} color="#fff" />
+        </a>
       </main>
     </>
   );
