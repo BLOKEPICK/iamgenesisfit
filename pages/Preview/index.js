@@ -33,51 +33,6 @@ export default function Home() {
       </Head>
 
       <main>
-        {/* HERO - Degradado vertical en esquinas superior e inferior */}
-        <section style={{
-          background: "#0A84FF",
-          color: "#fff",
-          padding: "5rem 2rem",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden"
-        }}>
-          {/* Degradado arriba */}
-          <div style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100px",
-            background: "linear-gradient(to bottom, #000, transparent)",
-            zIndex: 1
-          }} />
-
-          {/* Contenido */}
-          <div style={{ position: "relative", zIndex: 2 }}>
-            <h1 style={{ fontSize: "2.8rem", fontFamily: "'Anton', sans-serif", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "1rem" }}>
-              El cambio empieza contigo
-            </h1>
-            <p style={{ fontSize: "1.2rem", color: "#fff", marginTop: "1rem", maxWidth: "600px", marginInline: "auto", lineHeight: 1.6 }}>
-              Genesis Fit no es solo un programa. Es una transformación completa guiada por experiencia real y resultados medibles.
-            </p>
-            <a href="#planes" style={{ marginTop: "2rem", display: "inline-block", padding: "0.9rem 2.5rem", backgroundColor: "#fff", color: "#0A84FF", fontWeight: "700", borderRadius: "8px", textDecoration: "none" }}>
-              Empezar ahora
-            </a>
-          </div>
-
-          {/* Degradado abajo */}
-          <div style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            height: "380px",
-            background: "linear-gradient(to top, #000, transparent)",
-            zIndex: 1
-          }} />
-        </section>
-
         {/* SOBRE MÍ */}
         <section style={{ background: 'radial-gradient(circle at top left, #0A0A0A, #000)', color: '#fff', padding: '4rem 2rem' }}>
           <div className="trainer-section" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', maxWidth: '1000px', margin: '0 auto' }}>
