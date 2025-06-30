@@ -18,6 +18,17 @@ export default function Home() {
             background-color: #000000;
             font-family: 'Poppins', sans-serif;
           }
+          @media (max-width: 768px) {
+            .trainer-section {
+              flex-direction: column !important;
+              text-align: center !important;
+            }
+            .trainer-image {
+              width: 100% !important;
+              max-width: 320px;
+              margin: 0 auto 1.5rem;
+            }
+          }
         `}</style>
       </Head>
 
@@ -36,11 +47,12 @@ export default function Home() {
         </section>
 
         {/* SOBRE MÍ */}
-        <section style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+        <section style={{ background: 'radial-gradient(circle at top left, #0A0A0A, #000)', color: '#fff', padding: '4rem 2rem' }}>
+          <div className="trainer-section" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', maxWidth: '1000px', margin: '0 auto' }}>
             <img
               src="/trainer_main.webp"
               alt="Entrenadora Genesis"
+              className="trainer-image"
               style={{ width: '300px', borderRadius: '12px', objectFit: 'cover', boxShadow: '0 0 20px rgba(0,0,0,0.4)' }}
             />
             <div style={{ flex: 1 }}>
