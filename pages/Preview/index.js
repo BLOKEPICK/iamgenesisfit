@@ -96,24 +96,31 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BEFORE & AFTER - Static Images */}
+        {/* BEFORE & AFTER - Polaroid style */}
         <section style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0A84FF' }}>Logra tus metas conmigo</h2>
           <p style={{ color: '#aaa', maxWidth: '600px', margin: '0 auto 2rem' }}>
             Resultados reales obtenidos con esfuerzo, dedicación y un plan personalizado.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
             {[1, 2, 3].map((i) => (
-              <div key={i} style={{ background: '#111', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 0 12px rgba(0,0,0,0.3)' }}>
+              <div key={i} style={{
+                backgroundColor: '#fff',
+                color: '#000',
+                padding: '1rem',
+                borderRadius: '12px',
+                boxShadow: '0 4px 15px rgba(255, 255, 255, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}>
                 <img
                   src={`/transformation_${i}.webp`}
                   alt={`Transformación ${i}`}
-                  style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
+                  style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem' }}
                 />
-                <div style={{ padding: '1rem' }}>
-                  <h4 style={{ margin: 0, fontSize: '1.1rem', color: '#0A84FF' }}>Transformación #{i}</h4>
-                  <p style={{ fontSize: '0.9rem', color: '#ccc' }}>Antes y después tras 12 semanas de programa personalizado.</p>
-                </div>
+                <h4 style={{ margin: 0, fontSize: '1rem', color: '#0A84FF' }}>Transformación #{i}</h4>
+                <p style={{ fontSize: '0.85rem', color: '#333', marginTop: '0.5rem' }}>Antes y después tras 12 semanas de programa personalizado.</p>
               </div>
             ))}
           </div>
