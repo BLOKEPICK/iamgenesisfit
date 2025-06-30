@@ -178,7 +178,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PLANES */}
+       /* PLANES */
 <section id="planes" style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem' }}>
   <h2 style={{
     textAlign: 'center',
@@ -193,65 +193,96 @@ export default function Home() {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
     gap: '2rem',
-    maxWidth: '1000px',
+    maxWidth: '1200px',
     margin: '0 auto'
   }}>
     {[
       {
         title: 'Plan Básico',
         price: '$49 / mes',
-        features: ['Acceso a rutinas básicas', 'Grupo de WhatsApp', '1 check-in mensual']
+        features: ['Acceso a rutinas básicas', 'Grupo de WhatsApp', '1 check-in mensual'],
+        highlight: false
       },
       {
         title: 'Plan Avanzado',
         price: '$99 / mes',
-        features: ['Rutinas personalizadas', 'Grupo privado VIP', '2 check-ins mensuales', 'Asesoría nutricional']
+        features: ['Rutinas personalizadas', 'Grupo privado VIP', '2 check-ins mensuales', 'Asesoría nutricional'],
+        highlight: true
       },
       {
         title: 'Plan Premium',
         price: '$149 / mes',
-        features: ['Plan completo personalizado', 'Chat directo con Genesis', 'Check-in semanal', 'Acceso a talleres exclusivos']
+        features: ['Plan completo personalizado', 'Chat directo con Genesis', 'Check-in semanal', 'Acceso a talleres exclusivos'],
+        highlight: false
       }
     ].map((plan, i) => (
       <div key={i} style={{
-        backgroundColor: '#111',
-        border: '1px solid #333',
-        borderRadius: '12px',
+        backgroundColor: plan.highlight ? '#0A84FF' : '#111',
+        color: plan.highlight ? '#fff' : '#ccc',
+        borderRadius: '14px',
         padding: '2rem',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between'
+        boxShadow: plan.highlight ? '0 0 25px rgba(10,132,255,0.4)' : '0 0 15px rgba(0,0,0,0.2)',
+        position: 'relative',
+        transform: plan.highlight ? 'scale(1.05)' : 'none',
+        zIndex: plan.highlight ? 1 : 0,
+        transition: 'transform 0.3s ease'
       }}>
+        {plan.highlight && (
+          <div style={{
+            position: 'absolute',
+            top: '-1rem',
+            right: '-1rem',
+            backgroundColor: '#fff',
+            color: '#0A84FF',
+            padding: '0.3rem 0.75rem',
+            borderRadius: '8px',
+            fontSize: '0.8rem',
+            fontWeight: '700',
+            boxShadow: '0 2px 10px rgba(0,0,0,0.3)'
+          }}>Más popular</div>
+        )}
+
         <h3 style={{
-          color: '#0A84FF',
-          fontSize: '1.3rem',
-          marginBottom: '1rem',
-          fontWeight: '600',
-          textAlign: 'center'
-        }}>{plan.title}</h3>
-        <p style={{
-          fontSize: '1.5rem',
-          color: '#fff',
+          fontSize: '1.4rem',
           fontWeight: '700',
+          textAlign: 'center',
+          marginBottom: '1rem'
+        }}>{plan.title}</h3>
+
+        <p style={{
+          fontSize: '1.6rem',
+          fontWeight: 'bold',
           textAlign: 'center',
           marginBottom: '1.5rem'
         }}>{plan.price}</p>
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#ccc', fontSize: '0.95rem', lineHeight: 1.6 }}>
+
+        <ul style={{
+          listStyle: 'none',
+          padding: 0,
+          marginBottom: '2rem',
+          color: plan.highlight ? '#fff' : '#aaa',
+          fontSize: '0.95rem',
+          lineHeight: 1.7
+        }}>
           {plan.features.map((f, idx) => (
-            <li key={idx} style={{ marginBottom: '0.5rem' }}>• {f}</li>
+            <li key={idx} style={{
+              marginBottom: '0.5rem',
+              display: 'flex',
+              alignItems: 'center'
+            }}>• {f}</li>
           ))}
         </ul>
+
         <a href="#" style={{
-          marginTop: '2rem',
-          backgroundColor: '#0A84FF',
-          color: '#fff',
-          padding: '0.75rem',
-          borderRadius: '8px',
+          display: 'block',
+          backgroundColor: plan.highlight ? '#fff' : '#0A84FF',
+          color: plan.highlight ? '#0A84FF' : '#fff',
           textAlign: 'center',
-          textDecoration: 'none',
-          fontWeight: '600'
-        }}>Elegir plan</a>
+          padding: '0.75rem 1rem',
+          borderRadius: '8px',
+          fontWeight: '700',
+          textDecoration: 'none'
+        }}>Seleccionar</a>
       </div>
     ))}
   </div>
