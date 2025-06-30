@@ -98,10 +98,32 @@ export default function Home() {
 
          {/* BEFORE & AFTER - Estilo B con cintillo y fondo sólido oscuro */}
         <section style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0A84FF' }}>Resultados que hablan por sí solos</h2>
-          <p style={{ color: '#aaa', maxWidth: '600px', margin: '0 auto 2rem' }}>
-            No es magia. Es ciencia, dedicación y una guía experta comprometida contigo en cada paso.
-          </p>
+          <div style={{ marginBottom: '2rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              marginBottom: '0.5rem',
+              color: '#fff',
+              fontFamily: 'Anton, sans-serif',
+              letterSpacing: '1px',
+              textTransform: 'uppercase'
+            }}>Resultados que hablan por sí solos</h2>
+            <div style={{
+              width: '80px',
+              height: '4px',
+              margin: '0.5rem auto 1rem',
+              background: '#0A84FF',
+              borderRadius: '2px'
+            }} />
+            <p style={{
+              color: '#bbb',
+              fontSize: '1.05rem',
+              maxWidth: '640px',
+              margin: '0 auto',
+              lineHeight: 1.6
+            }}>
+              No es magia. Es ciencia, dedicación y una guía experta comprometida contigo en cada paso.
+            </p>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
             {[1, 2, 3].map((i) => (
               <div key={i} style={{
