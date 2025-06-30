@@ -98,9 +98,9 @@ export default function Home() {
 
         {/* BEFORE & AFTER - Estilo B con cintillo y fondo sólido oscuro */}
         <section style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0A84FF' }}>Logra tus metas conmigo</h2>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0A84FF' }}>Resultados que hablan por sí solos</h2>
           <p style={{ color: '#aaa', maxWidth: '600px', margin: '0 auto 2rem' }}>
-            Resultados reales obtenidos con esfuerzo, dedicación y un plan personalizado.
+            No es magia. Es ciencia, dedicación y una guía experta comprometida contigo en cada paso.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
             {[1, 2, 3].map((i) => (
@@ -124,15 +124,10 @@ export default function Home() {
                   12 semanas de transformación
                 </div>
                 <img
-   src={`/transformation_${i}.webp`}
-  alt={`Transformación ${i}`}
-  style={{
-    width: '100%',
-    height: '360px', // altura fija para todas
-    objectFit: 'cover',
-    display: 'block'
-  }}
-/>
+                  src={`/transformation_${i}.webp`}
+                  alt={`Transformación ${i}`}
+                  style={{ width: '100%', height: '360px', objectFit: 'cover' }}
+                />
                 <div style={{
                   padding: '1.5rem 1rem',
                   backgroundColor: '#111',
