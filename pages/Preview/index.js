@@ -124,10 +124,15 @@ export default function Home() {
                   12 semanas de transformación
                 </div>
                 <img
-                  src={`/transformation_${i}.webp`}
-                  alt={`Transformación ${i}`}
-                  style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-                />
+   src={`/transformation_${i}.webp`}
+  alt={`Transformación ${i}`}
+  style={{
+    width: '100%',
+    height: '360px', // altura fija para todas
+    objectFit: 'cover',
+    display: 'block'
+  }}
+/>
                 <div style={{
                   padding: '1.5rem 1rem',
                   backgroundColor: '#111',
