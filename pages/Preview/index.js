@@ -33,28 +33,23 @@ export default function Home() {
       </Head>
 
       <main>
-        {/* HERO - Opción A */}
+        {/* HERO - Opción B */}
         <section style={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          backgroundColor: "#000",
-          padding: "4rem 2rem"
+          background: "radial-gradient(circle at center, #0A84FF 0%, #000 100%)",
+          color: "#fff",
+          padding: "6rem 2rem",
+          textAlign: "center",
+          position: "relative"
         }}>
-          <div style={{ flex: "1 1 400px", color: "#fff", paddingRight: "2rem" }}>
-            <h1 style={{ fontSize: "2.8rem", color: "#0A84FF", fontWeight: "800", marginBottom: "1rem" }}>
-              Construye tu mejor versión
-            </h1>
-            <p style={{ fontSize: "1.1rem", color: "#ccc", marginBottom: "2rem", lineHeight: "1.6" }}>
-              Un plan de entrenamiento guiado, comunidad real y un enfoque integral de transformación física y mental.
-            </p>
-            <a href="#planes" style={{ background: "#0A84FF", color: "#fff", padding: "0.8rem 2rem", borderRadius: "8px", textDecoration: "none", fontWeight: "600" }}>
-              Empieza ahora
-            </a>
-          </div>
-          <div style={{ flex: "1 1 300px", textAlign: "center" }}>
-            <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: "100%", borderRadius: "12px" }} />
-          </div>
+          <h1 style={{ fontSize: "3rem", fontWeight: "800", letterSpacing: "1px" }}>
+            El cambio empieza contigo
+          </h1>
+          <p style={{ fontSize: "1.2rem", color: "#ddd", marginTop: "1rem", maxWidth: "600px", marginInline: "auto", lineHeight: 1.6 }}>
+            Genesis Fit no es solo un programa. Es una transformación completa guiada por experiencia real y resultados medibles.
+          </p>
+          <a href="#planes" style={{ marginTop: "2rem", display: "inline-block", padding: "0.9rem 2.5rem", backgroundColor: "#fff", color: "#0A84FF", fontWeight: "700", borderRadius: "8px", textDecoration: "none" }}>
+            Empezar ahora
+          </a>
         </section>
 
         {/* SOBRE MÍ */}
