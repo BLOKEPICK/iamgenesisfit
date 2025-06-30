@@ -191,6 +191,86 @@ export default function Home() {
           </div>
         </section>
 
+        {/* PLANES */}
+<section id="planes" style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem' }}>
+  <h2 style={{
+    textAlign: 'center',
+    fontSize: '2rem',
+    marginBottom: '2rem',
+    fontFamily: 'Anton, sans-serif',
+    letterSpacing: '1px',
+    textTransform: 'uppercase'
+  }}>elige tu plan</h2>
+
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: '2rem',
+    maxWidth: '1000px',
+    margin: '0 auto'
+  }}>
+    {[
+      {
+        title: 'Plan Básico',
+        price: '$49 / mes',
+        features: ['Acceso a rutinas básicas', 'Grupo de WhatsApp', '1 check-in mensual']
+      },
+      {
+        title: 'Plan Avanzado',
+        price: '$99 / mes',
+        features: ['Rutinas personalizadas', 'Grupo privado VIP', '2 check-ins mensuales', 'Asesoría nutricional']
+      },
+      {
+        title: 'Plan Premium',
+        price: '$149 / mes',
+        features: ['Plan completo personalizado', 'Chat directo con Genesis', 'Check-in semanal', 'Acceso a talleres exclusivos']
+      }
+    ].map((plan, i) => (
+      <div key={i} style={{
+        backgroundColor: '#111',
+        border: '1px solid #333',
+        borderRadius: '12px',
+        padding: '2rem',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}>
+        <h3 style={{
+          color: '#0A84FF',
+          fontSize: '1.3rem',
+          marginBottom: '1rem',
+          fontWeight: '600',
+          textAlign: 'center'
+        }}>{plan.title}</h3>
+        <p style={{
+          fontSize: '1.5rem',
+          color: '#fff',
+          fontWeight: '700',
+          textAlign: 'center',
+          marginBottom: '1.5rem'
+        }}>{plan.price}</p>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#ccc', fontSize: '0.95rem', lineHeight: 1.6 }}>
+          {plan.features.map((f, idx) => (
+            <li key={idx} style={{ marginBottom: '0.5rem' }}>• {f}</li>
+          ))}
+        </ul>
+        <a href="#" style={{
+          marginTop: '2rem',
+          backgroundColor: '#0A84FF',
+          color: '#fff',
+          padding: '0.75rem',
+          borderRadius: '8px',
+          textAlign: 'center',
+          textDecoration: 'none',
+          fontWeight: '600'
+        }}>Elegir plan</a>
+      </div>
+    ))}
+  </div>
+</section>
+
+
         {/* FOOTER */}
         <footer style={{
           backgroundColor: '#000',
