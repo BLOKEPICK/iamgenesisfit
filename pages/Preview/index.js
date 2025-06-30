@@ -33,33 +33,27 @@ export default function Home() {
       </Head>
 
       <main>
-        {/* HERO */}
+        {/* HERO - Opción A */}
         <section style={{
-          backgroundImage: "url('/trainer_main.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          position: "relative",
-          color: "#fff",
-          minHeight: "100vh",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          flexWrap: "wrap",
           alignItems: "center",
-          textAlign: "center"
+          backgroundColor: "#000",
+          padding: "4rem 2rem"
         }}>
-          <div style={{
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            padding: "4rem 2rem",
-            borderRadius: "12px",
-            maxWidth: "700px"
-          }}>
-            <h1 style={{ fontSize: "3rem", fontWeight: "700", marginBottom: "1rem" }}>Genesis Fit</h1>
-            <p style={{ fontSize: "1.1rem", color: "#ccc", lineHeight: 1.6 }}>
-              Bienvenida a tu nueva versión. Más fuerte, más sana, más segura. Este es el primer paso.
+          <div style={{ flex: "1 1 400px", color: "#fff", paddingRight: "2rem" }}>
+            <h1 style={{ fontSize: "2.8rem", color: "#0A84FF", fontWeight: "800", marginBottom: "1rem" }}>
+              Construye tu mejor versión
+            </h1>
+            <p style={{ fontSize: "1.1rem", color: "#ccc", marginBottom: "2rem", lineHeight: "1.6" }}>
+              Un plan de entrenamiento guiado, comunidad real y un enfoque integral de transformación física y mental.
             </p>
-            <a href="#planes" style={{ marginTop: "2rem", display: "inline-block", padding: "0.9rem 2rem", backgroundColor: "#0A84FF", color: "#fff", borderRadius: "6px", textDecoration: "none" }}>
-              Empezar
+            <a href="#planes" style={{ background: "#0A84FF", color: "#fff", padding: "0.8rem 2rem", borderRadius: "8px", textDecoration: "none", fontWeight: "600" }}>
+              Empieza ahora
             </a>
+          </div>
+          <div style={{ flex: "1 1 300px", textAlign: "center" }}>
+            <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: "100%", borderRadius: "12px" }} />
           </div>
         </section>
 
