@@ -24,12 +24,15 @@ export default function Home() {
       <main>
         {/* HERO */}
         <section style={{ background: "linear-gradient(180deg, #000 0%, #0A0A0A 100%)", color: "#fff", padding: "6rem 2rem", textAlign: "center" }}>
-          <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", marginBottom: "1rem", fontWeight: "700", letterSpacing: "2px", color: "#0A84FF" }}>
-            GENESIS IS NOW
+          <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", marginBottom: "1rem", fontWeight: "700", letterSpacing: "1px", color: "#0A84FF" }}>
+            TRANSFORMA TU VIDA HOY
           </h1>
-          <p style={{ color: "#ccc", fontSize: "1.2rem", maxWidth: "600px", margin: "0 auto 2rem" }}>
-            Tu transformación comienza hoy. Elige el camino. Construye tu mejor versión.
+          <p style={{ color: "#bbb", fontSize: "1.15rem", maxWidth: "700px", margin: "0 auto 2rem", lineHeight: 1.6 }}>
+            Descubre un enfoque único de entrenamiento físico y mental diseñado para ayudarte a alcanzar tu mejor versión. Resultados reales. Cambios sostenibles. Comunidad que te respalda.
           </p>
+          <a href="#" style={{ display: 'inline-block', marginTop: '1rem', padding: '0.75rem 2rem', backgroundColor: '#0A84FF', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: '500' }}>
+            Comienza tu cambio
+          </a>
         </section>
 
         {/* BEFORE & AFTER */}
