@@ -33,9 +33,9 @@ export default function Home() {
       </Head>
 
       <main>
-        {/* HERO - Ajustado con degradado arriba y abajo */}
+        {/* HERO - Con fondo azul degradado vertical arriba y abajo */}
         <section style={{
-          background: "linear-gradient(to bottom, #0A84FF 0%, #000 30%, #000 70%, #0A84FF 100%)",
+          background: "linear-gradient(to bottom, #0A84FF, #000 30%, #000 70%, #0A84FF)",
           color: "#fff",
           padding: "5rem 2rem",
           textAlign: "center",
