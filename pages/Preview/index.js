@@ -33,23 +33,49 @@ export default function Home() {
       </Head>
 
       <main>
-        {/* HERO - Con fondo azul degradado vertical arriba y abajo */}
+        {/* HERO - Degradado vertical en esquinas superior e inferior */}
         <section style={{
-          background: "linear-gradient(to bottom, #0A84FF, #000 30%, #000 70%, #0A84FF)",
+          background: "#0A84FF",
           color: "#fff",
           padding: "5rem 2rem",
           textAlign: "center",
-          position: "relative"
+          position: "relative",
+          overflow: "hidden"
         }}>
-          <h1 style={{ fontSize: "3rem", fontWeight: "800", letterSpacing: "1px" }}>
-            El cambio empieza contigo
-          </h1>
-          <p style={{ fontSize: "1.2rem", color: "#ddd", marginTop: "1rem", maxWidth: "600px", marginInline: "auto", lineHeight: 1.6 }}>
-            Genesis Fit no es solo un programa. Es una transformación completa guiada por experiencia real y resultados medibles.
-          </p>
-          <a href="#planes" style={{ marginTop: "2rem", display: "inline-block", padding: "0.9rem 2.5rem", backgroundColor: "#fff", color: "#0A84FF", fontWeight: "700", borderRadius: "8px", textDecoration: "none" }}>
-            Empezar ahora
-          </a>
+          {/* Degradado arriba */}
+          <div style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100px",
+            background: "linear-gradient(to bottom, #000, transparent)",
+            zIndex: 1
+          }} />
+
+          {/* Contenido */}
+          <div style={{ position: "relative", zIndex: 2 }}>
+            <h1 style={{ fontSize: "3rem", fontWeight: "800", letterSpacing: "1px" }}>
+              El cambio empieza contigo
+            </h1>
+            <p style={{ fontSize: "1.2rem", color: "#fff", marginTop: "1rem", maxWidth: "600px", marginInline: "auto", lineHeight: 1.6 }}>
+              Genesis Fit no es solo un programa. Es una transformación completa guiada por experiencia real y resultados medibles.
+            </p>
+            <a href="#planes" style={{ marginTop: "2rem", display: "inline-block", padding: "0.9rem 2.5rem", backgroundColor: "#fff", color: "#0A84FF", fontWeight: "700", borderRadius: "8px", textDecoration: "none" }}>
+              Empezar ahora
+            </a>
+          </div>
+
+          {/* Degradado abajo */}
+          <div style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: "100px",
+            background: "linear-gradient(to top, #000, transparent)",
+            zIndex: 1
+          }} />
         </section>
 
         {/* SOBRE MÍ */}
