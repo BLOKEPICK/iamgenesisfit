@@ -34,35 +34,49 @@ export default function Home() {
 
       <main>
         {/* HERO - Degradado vertical en esquinas superior e inferior */}
-        <section style={{ background: "linear-gradient(180deg, #000 0%, #0A0A0A 100%)", color: "#fff", padding: "6rem 2rem", textAlign: "center" }}>
-  <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", marginBottom: "1rem", fontWeight: "700", letterSpacing: "1px", color: "#0A84FF" }}>
-    EL CAMBIO EMPIEZA CONTIGO
-  </h1>
-  <p style={{ color: "#bbb", fontSize: "1.15rem", maxWidth: "700px", margin: "0 auto 2rem", lineHeight: 1.6 }}>
-    Descubre un enfoque único de entrenamiento físico y mental diseñado para ayudarte a alcanzar tu mejor versión. Resultados reales. Cambios sostenibles. Comunidad que te respalda.
-  </p>
-  <a href="#planes" style={{
-    display: 'inline-block',
-    marginTop: '1rem',
-    padding: '0.9rem 2.5rem',
-    backgroundColor: '#fff',
-    color: '#0A84FF',
-    borderRadius: '8px',
-    textDecoration: 'none',
-    fontWeight: '700',
-    fontSize: '1rem',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-    transition: 'background-color 0.3s ease, color 0.3s ease'
-  }} onMouseOver={(e) => {
-    e.target.style.backgroundColor = '#0A84FF';
-    e.target.style.color = '#fff';
-  }} onMouseOut={(e) => {
-    e.target.style.backgroundColor = '#fff';
-    e.target.style.color = '#0A84FF';
-  }}>
-    Empezar ahora
-  </a>
-</section>
+        <section style={{
+          background: "#0A84FF",
+          color: "#fff",
+          padding: "5rem 2rem",
+          textAlign: "center",
+          position: "relative",
+          overflow: "hidden"
+        }}>
+          {/* Degradado arriba */}
+          <div style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100px",
+            background: "linear-gradient(to bottom, #000, transparent)",
+            zIndex: 1
+          }} />
+
+          {/* Contenido */}
+          <div style={{ position: "relative", zIndex: 2 }}>
+            <h1 style={{ fontSize: "2.8rem", fontFamily: "'Anton', sans-serif", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "1rem" }}>
+              El cambio empieza contigo
+            </h1>
+            <p style={{ fontSize: "1.2rem", color: "#fff", marginTop: "1rem", maxWidth: "600px", marginInline: "auto", lineHeight: 1.6 }}>
+              Genesis Fit no es solo un programa. Es una transformación completa guiada por experiencia real y resultados medibles.
+            </p>
+            <a href="#planes" style={{ marginTop: "2rem", display: "inline-block", padding: "0.9rem 2.5rem", backgroundColor: "#fff", color: "#0A84FF", fontWeight: "700", borderRadius: "8px", textDecoration: "none" }}>
+              Empezar ahora
+            </a>
+          </div>
+
+          {/* Degradado abajo */}
+          <div style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: "380px",
+            background: "linear-gradient(to top, #000, transparent)",
+            zIndex: 1
+          }} />
+        </section>
 
         {/* SOBRE MÍ */}
         <section style={{ background: 'radial-gradient(circle at top left, #0A0A0A, #000)', color: '#fff', padding: '4rem 2rem' }}>
