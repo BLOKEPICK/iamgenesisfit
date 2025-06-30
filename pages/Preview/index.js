@@ -10,7 +10,7 @@ export default function Home() {
         <meta property="og:image" content="/og-image.jpg" />
         <meta property="og:title" content="iamgenesisfit | Página oficial" />
         <meta property="og:description" content="Transforma tu cuerpo y tu mente con iamgenesisfit. Programas, comunidad y resultados reales." />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Anton&display=swap" rel="stylesheet" />
         <style>{`
           html, body {
             margin: 0;
@@ -55,7 +55,7 @@ export default function Home() {
 
           {/* Contenido */}
           <div style={{ position: "relative", zIndex: 2 }}>
-            <h1 style={{ fontSize: "3rem", fontWeight: "800", letterSpacing: "1px" }}>
+            <h1 style={{ fontSize: "2.8rem", fontFamily: "'Anton', sans-serif", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "1rem" }}>
               El cambio empieza contigo
             </h1>
             <p style={{ fontSize: "1.2rem", color: "#fff", marginTop: "1rem", maxWidth: "600px", marginInline: "auto", lineHeight: 1.6 }}>
@@ -72,7 +72,7 @@ export default function Home() {
             bottom: 0,
             left: 0,
             width: "100%",
-            height: "280px",
+            height: "380px",
             background: "linear-gradient(to top, #000, transparent)",
             zIndex: 1
           }} />
