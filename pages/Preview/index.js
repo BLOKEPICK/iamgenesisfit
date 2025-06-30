@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BEFORE & AFTER - Estilo B con cintillo y fondo sólido oscuro */}
+         {/* BEFORE & AFTER - Estilo B con cintillo y fondo sólido oscuro */}
         <section style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0A84FF' }}>Resultados que hablan por sí solos</h2>
           <p style={{ color: '#aaa', maxWidth: '600px', margin: '0 auto 2rem' }}>
