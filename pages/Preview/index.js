@@ -72,7 +72,7 @@ export default function Home() {
             bottom: 0,
             left: 0,
             width: "100%",
-            height: "100px",
+            height: "180px",
             background: "linear-gradient(to top, #000, transparent)",
             zIndex: 1
           }} />
