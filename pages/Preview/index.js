@@ -188,7 +188,7 @@ export default function Home() {
             top: '-1rem',
             right: '-1rem',
             backgroundColor: '#fff',
-            color: '#0A84FF',
+            color: '#4D4B49',
             padding: '0.3rem 0.75rem',
             borderRadius: '8px',
             fontSize: '0.8rem',
@@ -231,7 +231,7 @@ export default function Home() {
         <a href="#" style={{
           display: 'block',
           backgroundColor: plan.highlight ? '#fff' : '#4D4B49',
-          color: plan.highlight ? '#0A84FF' : '#fff',
+          color: plan.highlight ? '#4D4B49' : '#fff',
           textAlign: 'center',
           padding: '0.75rem 1rem',
           borderRadius: '8px',
