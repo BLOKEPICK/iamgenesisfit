@@ -119,7 +119,7 @@ export default function Home() {
         </section>
 
         {/* FAQ */}
-        <section style={{ background: 'radial-gradient(circle at top left, #fff,rgb(255, 255, 255))', color: '#', padding: '4rem 2rem' }}>
+        <section style={{ background: 'radial-gradient(circle at top left, #,rgba(167, 153, 120, 0.87))', color: '#', padding: '4rem 2rem' }}>
           <h2 style={{ fontSize: '2rem', textAlign: 'center', marginBottom: '2rem', color: '#673306' }}>Preguntas frecuentes</h2>
           <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {[...Array(5)].map((_, i) => (
