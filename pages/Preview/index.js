@@ -34,7 +34,7 @@ export default function Home() {
 
       <main>
         {/* SOBRE MÍ */}
-        <section style={{ background: 'radial-gradient(circle at top left, #A79978, #000)', color: '#', padding: '4rem 2rem' }}>
+        <section style={{ background: 'radial-gradient(circle at top left, #A79978, #fff)', color: '#', padding: '4rem 2rem' }}>
           <div className="trainer-section" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', maxWidth: '1000px', margin: '0 auto' }}>
             <img
               src="/trainer_main.webp"
