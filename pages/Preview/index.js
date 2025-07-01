@@ -230,7 +230,7 @@ export default function Home() {
 
         <a href="#" style={{
           display: 'block',
-          backgroundColor: plan.highlight ? '#fff' : '#0A84FF',
+          backgroundColor: plan.highlight ? '#fff' : '#4D4B49',
           color: plan.highlight ? '#0A84FF' : '#fff',
           textAlign: 'center',
           padding: '0.75rem 1rem',
