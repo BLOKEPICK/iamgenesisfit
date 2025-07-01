@@ -176,7 +176,7 @@ export default function Home() {
         color: plan.highlight ? '#fff' : '#ccc',
         borderRadius: '14px',
         padding: '2rem',
-        boxShadow: plan.highlight ? '0 0 25px rgba(10,132,255,0.4)' : '0 0 15px rgba(0,0,0,0.2)',
+        boxShadow: plan.highlight ? '0 0 25px rgba(255, 255, 255, 0.9)' : '0 0 15px rgba(0,0,0,0.2)',
         position: 'relative',
         transform: plan.highlight ? 'scale(1.05)' : 'none',
         zIndex: plan.highlight ? 1 : 0,
