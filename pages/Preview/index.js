@@ -172,7 +172,7 @@ export default function Home() {
       }
     ].map((plan, i) => (
       <div key={i} style={{
-        backgroundColor: plan.highlight ? '#0A84FF' : '#111',
+        backgroundColor: plan.highlight ? '#94765B' : '#111',
         color: plan.highlight ? '#fff' : '#ccc',
         borderRadius: '14px',
         padding: '2rem',
