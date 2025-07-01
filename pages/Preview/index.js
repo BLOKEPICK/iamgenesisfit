@@ -91,7 +91,7 @@ export default function Home() {
                   position: 'absolute',
                   top: 0,
                   width: '100%',
-                  background: '#0A84FF',
+                  background: '#94765B',
                   color: '#fff',
                   fontWeight: '600',
                   fontSize: '0.85rem',
