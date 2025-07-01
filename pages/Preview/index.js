@@ -43,8 +43,8 @@ export default function Home() {
               style={{ width: '300px', borderRadius: '12px', objectFit: 'cover', boxShadow: '0 0 20px rgba(0,0,0,0.4)' }}
             />
             <div style={{ flex: 1 }}>
-              <h2 style={{ color: '#0A84FF', fontSize: '2rem', marginBottom: '1rem' }}>Conoce a Genesis</h2>
-              <p style={{ color: '#ccc', fontSize: '1rem', lineHeight: 1.6 }}>
+              <h2 style={{ color: '#A79978', fontSize: '2rem', marginBottom: '1rem' }}>Conoce a Genesis</h2>
+              <p style={{ color: '#', fontSize: '1rem', lineHeight: 1.6 }}>
                 Soy Genesis, entrenadora certificada con más de 5 años ayudando a mujeres a transformar sus cuerpos y su autoestima. Mi enfoque combina nutrición inteligente, entrenamiento eficiente y una comunidad que te impulsa. Esto no es una dieta más — es una nueva forma de vivir.
               </p>
             </div>
