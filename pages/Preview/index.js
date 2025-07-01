@@ -52,12 +52,12 @@ export default function Home() {
         </section>
 
          {/* BEFORE & AFTER - Estilo B con cintillo y fondo sólido oscuro */}
-        <section style={{ background: 'radial-gradient(circle at top left, #fff, #A79978)', color: '#', padding: '8rem 2rem' }}>
+        <section style={{ background: 'radial-gradient(circle at top left, #fff, #A79978)', color: '#', padding: '4rem 2rem' }}>
           <div style={{ marginBottom: '2rem' }}>
            <center> <h2 style={{
               fontSize: '2.5rem',
               marginBottom: '0.5rem',
-              color: '#fff',
+              color: '#673306',
               fontFamily: 'Anton, sans-serif',
               letterSpacing: '1px',
               textTransform: 'uppercase'
@@ -70,7 +70,7 @@ export default function Home() {
               borderRadius: '2px'
             }} />
             <p style={{
-              color: '#bbb',
+              color: '#000000',
               fontSize: '1.05rem',
               maxWidth: '640px',
               margin: '0 auto',
