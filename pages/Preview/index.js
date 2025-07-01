@@ -52,7 +52,7 @@ export default function Home() {
         </section>
 
          {/* BEFORE & AFTER - Estilo B con cintillo y fondo sólido oscuro */}
-        <section style={{ backgroundColor: '#0A0A0A', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
+        <section style={{ backgroundColor: '#A79978', color: '#fff', padding: '4rem 2rem', textAlign: 'center' }}>
           <div style={{ marginBottom: '2rem' }}>
             <h2 style={{
               fontSize: '2.5rem',
