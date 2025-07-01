@@ -107,10 +107,10 @@ export default function Home() {
                 />
                 <div style={{
                   padding: '1.5rem 1rem',
-                  backgroundColor: '#111',
+                  backgroundColor: '#94765B',
                   textAlign: 'center'
                 }}>
-                  <h4 style={{ margin: 0, fontSize: '1.1rem', color: '#0A84FF' }}>Transformación #{i}</h4>
+                  <h4 style={{ margin: 0, fontSize: '1.1rem', color: '#000000' }}>Transformación #{i}</h4>
                   <p style={{ fontSize: '0.9rem', color: '#ccc', marginTop: '0.5rem' }}>Antes y después tras seguimiento personalizado.</p>
                 </div>
               </div>
