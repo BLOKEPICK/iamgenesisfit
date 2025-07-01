@@ -52,16 +52,16 @@ export default function Home() {
         </section>
 
          {/* BEFORE & AFTER - Estilo B con cintillo y fondo sólido oscuro */}
-        <section style={{ background: 'radial-gradient(circle at top left, #A79978, #fff)', color: '#', padding: '4rem 2rem' }}>
+        <section style={{ background: 'radial-gradient(circle at top left, #A79978, #fff)', color: '#', padding: '8rem 2rem' }}>
           <div style={{ marginBottom: '2rem' }}>
-            <h2 style={{
+           <center> <h2 style={{
               fontSize: '2.5rem',
               marginBottom: '0.5rem',
               color: '#fff',
               fontFamily: 'Anton, sans-serif',
               letterSpacing: '1px',
               textTransform: 'uppercase'
-            }}>Resultados que hablan por sí solos</h2>
+            }}>Resultados que hablan por sí solos</h2></center>
             <div style={{
               width: '80px',
               height: '4px',
