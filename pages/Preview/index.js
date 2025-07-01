@@ -264,7 +264,7 @@ export default function Home() {
             position: 'fixed',
             bottom: '20px',
             right: '20px',
-            backgroundColor: '#0A84FF',
+            backgroundColor: '#94765B',
             borderRadius: '50%',
             width: '60px',
             height: '60px',
