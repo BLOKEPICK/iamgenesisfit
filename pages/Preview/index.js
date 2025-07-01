@@ -119,12 +119,12 @@ export default function Home() {
         </section>
 
         {/* FAQ */}
-        <section style={{ backgroundColor: '#101010', color: '#fff', padding: '4rem 2rem' }}>
-          <h2 style={{ fontSize: '2rem', textAlign: 'center', marginBottom: '2rem', color: '#0A84FF' }}>Preguntas frecuentes</h2>
+        <section style={{ background: 'radial-gradient(circle at top left, #fff, #A79978)', color: '#', padding: '4rem 2rem' }}>
+          <h2 style={{ fontSize: '2rem', textAlign: 'center', marginBottom: '2rem', color: '#673306' }}>Preguntas frecuentes</h2>
           <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {[...Array(5)].map((_, i) => (
               <div key={i} style={{ background: '#1A1A1A', borderRadius: '8px', padding: '1rem 1.5rem' }}>
-                <h4 style={{ margin: 0, color: '#0A84FF', fontSize: '1rem' }}>¿Pregunta ejemplo #{i + 1}?</h4>
+                <h4 style={{ margin: 0, color: '#4D4B49', fontSize: '1rem' }}>¿Pregunta ejemplo #{i + 1}?</h4>
                 <p style={{ color: '#ccc', fontSize: '0.95rem', marginTop: '0.5rem' }}>
                   Esta es una respuesta de ejemplo para demostrar cómo se verá el texto real en el sitio.
                 </p>
