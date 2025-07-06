@@ -28,7 +28,7 @@ export default function Home() {
           content="Transforma tu cuerpo y tu mente con iamgenesisfit. Programas, comunidad y resultados reales."
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Anton&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap"
           rel="stylesheet"
         />
         <style>{`
@@ -39,7 +39,10 @@ export default function Home() {
             margin: 0;
             padding: 0;
             background-color: #000000;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'DM Sans', sans-serif;
+          }
+          h1, h2, h3 {
+            font-family: 'DM Serif Display', serif;
           }
           @media (max-width: 768px) {
             .trainer-section {
