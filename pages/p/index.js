@@ -4,39 +4,114 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Jamie Brown Fit | Replica</title>
-        <meta name="description" content="Transforma tu cuerpo y mente con entrenamiento profesional." />
+        <title>Jamie Brown Fit | Página oficial</title>
+        <meta name="description" content="Transforma tu cuerpo y tu mente con un coaching fitness personalizado." />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+        <style>{\`
+          html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+          }
+          .hero {
+            background-image: url('/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+          }
+          .hero-overlay {
+            background-color: rgba(0,0,0,0.6);
+            padding: 2rem;
+            border-radius: 12px;
+          }
+          .form-section, .benefits-section, footer {
+            padding: 4rem 2rem;
+            text-align: center;
+          }
+          .form-section {
+            background-color: #f5f5f5;
+          }
+          form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+          }
+          input, button {
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+          }
+          button {
+            background-color: #000;
+            color: white;
+            border: none;
+            cursor: pointer;
+          }
+          .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+          }
+          .benefit-box {
+            background: #fff;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+          }
+          footer {
+            background-color: #000;
+            color: #aaa;
+            font-size: 0.9rem;
+          }
+          @media (max-width: 768px) {
+            .hero {
+              height: auto;
+              padding: 4rem 1rem;
+            }
+          }
+        \`}</style>
       </Head>
-      <main className="min-h-screen bg-white text-black">
-        <section className="h-screen bg-cover bg-center flex items-center justify-center text-center" style={{ backgroundImage: "url('/hero.jpg')" }}>
-          <div className="bg-black bg-opacity-50 p-10 rounded-xl text-white">
-            <h1 className="text-4xl font-bold mb-4">TRANSFORMA TU VIDA</h1>
-            <p className="text-lg mb-6">Programa personalizado de fitness y bienestar</p>
-            <a href="#form" className="bg-white text-black px-6 py-2 font-semibold rounded">Comienza ahora</a>
+      <main>
+        <section className="hero">
+          <div className="hero-overlay">
+            <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>TRANSFORMA TU VIDA</h1>
+            <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>Entrenamiento personalizado, resultados reales</p>
+            <a href="#form" style={{ backgroundColor: 'white', color: 'black', padding: '0.8rem 1.5rem', borderRadius: '8px', fontWeight: '600' }}>Comienza ahora</a>
           </div>
         </section>
 
-        <section id="form" className="p-10 bg-gray-100 text-center">
-          <h2 className="text-2xl font-bold mb-4">Solicita tu consulta gratuita</h2>
-          <form className="max-w-xl mx-auto grid grid-cols-1 gap-4">
-            <input className="border p-3 rounded" placeholder="Nombre completo" />
-            <input className="border p-3 rounded" placeholder="Email" />
-            <input className="border p-3 rounded" placeholder="Teléfono" />
-            <button className="bg-black text-white py-3 px-6 rounded">Enviar</button>
+        <section id="form" className="form-section">
+          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Solicita tu consulta gratuita</h2>
+          <form>
+            <input type="text" placeholder="Nombre completo" />
+            <input type="email" placeholder="Correo electrónico" />
+            <input type="tel" placeholder="Teléfono" />
+            <button type="submit">Enviar</button>
           </form>
         </section>
 
-        <section className="p-10 text-center">
-          <h2 className="text-2xl font-bold mb-6">Beneficios</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white rounded shadow">✔️ Coaching personalizado</div>
-            <div className="p-6 bg-white rounded shadow">✔️ Plan de nutrición</div>
-            <div className="p-6 bg-white rounded shadow">✔️ Resultados garantizados</div>
+        <section className="benefits-section">
+          <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Beneficios</h2>
+          <div className="benefits">
+            <div className="benefit-box">✔ Coaching personalizado</div>
+            <div className="benefit-box">✔ Plan nutricional adaptado</div>
+            <div className="benefit-box">✔ Resultados garantizados</div>
           </div>
         </section>
 
-        <footer className="p-6 bg-black text-white text-center">
-          <p>© 2025 JamieBrownFit Replica. Todos los derechos reservados.</p>
+        <footer>
+          <p>© 2025 Jamie Brown Fit Replica. Todos los derechos reservados.</p>
         </footer>
       </main>
     </>
