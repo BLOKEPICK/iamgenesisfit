@@ -7,7 +7,7 @@ export default function Home() {
         <title>Jamie Brown Fit | Página oficial</title>
         <meta name="description" content="Transforma tu cuerpo y tu mente con un coaching fitness personalizado." />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-        <style>{\`
+        <style>{`
           html, body {
             margin: 0;
             padding: 0;
@@ -80,7 +80,7 @@ export default function Home() {
               padding: 4rem 1rem;
             }
           }
-        \`}</style>
+        `}</style>
       </Head>
       <main>
         <section className="hero">
