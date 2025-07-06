@@ -42,7 +42,7 @@ export default function Home() {
             font-size: 0.9rem;
           }
           .hero {
-            background-image: url('/hero.jpg');
+            background-image: url('https://images.unsplash.com/photo-1594737625785-c0e1ee06b286?auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -156,7 +156,7 @@ export default function Home() {
       </Head>
 
       <nav>
-        <img src="/logo.png" alt="Logo" />
+        <img src="https://via.placeholder.com/120x40?text=Logo" alt="Logo" />
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -176,25 +176,25 @@ export default function Home() {
       <section className="media-logos">
         <p>Como se vio en:</p>
         <div>
-          <img src="/media1.png" alt="Media 1" />
-          <img src="/media2.png" alt="Media 2" />
-          <img src="/media3.png" alt="Media 3" />
+          <img src="https://via.placeholder.com/80x40?text=Media+1" alt="Media 1" />
+          <img src="https://via.placeholder.com/80x40?text=Media+2" alt="Media 2" />
+          <img src="https://via.placeholder.com/80x40?text=Media+3" alt="Media 3" />
         </div>
       </section>
 
       <section className="features">
         <div className="feature-box">
-          <img src="/icon1.png" alt="Icono 1" />
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Icono 1" />
           <h3>Plan personalizado</h3>
           <p>Diseñado para ti y tus metas.</p>
         </div>
         <div className="feature-box">
-          <img src="/icon2.png" alt="Icono 2" />
+          <img src="https://cdn-icons-png.flaticon.com/512/1049/1049166.png" alt="Icono 2" />
           <h3>Nutrición inteligente</h3>
           <p>Comida real para resultados reales.</p>
         </div>
         <div className="feature-box">
-          <img src="/icon3.png" alt="Icono 3" />
+          <img src="https://cdn-icons-png.flaticon.com/512/2089/2089787.png" alt="Icono 3" />
           <h3>Acompañamiento real</h3>
           <p>No estás sola en el proceso.</p>
         </div>
@@ -203,7 +203,7 @@ export default function Home() {
       <section className="cards">
         {[1,2,3].map(i => (
           <div className="card" key={i}>
-            <img src={"/img" + i + ".jpg"} alt={"Card " + i} />
+            <img src={"https://source.unsplash.com/600x400/?fitness,workout," + i} alt={"Card " + i} />
             <div className="card-content">
               <h3>Programa {i}</h3>
               <p>Descripción breve del programa de entrenamiento o transformación.</p>
