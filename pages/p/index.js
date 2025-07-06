@@ -4,15 +4,42 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Jamie Brown Fit | Página oficial</title>
-        <meta name="description" content="Transforma tu cuerpo y tu mente con un coaching fitness personalizado." />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+        <title>Jamie Brown Fit | Oficial</title>
+        <meta name="description" content="Coaching profesional para transformar cuerpo y mente." />
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
         <style>{`
-          html, body {
+          body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #ffffff;
+            font-family: 'Open Sans', sans-serif;
+            background: white;
+            color: #333;
+          }
+          nav {
+            background: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          nav img {
+            height: 40px;
+          }
+          nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+          }
+          nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
           }
           .hero {
             background-image: url('/hero.jpg');
@@ -24,19 +51,78 @@ export default function Home() {
             justify-content: center;
             color: white;
             text-align: center;
-            position: relative;
-          }
-          .hero-overlay {
-            background-color: rgba(0,0,0,0.6);
             padding: 2rem;
-            border-radius: 12px;
           }
-          .form-section, .benefits-section, footer {
-            padding: 4rem 2rem;
+          .hero h1 {
+            font-size: 3rem;
+            font-family: 'Anton', sans-serif;
+          }
+          .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+          }
+          .hero a {
+            padding: 0.8rem 2rem;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+          }
+          .media-logos {
+            padding: 2rem;
+            background: #f9f9f9;
             text-align: center;
           }
-          .form-section {
-            background-color: #f5f5f5;
+          .media-logos img {
+            height: 40px;
+            margin: 0 1rem;
+            opacity: 0.7;
+          }
+          .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: white;
+          }
+          .feature-box {
+            text-align: center;
+            padding: 1rem;
+          }
+          .feature-box img {
+            width: 60px;
+            margin-bottom: 1rem;
+          }
+          .cards {
+            padding: 4rem 2rem;
+            background: #f5f5f5;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+          }
+          .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          }
+          .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+          .card-content {
+            padding: 1.5rem;
+          }
+          .card-content h3 {
+            margin: 0 0 1rem;
+            font-size: 1.2rem;
+          }
+          .contact {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: white;
           }
           form {
             max-width: 500px;
@@ -44,76 +130,101 @@ export default function Home() {
             display: grid;
             gap: 1rem;
           }
-          input, button {
+          input, textarea {
             padding: 1rem;
-            border-radius: 6px;
             border: 1px solid #ccc;
+            border-radius: 6px;
             font-size: 1rem;
           }
           button {
-            background-color: #000;
+            background: black;
             color: white;
+            padding: 1rem;
             border: none;
+            border-radius: 6px;
+            font-weight: bold;
             cursor: pointer;
           }
-          .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-          }
-          .benefit-box {
-            background: #fff;
-            padding: 2rem;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-          }
           footer {
-            background-color: #000;
+            background: #111;
             color: #aaa;
+            padding: 2rem;
+            text-align: center;
             font-size: 0.9rem;
-          }
-          @media (max-width: 768px) {
-            .hero {
-              height: auto;
-              padding: 4rem 1rem;
-            }
           }
         `}</style>
       </Head>
-      <main>
-        <section className="hero">
-          <div className="hero-overlay">
-            <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>TRANSFORMA TU VIDA</h1>
-            <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>Entrenamiento personalizado, resultados reales</p>
-            <a href="#form" style={{ backgroundColor: 'white', color: 'black', padding: '0.8rem 1.5rem', borderRadius: '8px', fontWeight: '600' }}>Comienza ahora</a>
+
+      <nav>
+        <img src="/logo.png" alt="Logo" />
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Programs</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section className="hero">
+        <div>
+          <h1>COACHING PARA CAMBIAR TU VIDA</h1>
+          <p>Entrenamiento personalizado, resultados reales</p>
+          <a href="#contact">Comienza ahora</a>
+        </div>
+      </section>
+
+      <section className="media-logos">
+        <p>Como se vio en:</p>
+        <div>
+          <img src="/media1.png" alt="Media 1" />
+          <img src="/media2.png" alt="Media 2" />
+          <img src="/media3.png" alt="Media 3" />
+        </div>
+      </section>
+
+      <section className="features">
+        <div className="feature-box">
+          <img src="/icon1.png" alt="Icono 1" />
+          <h3>Plan personalizado</h3>
+          <p>Diseñado para ti y tus metas.</p>
+        </div>
+        <div className="feature-box">
+          <img src="/icon2.png" alt="Icono 2" />
+          <h3>Nutrición inteligente</h3>
+          <p>Comida real para resultados reales.</p>
+        </div>
+        <div className="feature-box">
+          <img src="/icon3.png" alt="Icono 3" />
+          <h3>Acompañamiento real</h3>
+          <p>No estás sola en el proceso.</p>
+        </div>
+      </section>
+
+      <section className="cards">
+        {[1,2,3].map(i => (
+          <div className="card" key={i}>
+            <img src={"/img" + i + ".jpg"} alt={"Card " + i} />
+            <div className="card-content">
+              <h3>Programa {i}</h3>
+              <p>Descripción breve del programa de entrenamiento o transformación.</p>
+            </div>
           </div>
-        </section>
+        ))}
+      </section>
 
-        <section id="form" className="form-section">
-          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Solicita tu consulta gratuita</h2>
-          <form>
-            <input type="text" placeholder="Nombre completo" />
-            <input type="email" placeholder="Correo electrónico" />
-            <input type="tel" placeholder="Teléfono" />
-            <button type="submit">Enviar</button>
-          </form>
-        </section>
+      <section className="contact" id="contact">
+        <h2>Contáctanos</h2>
+        <form>
+          <input type="text" placeholder="Tu nombre" />
+          <input type="email" placeholder="Correo electrónico" />
+          <textarea placeholder="Mensaje..." rows="4" />
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </section>
 
-        <section className="benefits-section">
-          <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Beneficios</h2>
-          <div className="benefits">
-            <div className="benefit-box">✔ Coaching personalizado</div>
-            <div className="benefit-box">✔ Plan nutricional adaptado</div>
-            <div className="benefit-box">✔ Resultados garantizados</div>
-          </div>
-        </section>
-
-        <footer>
-          <p>© 2025 Jamie Brown Fit Replica. Todos los derechos reservados.</p>
-        </footer>
-      </main>
+      <footer>
+        © 2025 JamieBrownFit Replica. Todos los derechos reservados.
+      </footer>
     </>
   );
 }
