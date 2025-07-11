@@ -1,9 +1,9 @@
 // ✅ NUEVA VERSIÓN REEMPLAZABLE DE index.js
-// Secciones "Sobre mí" y "Resultados" rediseñadas con layout profesional
+// Secciones "Sobre mí" y "Resultados" rediseñadas con layout profesional y visual moderno para móviles
 
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import { FaInstagram, FaWhatsapp, FaBars } from "react-icons/fa6";
+import { FaWhatsapp, FaBars } from "react-icons/fa6";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,9 +19,7 @@ export default function Home() {
         <meta name="description" content="Transforma tu cuerpo con Genesis. Asesorías personalizadas en entrenamiento y nutrición." />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
         <style>{`
-          html {
-            scroll-behavior: smooth;
-          }
+          html { scroll-behavior: smooth; }
           body {
             margin: 0;
             padding: 0;
@@ -63,6 +61,7 @@ export default function Home() {
       {/* SOBRE MI */}
       <section id="sobre-mi" style={styles.sectionAltBg}>
         <div style={styles.sobreMiGrid}>
+          <img src="/trainer_main.webp" alt="Genesis" style={styles.trainerImgLarge} />
           <div style={styles.sobreMiText}>
             <h2 style={styles.sectionTitle}>Conoce a Genesis</h2>
             <p>
@@ -72,15 +71,16 @@ export default function Home() {
               Mi misión es guiarte hacia una vida más fuerte, más sana y más segura de ti misma. Cada proceso es único, y tú mereces un plan que se adapte a ti y evolucione contigo.
             </p>
           </div>
-          <img src="/trainer_main.webp" alt="Genesis" style={styles.trainerImgLarge} />
         </div>
       </section>
 
       {/* RESULTADOS */}
-      <section id="resultados" style={styles.sectionWhite}>
-        <h2 style={styles.sectionTitle}>Transformaciones Reales</h2>
-        <p style={styles.sectionDesc}>Historias reales de compromiso, esfuerzo y guía efectiva.</p>
-        <div style={styles.resultadosGrid}>
+      <section id="resultados" style={styles.resultadosBg}>
+        <div style={styles.resultadosHeader}>
+          <h2 style={styles.sectionTitle}>Transformaciones Reales</h2>
+          <p style={styles.sectionDesc}>Historias reales de compromiso, esfuerzo y guía efectiva.</p>
+        </div>
+        <div style={styles.resultadosCarousel}>
           {[1, 2, 3].map(i => (
             <div key={i} style={styles.resultadoCard}>
               <img src={`/transformation_${i}.webp`} alt={`Transformación ${i}`} style={styles.resultadoImg} />
@@ -120,9 +120,9 @@ export default function Home() {
   );
 }
 
-// 🎨 ESTILOS PRINCIPALES
 const primary = "#94715F";
 const secondary = "#B89E90";
+
 const styles = {
   header: {
     backgroundColor: primary,
@@ -172,12 +172,13 @@ const styles = {
     padding: "4rem 2rem",
   },
   sobreMiGrid: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "3rem",
+    display: "flex",
+    flexDirection: "column-reverse",
+    gap: "2rem",
     maxWidth: "1200px",
     margin: "0 auto",
     alignItems: "center",
+    textAlign: "center",
   },
   sobreMiText: {
     fontSize: "1.05rem",
@@ -186,14 +187,19 @@ const styles = {
   },
   trainerImgLarge: {
     width: "100%",
+    maxWidth: "420px",
     borderRadius: "12px",
     boxShadow: "0 0 20px rgba(0,0,0,0.2)",
   },
-  sectionWhite: {
+  resultadosBg: {
     backgroundColor: "#fefefe",
     padding: "4rem 2rem",
   },
-  resultadosGrid: {
+  resultadosHeader: {
+    textAlign: "center",
+    marginBottom: "2rem",
+  },
+  resultadosCarousel: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
     gap: "2rem",
