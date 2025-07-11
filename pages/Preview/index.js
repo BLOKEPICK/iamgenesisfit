@@ -75,7 +75,7 @@ export default function Home() {
         </motion.div>
       </section>
 <div className="w-full flex justify-center py-8">
-  <div className="h-px w-24 bg-gray-600 rounded-full opacity-50"></div>
+  <div className="h-px w-24 bg-black-600 rounded-full opacity-50"></div>
 </div>
       <section id="resultados" style={styles.resultadosBg}>
         <motion.div
