@@ -57,26 +57,23 @@ export default function Home() {
         <a href="#contacto" style={styles.heroBtn}>Empieza ahora</a>
       </section>
 
-      <section id="sobre-mi" style={styles.sobreMiContainer}>
-  <div style={styles.sobreMiImageWrapper}>
-    <img
-      src="/trainer_main.webp"
-      alt="Genesis"
-      style={styles.sobreMiImage}
-      loading="lazy"
-    />
-  </div>
-  <div style={styles.sobreMiContent}>
-    <h2 style={styles.sobreMiTitle}>Conoce a Genesis</h2>
-    <p style={styles.sobreMiText}>
-      Soy Genesis, entrenadora certificada con más de 5 años transformando vidas, 
-      combinando entrenamiento, nutrición y apoyo emocional para que alcances tu mejor versión.
-    </p>
-    <blockquote style={styles.quote}>
-      "La fuerza no solo es física, es la confianza que te impulsa a ser mejor cada día."
-    </blockquote>
-  </div>
-</section>
+      <section id="sobre-mi" style={styles.sectionAltBg}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          style={styles.sobreMiGrid}
+        >
+          <img src="/trainer_main.webp" alt="Genesis" style={styles.trainerImgLarge} />
+          <div style={styles.sobreMiText}>
+            <h2 style={styles.sectionTitle}>Conoce a Genesis</h2>
+            <p>Entrenadora certificada especializada en transformar no solo cuerpos, sino también la confianza y bienestar emocional. Más de 5 años guiando a mujeres hacia su mejor versión.</p>
+            <p>Mi misión es ayudarte a construir una vida fuerte, saludable y llena de seguridad personal. Cada proceso es único, y tú mereces un plan que se adapte a ti.</p>
+            <p style={styles.firma}>&mdash; Genesis</p>
+          </div>
+        </motion.div>
+      </section>
 
       <section id="resultados" style={styles.resultadosBg}>
         <motion.div
