@@ -1,5 +1,5 @@
 // ✅ NUEVA VERSIÓN REEMPLAZABLE DE index.js
-// Estilo profesional completo basado en #94715F, fuente Poppins + Playfair Display, eliminado FAQ y Planes, con formulario optimizado
+// Secciones "Sobre mí" y "Resultados" rediseñadas con layout profesional
 
 import Head from "next/head";
 import { useState, useEffect } from "react";
@@ -62,14 +62,17 @@ export default function Home() {
 
       {/* SOBRE MI */}
       <section id="sobre-mi" style={styles.sectionAltBg}>
-        <div style={styles.trainerWrapper}>
-          <img src="/trainer_main.webp" alt="Genesis" style={styles.trainerImg} />
-          <div>
-            <h2>Sobre mí</h2>
+        <div style={styles.sobreMiGrid}>
+          <div style={styles.sobreMiText}>
+            <h2 style={styles.sectionTitle}>Conoce a Genesis</h2>
             <p>
-              Soy Genesis, entrenadora certificada especializada en ayudar a mujeres a transformar su físico y su mentalidad. Mi enfoque es integral, personalizado y basado en resultados reales.
+              Soy Genesis, entrenadora certificada especializada en transformar no solo cuerpos, sino también la confianza y el bienestar de mis clientas. Con más de 5 años de experiencia, combino nutrición estratégica, entrenamiento personalizado y motivación constante.
+            </p>
+            <p>
+              Mi misión es guiarte hacia una vida más fuerte, más sana y más segura de ti misma. Cada proceso es único, y tú mereces un plan que se adapte a ti y evolucione contigo.
             </p>
           </div>
+          <img src="/trainer_main.webp" alt="Genesis" style={styles.trainerImgLarge} />
         </div>
       </section>
 
@@ -77,11 +80,13 @@ export default function Home() {
       <section id="resultados" style={styles.sectionWhite}>
         <h2 style={styles.sectionTitle}>Transformaciones Reales</h2>
         <p style={styles.sectionDesc}>Historias reales de compromiso, esfuerzo y guía efectiva.</p>
-        <div style={styles.galleryGrid}>
+        <div style={styles.resultadosGrid}>
           {[1, 2, 3].map(i => (
-            <div key={i} style={styles.galleryCard}>
-              <img src={`/transformation_${i}.webp`} alt={`Transformación ${i}`} style={styles.galleryImg} />
-              <p style={styles.galleryCaption}>12 semanas de cambio total</p>
+            <div key={i} style={styles.resultadoCard}>
+              <img src={`/transformation_${i}.webp`} alt={`Transformación ${i}`} style={styles.resultadoImg} />
+              <div style={styles.resultadoOverlay}>
+                <p style={styles.resultadoTexto}>12 semanas de progreso</p>
+              </div>
             </div>
           ))}
         </div>
@@ -166,28 +171,62 @@ const styles = {
     backgroundColor: "#fff",
     padding: "4rem 2rem",
   },
+  sobreMiGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "3rem",
+    maxWidth: "1200px",
+    margin: "0 auto",
+    alignItems: "center",
+  },
+  sobreMiText: {
+    fontSize: "1.05rem",
+    color: "#333",
+    lineHeight: 1.7,
+  },
+  trainerImgLarge: {
+    width: "100%",
+    borderRadius: "12px",
+    boxShadow: "0 0 20px rgba(0,0,0,0.2)",
+  },
   sectionWhite: {
     backgroundColor: "#fefefe",
     padding: "4rem 2rem",
+  },
+  resultadosGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: "2rem",
+    maxWidth: "1000px",
+    margin: "0 auto",
+  },
+  resultadoCard: {
+    position: "relative",
+    overflow: "hidden",
+    borderRadius: "12px",
+    boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+  },
+  resultadoImg: {
+    width: "100%",
+    height: "360px",
+    objectFit: "cover",
+  },
+  resultadoOverlay: {
+    position: "absolute",
+    bottom: 0,
+    background: "rgba(0,0,0,0.6)",
+    width: "100%",
+    padding: "1rem",
+  },
+  resultadoTexto: {
+    color: "#fff",
+    fontWeight: 600,
+    textAlign: "center",
   },
   sectionForm: {
     backgroundColor: primary,
     color: "#fff",
     padding: "4rem 2rem",
-  },
-  trainerWrapper: {
-    display: "flex",
-    flexWrap: "wrap",
-    alignItems: "center",
-    gap: "2rem",
-    maxWidth: "1000px",
-    margin: "0 auto",
-  },
-  trainerImg: {
-    width: "300px",
-    borderRadius: "12px",
-    objectFit: "cover",
-    boxShadow: "0 0 20px rgba(0,0,0,0.4)",
   },
   sectionTitle: {
     textAlign: "center",
@@ -199,30 +238,6 @@ const styles = {
     maxWidth: "600px",
     margin: "0 auto 2rem",
     fontSize: "1.1rem",
-  },
-  galleryGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-    gap: "2rem",
-    maxWidth: "1000px",
-    margin: "0 auto",
-  },
-  galleryCard: {
-    borderRadius: "12px",
-    overflow: "hidden",
-    boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-  },
-  galleryImg: {
-    width: "100%",
-    height: "360px",
-    objectFit: "cover",
-  },
-  galleryCaption: {
-    padding: "1rem",
-    backgroundColor: secondary,
-    color: "#000",
-    textAlign: "center",
-    fontWeight: 500,
   },
   form: {
     maxWidth: "600px",
