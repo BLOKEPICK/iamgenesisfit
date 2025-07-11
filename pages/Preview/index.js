@@ -1,9 +1,10 @@
-// ✅ NUEVA VERSIÓN REEMPLAZABLE DE index.js
-// Secciones "Sobre mí" y "Resultados" rediseñadas con layout profesional y visual moderno para móviles
+// ✅ NUEVA VERSIÓN CON ANIMACIONES Y FIRMA PERSONALIZADA
+// Secciones "Sobre mí" y "Resultados" mejoradas con storytelling, testimonios visuales, y framer-motion
 
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import { FaWhatsapp, FaBars } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function Home() {
       <Head>
         <title>iamgenesisfit | Página oficial</title>
         <meta name="description" content="Transforma tu cuerpo con Genesis. Asesorías personalizadas en entrenamiento y nutrición." />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet" />
         <style>{`
           html { scroll-behavior: smooth; }
           body {
@@ -32,7 +33,6 @@ export default function Home() {
         `}</style>
       </Head>
 
-      {/* NAVBAR */}
       <header style={styles.header}>
         <h1 style={styles.logo}>iamgenesisfit</h1>
         <nav className="desktop-menu" style={styles.navLinks}>
@@ -51,48 +51,60 @@ export default function Home() {
         `}</style>
       </header>
 
-      {/* HERO */}
       <section style={styles.hero}>
         <h2 style={styles.heroTitle}>Eleva tu bienestar con Genesis</h2>
         <p style={styles.heroSubtitle}>Entrenamiento y nutrición para transformar cuerpo y mente.</p>
         <a href="#contacto" style={styles.heroBtn}>Empieza ahora</a>
       </section>
 
-      {/* SOBRE MI */}
       <section id="sobre-mi" style={styles.sectionAltBg}>
-        <div style={styles.sobreMiGrid}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          style={styles.sobreMiGrid}
+        >
           <img src="/trainer_main.webp" alt="Genesis" style={styles.trainerImgLarge} />
           <div style={styles.sobreMiText}>
             <h2 style={styles.sectionTitle}>Conoce a Genesis</h2>
-            <p>
-              Soy Genesis, entrenadora certificada especializada en transformar no solo cuerpos, sino también la confianza y el bienestar de mis clientas. Con más de 5 años de experiencia, combino nutrición estratégica, entrenamiento personalizado y motivación constante.
-            </p>
-            <p>
-              Mi misión es guiarte hacia una vida más fuerte, más sana y más segura de ti misma. Cada proceso es único, y tú mereces un plan que se adapte a ti y evolucione contigo.
-            </p>
+            <p>Entrenadora certificada especializada en transformar no solo cuerpos, sino también la confianza y bienestar emocional. Más de 5 años guiando a mujeres hacia su mejor versión.</p>
+            <p>Mi misión es ayudarte a construir una vida fuerte, saludable y llena de seguridad personal. Cada proceso es único, y tú mereces un plan que se adapte a ti.</p>
+            <p style={styles.firma}>&mdash; Genesis</p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      {/* RESULTADOS */}
       <section id="resultados" style={styles.resultadosBg}>
-        <div style={styles.resultadosHeader}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          style={styles.resultadosHeader}
+        >
           <h2 style={styles.sectionTitle}>Transformaciones Reales</h2>
           <p style={styles.sectionDesc}>Historias reales de compromiso, esfuerzo y guía efectiva.</p>
-        </div>
+        </motion.div>
         <div style={styles.resultadosCarousel}>
           {[1, 2, 3].map(i => (
-            <div key={i} style={styles.resultadoCard}>
+            <motion.div
+              key={i}
+              style={styles.resultadoCard}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+              viewport={{ once: true }}
+            >
               <img src={`/transformation_${i}.webp`} alt={`Transformación ${i}`} style={styles.resultadoImg} />
               <div style={styles.resultadoOverlay}>
                 <p style={styles.resultadoTexto}>12 semanas de progreso</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* FORMULARIO */}
       <section id="contacto" style={styles.sectionForm}>
         <h2 style={styles.sectionTitle}>¿Lista para empezar?</h2>
         <p style={styles.sectionDesc}>Completa este formulario y transforma tu vida hoy.</p>
@@ -107,12 +119,10 @@ export default function Home() {
         </form>
       </section>
 
-      {/* FOOTER */}
       <footer style={styles.footer}>
         &copy; {new Date().getFullYear()} iamgenesisfit | Todos los derechos reservados
       </footer>
 
-      {/* WHATSAPP FLOAT */}
       <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={styles.waBtn}>
         <FaWhatsapp size={28} color="#fff" />
       </a>
@@ -124,6 +134,15 @@ const primary = "#94715F";
 const secondary = "#B89E90";
 
 const styles = {
+  // ... mismos estilos anteriores ...
+  // Extra:
+  firma: {
+    marginTop: "1.5rem",
+    fontFamily: "'Great Vibes', cursive",
+    fontSize: "1.8rem",
+    color: primary,
+    textAlign: "right",
+  },
   header: {
     backgroundColor: primary,
     padding: "1rem 2rem",
