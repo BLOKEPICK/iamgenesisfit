@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-
+<div className="w-24 h-px bg-gray-600 my-10 rounded-full opacity-50" />
       <section id="resultados" style={styles.resultadosBg}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
