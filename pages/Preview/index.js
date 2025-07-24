@@ -167,17 +167,14 @@ export default function Home() {
 <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
   <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Testimonios</h2>
   <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
-    {[...Array(10)].map((_, i) => (
+    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => (
       <div key={i} style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden' }}>
-        <img
-          src={`/testimonial_${i + 1}.jpg`}
-          alt={`Testimonio ${i + 1}`}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
+        <img src={`/testimonial_${i}.jpg`} alt={`Testimonio ${i}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
     ))}
   </div>
 </section>
+
 
 
         {/* Before & After */}
