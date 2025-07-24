@@ -1,318 +1,149 @@
-// ✅ NUEVA VERSIÓN CON ANIMACIONES Y FIRMA PERSONALIZADA
-// Secciones "Sobre mí" y "Resultados" mejoradas con storytelling, testimonios visuales, y framer-motion
+// ✅ Página completa en un solo archivo para Genesis Fit
 
 import Head from "next/head";
-import { useState, useEffect } from "react";
-import { FaWhatsapp, FaBars } from "react-icons/fa6";
-import { motion } from "framer-motion";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-  }, [menuOpen]);
-
   return (
     <>
       <Head>
-        <title>iamgenesisfit | Página oficial</title>
-        <meta name="description" content="Transforma tu cuerpo con Genesis. Asesorías personalizadas en entrenamiento y nutrición." />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+        <title>Genesis Fit | Transformación real para mujeres reales</title>
+        <meta name="description" content="Acompaña a Genesis Fit en tu proceso de cambio físico y mental. Programas únicos, testimonios reales, asesoría personalizada." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
         <style>{`
           html { scroll-behavior: smooth; }
           body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #fdfaf9;
+            font-family: 'Manrope', sans-serif;
+            background-color: #fff;
+            color: #2D2D2D;
           }
-          h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+          *::selection {
+            background-color: #94715F;
+            color: #fff;
           }
+          a { color: inherit; text-decoration: none; }
         `}</style>
       </Head>
 
-      <header style={styles.header}>
-        <h1 style={styles.logo}>iamgenesisfit</h1>
-        <nav className="desktop-menu" style={styles.navLinks}>
-          <a href="#sobre-mi" style={styles.navLink}>Sobre mí</a>
-          <a href="#resultados" style={styles.navLink}>Transformaciones</a>
-          <a href="#contacto" style={styles.navLink}>Formulario</a>
+      {/* Menú Sticky Transparente */}
+      <header style={{
+        position: 'sticky', top: 0, zIndex: 99, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
+      }}>
+        <a href="#hero" style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</a>
+        <nav style={{ display: 'flex', gap: '1.5rem', fontSize: '0.95rem', fontWeight: 600 }}>
+          <a href="#sobremi">Sobre mí</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#before">Resultados</a>
+          <a href="#faq">Preguntas</a>
+          <a href="#formulario">Contacto</a>
         </nav>
-        <div className="mobile-menu-icon" style={{ display: "none" }}>
-          <FaBars size={24} color="#fff" onClick={() => setMenuOpen(!menuOpen)} style={{ cursor: "pointer" }} />
-        </div>
-        <style>{`
-          @media (max-width: 768px) {
-            .desktop-menu { display: none !important; }
-            .mobile-menu-icon { display: block !important; }
-          }
-        `}</style>
       </header>
 
-      <section style={styles.hero}>
-        <h2 style={styles.heroTitle}>Eleva tu bienestar con Genesis</h2>
-        <p style={styles.heroSubtitle}>Entrenamiento y nutrición para transformar cuerpo y mente.</p>
-        <a href="#contacto" style={styles.heroBtn}>Empieza ahora</a>
-      </section>
-
-      <section id="sobre-mi" style={styles.sectionAltBg}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          style={styles.sobreMiGrid}
-        >
-          <img src="/trainer_main.webp" alt="Genesis" style={styles.trainerImgLarge} />
-          <div style={styles.sobreMiText}>
-            <h2 style={styles.sectionTitle}>Conoce a Genesis</h2>
-            <p>Entrenadora certificada especializada en transformar no solo cuerpos, sino también la confianza y bienestar emocional. Más de 5 años guiando a mujeres hacia su mejor versión.</p>
-            <p>Mi misión es ayudarte a construir una vida fuerte, saludable y llena de seguridad personal. Cada proceso es único, y tú mereces un plan que se adapte a ti.</p>
-            <p style={styles.firma}>&mdash; Genesis</p>
+      <main>
+        {/* Hero */}
+        <section id="hero" style={{ background: '#F3EDEB', padding: '6rem 2rem', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Transforma tu cuerpo y mente con <strong>Genesis Fit</strong></h1>
+          <p style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 2rem' }}>Acompañamiento real para mujeres reales. ¡Cambia tu vida desde hoy!</p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+            <a href="#formulario" style={{ backgroundColor: '#94715F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '6px', fontWeight: 600 }}>Comienza Ahora</a>
           </div>
-        </motion.div>
-      </section>
-<div className="w-full flex justify-center py-8">
-  <div className="h-px w-24 bg-black-600 rounded-full opacity-50"></div>
-</div>
-      <section id="resultados" style={styles.resultadosBg}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          style={styles.resultadosHeader}
-        >
-          <h2 style={styles.sectionTitle}>Transformaciones Reales</h2>
-          <p style={styles.sectionDesc}>Historias reales de compromiso, esfuerzo y guía efectiva.</p>
-        </motion.div>
-        <div style={styles.resultadosCarousel}>
-          {[1, 2, 3].map(i => (
-            <motion.div
-              key={i}
-              style={styles.resultadoCard}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <img src={`/transformation_${i}.webp`} alt={`Transformación ${i}`} style={styles.resultadoImg} />
-              <div style={styles.resultadoOverlay}>
-                <p style={styles.resultadoTexto}>12 semanas de progreso</p>
+        </section>
+
+        {/* Sobre mí */}
+        <section id="sobremi" style={{ background: '#fff', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
+            <img src="/trainer_main.webp" alt="Genesis" style={{ width: '100%', borderRadius: '10px', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }} />
+            <div>
+              <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Sobre mí</h2>
+              <p>Soy Genesis, entrenadora certificada con pasión por ayudar a mujeres a transformar su vida desde dentro hacia fuera. Cada cuerpo tiene su historia, y yo te acompaño a escribir la mejor versión de la tuya.</p>
+              <p>Mi enfoque combina entrenamiento físico, hábitos saludables y mucha empatía.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonios */}
+        <section id="testimonios" style={{ background: '#FAF7F6', padding: '4rem 2rem' }}>
+          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem' }}>Lo que dicen de mí</h2>
+          <div style={{ display: 'flex', overflowX: 'auto', gap: '1.5rem', padding: '1rem 0' }}>
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} style={{ minWidth: '240px', height: '300px', backgroundColor: '#eee', borderRadius: '10px', flexShrink: 0, backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url(/testimonial_${i}.webp)` }} />
+            ))}
+          </div>
+        </section>
+
+        {/* Before and After */}
+        <section id="before" style={{ background: '#fff', padding: '4rem 2rem' }}>
+          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem' }}>Resultados reales</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            {[1, 2, 3].map(i => (
+              <div key={i} style={{ borderRadius: '10px', overflow: 'hidden', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }}>
+                <img src={`/beforeafter_${i}.webp`} alt={`Progreso ${i}`} style={{ width: '100%', height: 'auto' }} />
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
+        </section>
+
+        {/* Preguntas Frecuentes */}
+        <section id="faq" style={{ background: '#F3EDEB', padding: '4rem 2rem' }}>
+          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '1rem' }}>Preguntas Frecuentes</h2>
+          <p style={{ textAlign: 'center', marginBottom: '2rem' }}>¿Tienes otra duda? <a href="https://wa.me/18292520244" style={{ color: '#94715F', fontWeight: 600 }}>Escríbeme por WhatsApp</a></p>
+          <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {[
+              { q: "¿Este programa es solo para mujeres?", a: "Sí, mi enfoque está totalmente dedicado a mujeres." },
+              { q: "¿Necesito ir al gimnasio?", a: "No, puedes entrenar desde casa con el plan adecuado para ti." },
+              { q: "¿Incluye plan de alimentación?", a: "Sí, recibirás una guía nutricional ajustada a tu meta." },
+              { q: "¿Puedo contactarte directamente?", a: "Claro, siempre estaré disponible por WhatsApp para acompañarte." },
+              { q: "¿Qué duración tienen los programas?", a: "Dependiendo de tu objetivo, desde 4 semanas hasta 12 o más." },
+              { q: "¿Qué necesito para empezar?", a: "Ganas de cambiar y seguir un plan personalizado." },
+              { q: "¿Cómo recibiré mi programa?", a: "Por correo electrónico una vez completes el formulario." },
+              { q: "¿Hay seguimiento semanal?", a: "Sí, hago un seguimiento personalizado según el plan que elijas." }
+            ].map((item, idx) => (
+              <details key={idx} style={{ background: '#fff', borderRadius: '8px', padding: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
+                <summary style={{ fontWeight: 600, cursor: 'pointer' }}>{item.q}</summary>
+                <p style={{ marginTop: '0.5rem' }}>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        {/* Formulario */}
+        <section id="formulario" style={{ background: '#94715F', padding: '4rem 2rem', color: '#fff' }}>
+          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '1rem' }}>¿Lista para comenzar?</h2>
+          <p style={{ textAlign: 'center', marginBottom: '2rem' }}>Llena este formulario y empecemos tu transformación</p>
+          <form action="https://formspree.io/f/YOUR_ID" method="POST" style={{ maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <input type="text" name="nombre" placeholder="Nombre" required style={inputStyle} />
+            <input type="email" name="correo" placeholder="Correo electrónico" required style={inputStyle} />
+            <input type="text" name="dias" placeholder="¿Cuántos días deseas entrenar?" style={inputStyle} />
+            <input type="text" name="condicion" placeholder="¿Alguna condición física?" style={inputStyle} />
+            <textarea name="meta" placeholder="¿Cuál es tu meta?" rows="3" style={inputStyle}></textarea>
+            <textarea name="actividad" placeholder="¿Realizas alguna actividad física? ¿Cuáles?" rows="3" style={inputStyle}></textarea>
+            <button type="submit" style={{ backgroundColor: '#fff', color: '#94715F', padding: '0.75rem', border: 'none', borderRadius: '6px', fontWeight: 600, cursor: 'pointer' }}>Enviar</button>
+          </form>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer style={{ backgroundColor: '#111', color: '#fff', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '2rem', fontSize: '0.9rem', fontFamily: 'Manrope, sans-serif', gap: '1rem' }}>
+        <div style={{ flex: '1 1 300px' }}>© Copyright 2025 Genesis Fit. Todos los derechos reservados.</div>
+        <div style={{ display: 'flex', gap: '1.5rem' }}>
+          <a href="https://www.instagram.com/GenesisFit" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@genesisfit" target="_blank" rel="noopener noreferrer">TikTok</a>
         </div>
-      </section>
-
-      <section id="contacto" style={styles.sectionForm}>
-        <h2 style={styles.sectionTitle}>¿Lista para empezar?</h2>
-        <p style={styles.sectionDesc}>Completa este formulario y transforma tu vida hoy.</p>
-        <form style={styles.form}>
-          <input type="text" placeholder="Nombre" required style={styles.input} />
-          <input type="email" placeholder="Correo electrónico" required style={styles.input} />
-          <input type="text" placeholder="¿Cuántos días deseas entrenar?" style={styles.input} />
-          <input type="text" placeholder="¿Alguna condición física?" style={styles.input} />
-          <textarea placeholder="¿Cuál es tu meta?" style={styles.textarea} rows={3}></textarea>
-          <textarea placeholder="¿Realizas alguna actividad física? ¿Cuáles?" style={styles.textarea} rows={3}></textarea>
-          <button type="submit" style={styles.submitBtn}>Enviar solicitud</button>
-        </form>
-      </section>
-
-      <footer style={styles.footer}>
-        &copy; {new Date().getFullYear()} iamgenesisfit | Todos los derechos reservados
+        <div style={{ flex: '1 1 300px', textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem' }}>
+          <a href="/privacidad" style={{ color: '#fff', textDecoration: 'underline' }}>Política de Privacidad</a>
+          <a href="/terminos" style={{ color: '#fff', textDecoration: 'underline' }}>Términos y Condiciones</a>
+          <span style={{ fontSize: '0.85rem', color: '#aaa' }}>Diseñado por <a href="https://www.instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', textDecoration: 'underline' }}>@GeorgeValdezR</a></span>
+        </div>
       </footer>
-
-      <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={styles.waBtn}>
-        <FaWhatsapp size={28} color="#fff" />
-      </a>
     </>
   );
 }
 
-const primary = "#94715F";
-const secondary = "#B89E90";
-
-const styles = {
-  // ... mismos estilos anteriores ...
-  // Extra:
-  firma: {
-    marginTop: "1.5rem",
-    fontFamily: "'Great Vibes', cursive",
-    fontSize: "1.8rem",
-    color: primary,
-    textAlign: "right",
-  },
-  header: {
-    backgroundColor: primary,
-    padding: "1rem 2rem",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  logo: {
-    color: "#fff",
-    fontSize: "1.5rem",
-    margin: 0,
-  },
-  navLinks: {
-    display: "flex",
-    gap: "2rem",
-  },
-  navLink: {
-    color: "#fff",
-    textDecoration: "none",
-    fontWeight: 500,
-  },
-  hero: {
-    backgroundColor: secondary,
-    color: "#fff",
-    textAlign: "center",
-    padding: "6rem 2rem",
-  },
-  heroTitle: {
-    fontSize: "2.5rem",
-    marginBottom: "1rem",
-  },
-  heroSubtitle: {
-    fontSize: "1.2rem",
-    marginBottom: "2rem",
-  },
-  heroBtn: {
-    backgroundColor: primary,
-    color: "#fff",
-    padding: "0.75rem 1.5rem",
-    borderRadius: "8px",
-    textDecoration: "none",
-    fontWeight: 600,
-  },
-  sectionAltBg: {
-    backgroundColor: "#fff",
-    padding: "4rem 2rem",
-  },
-  sobreMiGrid: {
-    display: "flex",
-    flexDirection: "column-reverse",
-    gap: "2rem",
-    maxWidth: "1200px",
-    margin: "0 auto",
-    alignItems: "center",
-    textAlign: "center",
-  },
-  sobreMiText: {
-    fontSize: "1.05rem",
-    color: "#333",
-    lineHeight: 1.7,
-  },
-  trainerImgLarge: {
-    width: "100%",
-    maxWidth: "420px",
-    borderRadius: "12px",
-    boxShadow: "0 0 20px rgba(0,0,0,0.2)",
-  },
-  resultadosBg: {
-    backgroundColor: "#fefefe",
-    padding: "4rem 2rem",
-  },
-  resultadosHeader: {
-    textAlign: "center",
-    marginBottom: "2rem",
-  },
-  resultadosCarousel: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-    gap: "2rem",
-    maxWidth: "1000px",
-    margin: "0 auto",
-  },
-  resultadoCard: {
-    position: "relative",
-    overflow: "hidden",
-    borderRadius: "12px",
-    boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-  },
-  resultadoImg: {
-    width: "100%",
-    height: "360px",
-    objectFit: "cover",
-  },
-  resultadoOverlay: {
-    position: "absolute",
-    bottom: 0,
-    background: "rgba(0,0,0,0.6)",
-    width: "100%",
-    padding: "1rem",
-  },
-  resultadoTexto: {
-    color: "#fff",
-    fontWeight: 600,
-    textAlign: "center",
-  },
-  sectionForm: {
-    backgroundColor: primary,
-    color: "#fff",
-    padding: "4rem 2rem",
-  },
-  sectionTitle: {
-    textAlign: "center",
-    fontSize: "2rem",
-    marginBottom: "1rem",
-  },
-  sectionDesc: {
-    textAlign: "center",
-    maxWidth: "600px",
-    margin: "0 auto 2rem",
-    fontSize: "1.1rem",
-  },
-  form: {
-    maxWidth: "600px",
-    margin: "0 auto",
-    display: "flex",
-    flexDirection: "column",
-    gap: "1rem",
-  },
-  input: {
-    padding: "0.75rem 1rem",
-    borderRadius: "6px",
-    border: "none",
-    fontSize: "1rem",
-  },
-  textarea: {
-    padding: "0.75rem 1rem",
-    borderRadius: "6px",
-    border: "none",
-    fontSize: "1rem",
-  },
-  submitBtn: {
-    backgroundColor: "#fff",
-    color: primary,
-    fontWeight: 600,
-    padding: "0.75rem",
-    borderRadius: "6px",
-    cursor: "pointer",
-    border: "none",
-  },
-  footer: {
-    backgroundColor: "#222",
-    color: "#ccc",
-    textAlign: "center",
-    padding: "2rem 1rem",
-    fontSize: "0.9rem",
-  },
-  waBtn: {
-    position: "fixed",
-    bottom: "20px",
-    right: "20px",
-    backgroundColor: primary,
-    borderRadius: "50%",
-    width: "60px",
-    height: "60px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    boxShadow: "0 0 15px rgba(0,0,0,0.3)",
-    zIndex: 999,
-  },
+const inputStyle = {
+  padding: '0.75rem 1rem',
+  borderRadius: '6px',
+  border: 'none',
+  fontSize: '1rem'
 };
