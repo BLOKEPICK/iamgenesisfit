@@ -444,19 +444,23 @@ const inputFocusStyle = `
 
       </main>
 
-      {/* Footer estilo Alofoke */}
-      <footer style={{ backgroundColor: '#000', color: '#fff', padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', textAlign: 'center' }}>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
-          <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
-        </div>
-        <div style={{ fontSize: '0.9rem' }}>© Copyright 2025 Genesis Fit. Todos los derechos reservados.</div>
-        <div style={{ fontSize: '0.9rem', display: 'flex', gap: '1rem' }}>
-          <a href="/privacy">Política de Privacidad</a>
-          <a href="/terms">Términos y Condiciones</a>
-        </div>
-        <div style={{ fontSize: '0.9rem' }}>Diseñado por <a href="https://instagram.com/GeorgeValdezR" target="_blank">@GeorgeValdezR</a></div>
-      </footer>
+      {/* Footer estilo moderno y claro */}
+<footer style={{ backgroundColor: '#F4ECE7', color: '#4A3B36', padding: '2rem 1.5rem', textAlign: 'center', fontSize: '0.9rem' }}>
+  <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '1rem' }}>
+    <a href="https://instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer">
+      <FaInstagram size={22} />
+    </a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+      <FaTiktok size={22} />
+    </a>
+  </div>
+  <div style={{ marginBottom: '0.5rem' }}>© 2025 Genesis Fit. Todos los derechos reservados.</div>
+  <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+    <a href="/privacy" style={{ color: '#4A3B36', textDecoration: 'underline' }}>Privacidad</a>
+    <a href="/terms" style={{ color: '#4A3B36', textDecoration: 'underline' }}>Términos</a>
+    <a href="https://instagram.com/GeorgeValdezR" target="_blank" style={{ color: '#4A3B36' }}>Diseñado por @GeorgeValdezR</a>
+  </div>
+</footer>
     </>
   );
 }
