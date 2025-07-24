@@ -1,149 +1,156 @@
-// ✅ Página completa en un solo archivo para Genesis Fit
-
+// pages/index.js
 import Head from "next/head";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Head>
-        <title>Genesis Fit | Transformación real para mujeres reales</title>
-        <meta name="description" content="Acompaña a Genesis Fit en tu proceso de cambio físico y mental. Programas únicos, testimonios reales, asesoría personalizada." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
-        <style>{`
-          html { scroll-behavior: smooth; }
-          body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Manrope', sans-serif;
-            background-color: #fff;
-            color: #2D2D2D;
-          }
-          *::selection {
-            background-color: #94715F;
-            color: #fff;
-          }
-          a { color: inherit; text-decoration: none; }
-        `}</style>
+        <title>Genesis Fit</title>
+        <meta name="description" content="Transforma tu cuerpo con Genesis Fit" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      {/* Menú Sticky Transparente */}
-      <header style={{
-        position: 'sticky', top: 0, zIndex: 99, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
-      }}>
-        <a href="#hero" style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</a>
-        <nav style={{ display: 'flex', gap: '1.5rem', fontSize: '0.95rem', fontWeight: 600 }}>
-          <a href="#sobremi">Sobre mí</a>
-          <a href="#testimonios">Testimonios</a>
-          <a href="#before">Resultados</a>
-          <a href="#faq">Preguntas</a>
-          <a href="#formulario">Contacto</a>
-        </nav>
-      </header>
+      <main className="font-[Manrope] scroll-smooth bg-[#F3EDEB] text-[#111]">
+        {/* Header */}
+        <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
+          <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+            <a href="#hero" className="text-2xl font-light tracking-wide">
+              Genesis<span className="font-bold text-[#94715F]">Fit</span>
+            </a>
+            <nav className="hidden md:flex gap-6 text-sm font-medium">
+              <a href="#sobre-mi" className="hover:text-[#94715F]">Sobre mí</a>
+              <a href="#testimonios" className="hover:text-[#94715F]">Testimonios</a>
+              <a href="#transformaciones" className="hover:text-[#94715F]">Before & After</a>
+              <a href="#faq" className="hover:text-[#94715F]">FAQ</a>
+              <a href="#contacto" className="hover:text-[#94715F]">Contacto</a>
+            </nav>
+          </div>
+        </header>
 
-      <main>
         {/* Hero */}
-        <section id="hero" style={{ background: '#F3EDEB', padding: '6rem 2rem', textAlign: 'center' }}>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Transforma tu cuerpo y mente con <strong>Genesis Fit</strong></h1>
-          <p style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 2rem' }}>Acompañamiento real para mujeres reales. ¡Cambia tu vida desde hoy!</p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
-            <a href="#formulario" style={{ backgroundColor: '#94715F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '6px', fontWeight: 600 }}>Comienza Ahora</a>
+        <section id="hero" className="min-h-screen flex items-center justify-center px-6 pt-28">
+          <div className="max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+                Transforma tu cuerpo y tu mente con <span className="text-[#94715F]">Genesis Fit</span>
+              </h1>
+              <p className="mb-6 text-lg">Entrenamiento personalizado para mujeres reales. Resultados que se sienten y se ven.</p>
+              <a href="#contacto" className="inline-block bg-[#94715F] text-white px-6 py-3 rounded-full font-semibold hover:opacity-90">
+                Comienza ahora
+              </a>
+            </div>
+            <div>
+              <img src="/hero-image.png" alt="Entrenadora" className="rounded-xl w-full shadow-lg" />
+            </div>
           </div>
         </section>
 
         {/* Sobre mí */}
-        <section id="sobremi" style={{ background: '#fff', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
-            <img src="/trainer_main.webp" alt="Genesis" style={{ width: '100%', borderRadius: '10px', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }} />
+        <section id="sobre-mi" className="py-24 px-6 bg-white">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <img src="/about-me.jpg" alt="Sobre mí" className="rounded-xl shadow-md" />
             <div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Sobre mí</h2>
-              <p>Soy Genesis, entrenadora certificada con pasión por ayudar a mujeres a transformar su vida desde dentro hacia fuera. Cada cuerpo tiene su historia, y yo te acompaño a escribir la mejor versión de la tuya.</p>
-              <p>Mi enfoque combina entrenamiento físico, hábitos saludables y mucha empatía.</p>
+              <h2 className="text-3xl font-bold mb-4">Conóceme</h2>
+              <p className="text-lg leading-relaxed">
+                Soy Genesis, entrenadora certificada especializada en transformar vidas femeninas. Creo en el poder de la disciplina y el amor propio. Mi misión es guiarte hacia tu mejor versión, física y emocional.
+              </p>
             </div>
           </div>
         </section>
 
         {/* Testimonios */}
-        <section id="testimonios" style={{ background: '#FAF7F6', padding: '4rem 2rem' }}>
-          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem' }}>Lo que dicen de mí</h2>
-          <div style={{ display: 'flex', overflowX: 'auto', gap: '1.5rem', padding: '1rem 0' }}>
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} style={{ minWidth: '240px', height: '300px', backgroundColor: '#eee', borderRadius: '10px', flexShrink: 0, backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url(/testimonial_${i}.webp)` }} />
-            ))}
+        <section id="testimonios" className="py-24 px-6 bg-[#F3EDEB]">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Testimonios</h2>
+            <div className="flex overflow-x-auto space-x-6 snap-x">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="min-w-[300px] snap-center bg-white p-4 rounded-xl shadow-md cursor-pointer">
+                  <img src={`/testimonial-${i}.jpg`} alt={`Testimonio ${i}`} className="rounded-md mb-4" />
+                  <p className="text-sm italic">“Entrenar con Genesis cambió mi vida. Me siento más fuerte, segura y feliz.”</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Before and After */}
-        <section id="before" style={{ background: '#fff', padding: '4rem 2rem' }}>
-          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem' }}>Resultados reales</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            {[1, 2, 3].map(i => (
-              <div key={i} style={{ borderRadius: '10px', overflow: 'hidden', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }}>
-                <img src={`/beforeafter_${i}.webp`} alt={`Progreso ${i}`} style={{ width: '100%', height: 'auto' }} />
-              </div>
-            ))}
+        {/* Before & After */}
+        <section id="transformaciones" className="py-24 px-6 bg-white">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-8">Transformaciones</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="bg-[#F3EDEB] rounded-xl p-4 shadow-md">
+                  <img src={`/before-after-${i}.jpg`} alt={`Transformación ${i}`} className="rounded-md w-full" />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Preguntas Frecuentes */}
-        <section id="faq" style={{ background: '#F3EDEB', padding: '4rem 2rem' }}>
-          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '1rem' }}>Preguntas Frecuentes</h2>
-          <p style={{ textAlign: 'center', marginBottom: '2rem' }}>¿Tienes otra duda? <a href="https://wa.me/18292520244" style={{ color: '#94715F', fontWeight: 600 }}>Escríbeme por WhatsApp</a></p>
-          <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        {/* FAQ */}
+        <section id="faq" className="py-24 px-6 bg-[#F3EDEB]">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Preguntas Frecuentes</h2>
             {[
-              { q: "¿Este programa es solo para mujeres?", a: "Sí, mi enfoque está totalmente dedicado a mujeres." },
-              { q: "¿Necesito ir al gimnasio?", a: "No, puedes entrenar desde casa con el plan adecuado para ti." },
-              { q: "¿Incluye plan de alimentación?", a: "Sí, recibirás una guía nutricional ajustada a tu meta." },
-              { q: "¿Puedo contactarte directamente?", a: "Claro, siempre estaré disponible por WhatsApp para acompañarte." },
-              { q: "¿Qué duración tienen los programas?", a: "Dependiendo de tu objetivo, desde 4 semanas hasta 12 o más." },
-              { q: "¿Qué necesito para empezar?", a: "Ganas de cambiar y seguir un plan personalizado." },
-              { q: "¿Cómo recibiré mi programa?", a: "Por correo electrónico una vez completes el formulario." },
-              { q: "¿Hay seguimiento semanal?", a: "Sí, hago un seguimiento personalizado según el plan que elijas." }
-            ].map((item, idx) => (
-              <details key={idx} style={{ background: '#fff', borderRadius: '8px', padding: '1rem', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
-                <summary style={{ fontWeight: 600, cursor: 'pointer' }}>{item.q}</summary>
-                <p style={{ marginTop: '0.5rem' }}>{item.a}</p>
+              ["¿Necesito experiencia previa?", "No. Trabajo con principiantes y avanzadas."],
+              ["¿Dónde se realizan los entrenamientos?", "Todo es online y personalizado a tu rutina."],
+              ["¿Puedo escribirte para dudas?", "¡Sí! Escríbeme directamente por WhatsApp."]
+            ].map(([q, a], i) => (
+              <details key={i} className="mb-4 bg-white rounded-lg p-4 cursor-pointer">
+                <summary className="font-semibold text-lg">{q}</summary>
+                <p className="mt-2">{a} <a href="https://wa.me/1XXXXXXXXXX" className="text-[#94715F] underline">Haz clic aquí</a>.</p>
               </details>
             ))}
           </div>
         </section>
 
-        {/* Formulario */}
-        <section id="formulario" style={{ background: '#94715F', padding: '4rem 2rem', color: '#fff' }}>
-          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '1rem' }}>¿Lista para comenzar?</h2>
-          <p style={{ textAlign: 'center', marginBottom: '2rem' }}>Llena este formulario y empecemos tu transformación</p>
-          <form action="https://formspree.io/f/YOUR_ID" method="POST" style={{ maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <input type="text" name="nombre" placeholder="Nombre" required style={inputStyle} />
-            <input type="email" name="correo" placeholder="Correo electrónico" required style={inputStyle} />
-            <input type="text" name="dias" placeholder="¿Cuántos días deseas entrenar?" style={inputStyle} />
-            <input type="text" name="condicion" placeholder="¿Alguna condición física?" style={inputStyle} />
-            <textarea name="meta" placeholder="¿Cuál es tu meta?" rows="3" style={inputStyle}></textarea>
-            <textarea name="actividad" placeholder="¿Realizas alguna actividad física? ¿Cuáles?" rows="3" style={inputStyle}></textarea>
-            <button type="submit" style={{ backgroundColor: '#fff', color: '#94715F', padding: '0.75rem', border: 'none', borderRadius: '6px', fontWeight: 600, cursor: 'pointer' }}>Enviar</button>
-          </form>
+        {/* Contacto */}
+        <section id="contacto" className="py-24 px-6 bg-white">
+          <div className="max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-center">Contáctame</h2>
+            <form action="https://formspree.io/f/YOUR_ID" method="POST" className="space-y-4">
+              <input name="nombre" required className="w-full border border-gray-300 rounded px-4 py-2" placeholder="Nombre" />
+              <input name="correo" type="email" required className="w-full border border-gray-300 rounded px-4 py-2" placeholder="Correo electrónico" />
+              <input name="dias" className="w-full border border-gray-300 rounded px-4 py-2" placeholder="¿Cuántos días deseas entrenar?" />
+              <input name="condicion" className="w-full border border-gray-300 rounded px-4 py-2" placeholder="¿Alguna condición física?" />
+              <input name="meta" className="w-full border border-gray-300 rounded px-4 py-2" placeholder="¿Cuál es tu meta?" />
+              <input name="actividad" className="w-full border border-gray-300 rounded px-4 py-2" placeholder="¿Realizas actividad física? ¿Cuáles?" />
+              <button type="submit" className="w-full bg-[#94715F] text-white py-3 rounded font-semibold hover:opacity-90">Enviar</button>
+            </form>
+          </div>
         </section>
-      </main>
 
-      {/* Footer */}
-      <footer style={{ backgroundColor: '#111', color: '#fff', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '2rem', fontSize: '0.9rem', fontFamily: 'Manrope, sans-serif', gap: '1rem' }}>
-        <div style={{ flex: '1 1 300px' }}>© Copyright 2025 Genesis Fit. Todos los derechos reservados.</div>
-        <div style={{ display: 'flex', gap: '1.5rem' }}>
-          <a href="https://www.instagram.com/GenesisFit" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.tiktok.com/@genesisfit" target="_blank" rel="noopener noreferrer">TikTok</a>
-        </div>
-        <div style={{ flex: '1 1 300px', textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem' }}>
-          <a href="/privacidad" style={{ color: '#fff', textDecoration: 'underline' }}>Política de Privacidad</a>
-          <a href="/terminos" style={{ color: '#fff', textDecoration: 'underline' }}>Términos y Condiciones</a>
-          <span style={{ fontSize: '0.85rem', color: '#aaa' }}>Diseñado por <a href="https://www.instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', textDecoration: 'underline' }}>@GeorgeValdezR</a></span>
-        </div>
-      </footer>
+        {/* Footer */}
+        <footer className="bg-[#111] text-white py-10 px-6">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+            <div className="flex gap-4">
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/ig.svg" alt="Instagram" className="w-6 h-6" />
+              </a>
+              <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer">
+                <img src="/tt.svg" alt="TikTok" className="w-6 h-6" />
+              </a>
+            </div>
+            <p>&copy; {new Date().getFullYear()} Genesis Fit. Todos los derechos reservados.</p>
+            <div className="flex gap-4">
+              <a href="/politicas" className="hover:underline">Políticas</a>
+              <a href="https://instagram.com/GeorgeValdezR" className="hover:underline" target="_blank">Diseño por @GeorgeValdezR</a>
+            </div>
+          </div>
+        </footer>
+      </main>
     </>
   );
 }
-
-const inputStyle = {
-  padding: '0.75rem 1rem',
-  borderRadius: '6px',
-  border: 'none',
-  fontSize: '1rem'
-};
