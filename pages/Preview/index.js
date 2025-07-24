@@ -28,6 +28,7 @@ export default function Home() {
             color: #fff;
           }
           a { color: inherit; text-decoration: none; }
+          .mobile-menu-icon { display: none; }
           @media (max-width: 768px) {
             nav.desktop-menu { display: none; }
             .mobile-menu-icon { display: block; cursor: pointer; }
@@ -42,6 +43,7 @@ export default function Home() {
               border-top: 1px solid #eee;
               padding: 1rem 2rem;
               gap: 1rem;
+              z-index: 98;
             }
           }
         `}</style>
