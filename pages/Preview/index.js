@@ -173,15 +173,15 @@ export default function Home() {
       {/* Footer estilo Alofoke */}
       <footer style={{ backgroundColor: '#000', color: '#fff', padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', textAlign: 'center' }}>
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <a href="https://instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><FaTiktok size={24} /></a>
+          <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
+          <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
         </div>
         <div style={{ fontSize: '0.9rem' }}>© Copyright 2025 Genesis Fit. Todos los derechos reservados.</div>
         <div style={{ fontSize: '0.9rem', display: 'flex', gap: '1rem' }}>
           <a href="/privacy">Política de Privacidad</a>
           <a href="/terms">Términos y Condiciones</a>
         </div>
-        <div style={{ fontSize: '0.9rem' }}>Diseñado por <a href="https://instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer">@GeorgeValdezR</a></div>
+        <div style={{ fontSize: '0.9rem' }}>Diseñado por <a href="https://instagram.com/GeorgeValdezR" target="_blank">@GeorgeValdezR</a></div>
       </footer>
     </>
   );
