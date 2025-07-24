@@ -206,7 +206,7 @@ export default function Home() {
         </section>
 
         {/* Formulario */}
-        <section id="formulario" style={{ padding: '4rem 2rem', background: '#F3EDEB', textAlign: 'center' }}>
+        <section id="formulario" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
           <h2 style={{ marginBottom: '1rem' }}>Formulario de Aplicación</h2>
           <p style={{ marginBottom: '2rem' }}>Responde este formulario para iniciar tu transformación.</p>
           <form action="https://formspree.io/f/mayzrwry" method="POST" style={{ maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
