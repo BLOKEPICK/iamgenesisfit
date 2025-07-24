@@ -87,6 +87,7 @@ export default function Home() {
               gap: 1rem;
               width: 100%;
               padding-bottom: 2rem;
+              margin-top: 2rem;
             }
           }
           .hero-button {
