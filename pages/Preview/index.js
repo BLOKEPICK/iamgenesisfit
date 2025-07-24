@@ -351,7 +351,7 @@ const inputFocusStyle = `
         borderRadius: '6px',
         fontSize: '1rem',
         fontFamily: 'inherit',
-        width: '100%'
+        width: '80%'
       }}
     />
     <input
@@ -365,7 +365,7 @@ const inputFocusStyle = `
         borderRadius: '6px',
         fontSize: '1rem',
         fontFamily: 'inherit',
-        width: '70%'
+        width: '80%'
       }}
     />
     <input
@@ -378,7 +378,7 @@ const inputFocusStyle = `
         borderRadius: '6px',
         fontSize: '1rem',
         fontFamily: 'inherit',
-        width: '100%'
+        width: '80%'
       }}
     />
     <input
@@ -391,7 +391,7 @@ const inputFocusStyle = `
         borderRadius: '6px',
         fontSize: '1rem',
         fontFamily: 'inherit',
-        width: '100%'
+        width: '80%'
       }}
     />
     <textarea
@@ -404,7 +404,7 @@ const inputFocusStyle = `
         borderRadius: '6px',
         fontSize: '1rem',
         fontFamily: 'inherit',
-        width: '100%',
+        width: '80%',
         resize: 'none'
       }}
     ></textarea>
@@ -418,7 +418,7 @@ const inputFocusStyle = `
         borderRadius: '6px',
         fontSize: '1rem',
         fontFamily: 'inherit',
-        width: '100%',
+        width: '80%',
         resize: 'none'
       }}
     ></textarea>
