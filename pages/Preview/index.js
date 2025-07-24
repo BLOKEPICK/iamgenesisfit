@@ -152,9 +152,15 @@ export default function Home() {
         </section>
 
         {/* Sobre mí */}
-        <section id="sobremi" style={{ padding: '4rem 2rem', textAlign: 'center', background: '#F3EDEB' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Sobre mí</h2>
-          <p style={{ maxWidth: '700px', margin: '0 auto' }}>Soy Genesis, entrenadora personal especializada en mujeres. Mi enfoque va más allá del físico: busco que cada mujer se sienta fuerte, segura y en control de su vida.</p>
+        <section id="sobremi" style={{ padding: '4rem 2rem', backgroundColor: '#F9F9F9', textAlign: 'center' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Conóceme un poco más</h2>
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
+              Soy Genesis, entrenadora certificada especializada en transformar la vida de mujeres reales a través de entrenamientos accesibles y adaptados a tu ritmo. Más que ejercicios, mi objetivo es ayudarte a construir una relación sana con tu cuerpo, tu mente y tu bienestar general. He acompañado a decenas de mujeres en su proceso de cambio físico y emocional, y estoy lista para ayudarte también a ti.
+              <br /><br />
+              Cada cuerpo es distinto, por eso mis planes son personalizados y están diseñados para motivarte, inspirarte y sobre todo acompañarte en cada paso del proceso. No necesitas experiencia previa, solo ganas de empezar.
+            </p>
+          </div>
         </section>
 
         {/* Testimonios */}
