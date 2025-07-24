@@ -6,50 +6,21 @@ import { FaBars, FaTimes, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
-
-  const openLightbox = (index) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
-
-  const nextImage = (e) => {
-    e.stopPropagation();
-    setLightboxIndex((prev) => (prev + 1) % 10);
-  };
-
-  const prevImage = (e) => {
-    e.stopPropagation();
-    setLightboxIndex((prev) => (prev - 1 + 10) % 10);
-  };
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
-const inputStyle = {
-  padding: '0.75rem 1rem',
-  borderRadius: '6px',
-  border: '1px solid #ccc',
-  fontSize: '1rem',
-  outline: 'none',
-  width: '100%',
-  boxSizing: 'border-box',
-  transition: 'all 0.3s ease',
-};
 
-const inputFocusStyle = `
-  input:focus, textarea:focus {
-    border-color: #94715F;
-    box-shadow: 0 0 0 2px rgba(148, 113, 95, 0.25);
-  }
-`;
-
-
+  const inputStyle = {
+    padding: '0.75rem 1rem',
+    borderRadius: '6px',
+    border: '1px solid #ccc',
+    fontSize: '1rem',
+    outline: 'none',
+    width: '100%',
+    boxSizing: 'border-box',
+    transition: 'all 0.3s ease',
+  };
 
   return (
     <>
@@ -58,7 +29,6 @@ const inputFocusStyle = `
         <meta name="description" content="Acompaña a Genesis Fit en tu proceso de cambio físico y mental. Programas únicos, testimonios reales, asesoría personalizada." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
-
         <style>{`
           html { scroll-behavior: smooth; }
           body {
@@ -81,6 +51,10 @@ const inputFocusStyle = `
           }
           .mobile-menu-icon { display: none; }
           .mobile-nav { display: none; }
+          input:focus, textarea:focus {
+            border-color: #94715F;
+            box-shadow: 0 0 0 2px rgba(148, 113, 95, 0.25);
+          }
 
           @media (max-width: 768px) {
             .desktop-menu { display: none !important; }
@@ -128,6 +102,7 @@ const inputFocusStyle = `
               gap: 1rem;
               width: 100%;
               padding-bottom: 2rem;
+              margin-top: auto;
             }
           }
           .hero-button {
@@ -143,48 +118,6 @@ const inputFocusStyle = `
           .hero-button:hover {
             background-color: #B89E90;
           }
-            .lightbox-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  flex-direction: column;
-}
-.lightbox-image {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
-}
-.lightbox-controls {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-.lightbox-button {
-  background: #fff;
-  color: #000;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-}
-  ${inputFocusStyle}
 
         `}</style>
       </Head>
@@ -318,129 +251,53 @@ const inputFocusStyle = `
 
         {/* Formulario */}
 <section id="formulario" style={{ padding: '5rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
-  <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Formulario de Aplicación</h2>
-  <p style={{ marginBottom: '2.5rem', color: '#4A3B36' }}>
-    Responde este formulario para iniciar tu transformación. ¡Estoy aquí para acompañarte en cada paso!
-  </p>
-  <form
-  action="https://formspree.io/f/mayzrwry"
-  method="POST"
-  style={{
-    width: '100%',
-    maxWidth: '600px',
-    margin: '0 auto',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.25rem',
-    background: '#fff',
-    padding: '2rem',
-    borderRadius: '12px',
-    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)',
-    boxSizing: 'border-box',
-  }}
->
-
-    <input
-      type="text"
-      name="nombre"
-      placeholder="Nombre completo"
-      required
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '100%'
-      }}
-    />
-    <input
-      type="email"
-      name="email"
-      placeholder="Correo electrónico"
-      required
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '100%'
-      }}
-    />
-    <input
-      type="text"
-      name="dias"
-      placeholder="¿Cuántos días deseas entrenar?"
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '100%'
-      }}
-    />
-    <input
-      type="text"
-      name="condicion"
-      placeholder="¿Alguna condición física?"
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '100%'
-      }}
-    />
-    <textarea
-      name="meta"
-      placeholder="¿Cuál es tu meta que buscas lograr?"
-      rows={3}
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '100%',
-        resize: 'none'
-      }}
-    ></textarea>
-    <textarea
-      name="actividad"
-      placeholder="¿Realizas alguna actividad física actualmente?"
-      rows={3}
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '100%',
-        resize: 'none'
-      }}
-    ></textarea>
-    <button
-      type="submit"
-      style={{
-        backgroundColor: '#94715F',
-        color: '#fff',
-        padding: '0.85rem',
-        borderRadius: '6px',
-        fontWeight: '600',
-        fontSize: '1rem',
-        border: 'none',
-        cursor: 'pointer'
-      }}
-      onMouseOver={(e) => e.target.style.backgroundColor = '#B89E90'}
-      onMouseOut={(e) => e.target.style.backgroundColor = '#94715F'}
-    >
-      Enviar
-    </button>
-  </form>
-</section>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Formulario de Aplicación</h2>
+        <p style={{ marginBottom: '2.5rem', color: '#4A3B36' }}>
+          Responde este formulario para iniciar tu transformación. ¡Estoy aquí para acompañarte en cada paso!
+        </p>
+        <form
+          action="https://formspree.io/f/mayzrwry"
+          method="POST"
+          style={{
+            width: '100%',
+            maxWidth: '600px',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.25rem',
+            background: '#fff',
+            padding: '2rem',
+            borderRadius: '12px',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)',
+            boxSizing: 'border-box'
+          }}
+        >
+          <input type="text" name="nombre" placeholder="Nombre completo" required style={inputStyle} />
+          <input type="email" name="email" placeholder="Correo electrónico" required style={inputStyle} />
+          <input type="text" name="dias" placeholder="¿Cuántos días deseas entrenar?" style={inputStyle} />
+          <input type="text" name="condicion" placeholder="¿Alguna condición física?" style={inputStyle} />
+          <textarea name="meta" placeholder="¿Cuál es tu meta que buscas lograr?" rows={3} style={inputStyle}></textarea>
+          <textarea name="actividad" placeholder="¿Realizas alguna actividad física actualmente?" rows={3} style={inputStyle}></textarea>
+          <button
+            type="submit"
+            style={{
+              backgroundColor: '#94715F',
+              color: '#fff',
+              padding: '0.85rem',
+              borderRadius: '6px',
+              fontWeight: '600',
+              fontSize: '1rem',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#B89E90'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#94715F'}
+          >
+            Enviar
+          </button>
+        </form>
+      </section>
 
       </main>
 
