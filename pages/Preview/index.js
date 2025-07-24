@@ -152,7 +152,7 @@ export default function Home() {
         </section>
 
         {/* Sobre mí */}
-        <section id="sobremi" style={{ padding: '4rem 2rem', backgroundColor: '#F9F9F9', textAlign: 'center' }}>
+        <section id="sobremi" style={{ padding: '4rem 2rem', backgroundColor: '#94715F', textAlign: 'center' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Conóceme un poco más</h2>
             <p style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
