@@ -176,7 +176,7 @@ export default function Home() {
         </section>
 
         {/* Before & After */}
-        <section id="before" style={{ padding: '4rem 2rem', background: '#F3EDEB', textAlign: 'center' }}>
+        <section id="before" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
           <h2 style={{ marginBottom: '2rem' }}>Resultados Reales</h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
             {[1, 2, 3].map(i => (
