@@ -28,10 +28,32 @@ export default function Home() {
             color: #fff;
           }
           a { color: inherit; text-decoration: none; }
-          .mobile-menu-icon { display: none; }
+
+          .desktop-menu {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+          }
+
+          .mobile-menu-icon {
+            display: none;
+          }
+
+          .mobile-nav {
+            display: none;
+          }
+
           @media (max-width: 768px) {
-            nav.desktop-menu { display: none; }
-            .mobile-menu-icon { display: block; cursor: pointer; }
+            .desktop-menu {
+              display: none !important;
+            }
+
+            .mobile-menu-icon {
+              display: block !important;
+              cursor: pointer;
+            }
+
             .mobile-nav {
               display: flex;
               flex-direction: column;
@@ -55,7 +77,7 @@ export default function Home() {
       }}>
         <a href="#hero" style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</a>
 
-        <nav className="desktop-menu" style={{ display: 'flex', gap: '1.5rem', fontSize: '0.95rem', fontWeight: 600 }}>
+        <nav className="desktop-menu">
           <a href="#sobremi">Sobre mí</a>
           <a href="#testimonios">Testimonios</a>
           <a href="#before">Resultados</a>
