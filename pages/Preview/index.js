@@ -53,8 +53,8 @@ export default function Home() {
               left: 0;
               width: 100%;
               height: 100dvh;
-              padding: 5rem 2rem 2rem;
-              gap: 2rem;
+              padding: 5rem 2rem 1rem;
+              gap: 1.5rem;
               z-index: 100;
               overflow-y: auto;
               transition: all 0.3s ease;
@@ -63,7 +63,7 @@ export default function Home() {
             .mobile-nav-links {
               display: flex;
               flex-direction: column;
-              gap: 1.5rem;
+              gap: 1.25rem;
               align-items: flex-start;
             }
             .mobile-nav a {
@@ -86,7 +86,7 @@ export default function Home() {
               align-items: center;
               gap: 1rem;
               width: 100%;
-              padding-bottom: 1rem;
+              padding-bottom: 2rem;
             }
           }
           .hero-button {
@@ -121,19 +121,21 @@ export default function Home() {
 
       {menuOpen && (
         <nav className="mobile-nav">
-          <div className="mobile-nav-links">
-            <a href="#sobremi" onClick={() => setMenuOpen(false)}>Sobre mí</a>
-            <a href="#testimonios" onClick={() => setMenuOpen(false)}>Testimonios</a>
-            <a href="#before" onClick={() => setMenuOpen(false)}>Resultados</a>
-            <a href="#faq" onClick={() => setMenuOpen(false)}>Preguntas</a>
-            <a href="#formulario" onClick={() => setMenuOpen(false)}>Contacto</a>
-          </div>
-          <hr />
-          <div className="mobile-nav-footer">
-            <div style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
-              <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
+          <div>
+            <div className="mobile-nav-links">
+              <a href="#sobremi" onClick={() => setMenuOpen(false)}>Sobre mí</a>
+              <a href="#testimonios" onClick={() => setMenuOpen(false)}>Testimonios</a>
+              <a href="#before" onClick={() => setMenuOpen(false)}>Resultados</a>
+              <a href="#faq" onClick={() => setMenuOpen(false)}>Preguntas</a>
+              <a href="#formulario" onClick={() => setMenuOpen(false)}>Contacto</a>
+            </div>
+            <hr />
+            <div className="mobile-nav-footer">
+              <div style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
+                <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
+              </div>
             </div>
           </div>
         </nav>
