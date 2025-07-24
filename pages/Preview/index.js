@@ -169,11 +169,18 @@ export default function Home() {
   <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => (
       <div key={i} style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden' }}>
-        <img src={`/testimonial_${i}.webp`} alt={`Testimonio ${i}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <a href={`/testimonial_${i}.webp`} target="_blank" rel="noopener noreferrer">
+          <img
+            src={`/testimonial_${i}.webp`}
+            alt={`Testimonio ${i}`}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </a>
       </div>
     ))}
   </div>
 </section>
+
 
 
 
