@@ -365,7 +365,7 @@ const inputFocusStyle = `
         borderRadius: '6px',
         fontSize: '1rem',
         fontFamily: 'inherit',
-        width: '100%'
+        width: '70%'
       }}
     />
     <input
