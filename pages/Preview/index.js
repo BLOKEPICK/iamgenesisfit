@@ -164,16 +164,21 @@ export default function Home() {
         </section>
 
         {/* Testimonios */}
-        <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Testimonios</h2>
-          <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
-            {[1, 2, 3].map(i => (
-              <div key={i} style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden' }}>
-                <img src={`/testimonial_${i}.webp`} alt={`Testimonio ${i}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
-            ))}
-          </div>
-        </section>
+<section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
+  <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Testimonios</h2>
+  <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
+    {[...Array(10)].map((_, i) => (
+      <div key={i} style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden' }}>
+        <img
+          src={`/testimonial_${i + 1}.jpg`}
+          alt={`Testimonio ${i + 1}`}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
 
         {/* Before & After */}
         <section id="before" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
