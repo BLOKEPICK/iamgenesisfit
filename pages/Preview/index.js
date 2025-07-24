@@ -58,8 +58,13 @@ export default function Home() {
               z-index: 100;
               overflow-y: auto;
               transition: all 0.3s ease;
-              align-items: center;
               justify-content: flex-start;
+              align-items: flex-start;
+            }
+            .mobile-nav a {
+              width: 100%;
+              text-align: left;
+              padding-left: 1rem;
             }
             .mobile-nav hr {
               width: 100%;
@@ -73,6 +78,7 @@ export default function Home() {
               flex-direction: column;
               align-items: center;
               gap: 1rem;
+              width: 100%;
               margin-top: auto;
             }
           }
