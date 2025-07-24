@@ -131,10 +131,10 @@ export default function Home() {
             </div>
             <hr />
             <div className="mobile-nav-footer">
-              <div style={{ fontWeight: 700, fontSize: '3.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
+              <div style={{ fontWeight: 700, fontSize: '2.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={34} /></a>
-                <a href="https://tiktok.com" target="_blank"><FaTiktok size={34} /></a>
+                <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
+                <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
               </div>
             </div>
           </div>
