@@ -62,7 +62,7 @@ export default function Home() {
             .mobile-nav {
               display: flex;
               flex-direction: column;
-              background: #f5f5f5;
+              background: #f0f0f0;
               position: fixed;
               top: 0;
               left: 0;
@@ -72,6 +72,7 @@ export default function Home() {
               gap: 1.5rem;
               z-index: 100;
               overflow-y: auto;
+              transition: all 0.3s ease;
             }
           }
         `}</style>
@@ -79,7 +80,7 @@ export default function Home() {
 
       {/* Menú Sticky con hamburguesa solo en móvil */}
       <header style={{
-        position: 'sticky', top: 0, zIndex: 99, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
+        position: 'sticky', top: 0, zIndex: 102, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
       }}>
         <a href="#hero" style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</a>
 
@@ -92,7 +93,7 @@ export default function Home() {
         </nav>
 
         <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+          {menuOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
         </div>
       </header>
 
@@ -116,6 +117,9 @@ export default function Home() {
           </div>
           <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: '400px', borderRadius: '1rem', objectFit: 'cover' }} />
         </section>
+
+        {/* ... el resto del contenido permanece igual ... */}
+      </main>
 
         {/* Sobre mí */}
         <section id="sobremi" style={{ padding: '4rem 2rem', textAlign: 'center', background: '#F3EDEB' }}>
