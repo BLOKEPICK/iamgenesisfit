@@ -1,11 +1,15 @@
 // ✅ Página completa en un solo archivo para Genesis Fit - VERSIÓN FINAL COMPLETA
 
 import Head from "next/head";
-import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
 
   return (
     <>
@@ -52,28 +56,30 @@ export default function Home() {
             .mobile-menu-icon {
               display: block !important;
               cursor: pointer;
+              z-index: 100;
             }
 
             .mobile-nav {
               display: flex;
               flex-direction: column;
-              background: #fff;
-              position: absolute;
-              top: 70px;
+              background: #f5f5f5;
+              position: fixed;
+              top: 0;
               left: 0;
               width: 100%;
-              border-top: 1px solid #eee;
-              padding: 1rem 2rem;
-              gap: 1rem;
-              z-index: 98;
+              height: 100vh;
+              padding: 6rem 2rem 2rem;
+              gap: 1.5rem;
+              z-index: 99;
+              overflow-y: auto;
             }
           }
         `}</style>
       </Head>
 
-      {/* Menú Sticky Transparente con hamburguesa */}
+      {/* Menú Sticky con hamburguesa solo en móvil */}
       <header style={{
-        position: 'sticky', top: 0, zIndex: 99, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
+        position: 'sticky', top: 0, zIndex: 98, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
       }}>
         <a href="#hero" style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</a>
 
@@ -86,7 +92,7 @@ export default function Home() {
         </nav>
 
         <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          <FaBars size={22} />
+          {menuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
         </div>
       </header>
 
