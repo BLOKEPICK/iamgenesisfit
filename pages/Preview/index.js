@@ -56,7 +56,7 @@ export default function Home() {
             .mobile-menu-icon {
               display: block !important;
               cursor: pointer;
-              z-index: 100;
+              z-index: 101;
             }
 
             .mobile-nav {
@@ -70,7 +70,7 @@ export default function Home() {
               height: 100vh;
               padding: 6rem 2rem 2rem;
               gap: 1.5rem;
-              z-index: 99;
+              z-index: 100;
               overflow-y: auto;
             }
           }
@@ -79,7 +79,7 @@ export default function Home() {
 
       {/* Menú Sticky con hamburguesa solo en móvil */}
       <header style={{
-        position: 'sticky', top: 0, zIndex: 98, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
+        position: 'sticky', top: 0, zIndex: 99, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
       }}>
         <a href="#hero" style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</a>
 
