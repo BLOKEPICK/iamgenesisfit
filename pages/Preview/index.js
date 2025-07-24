@@ -52,26 +52,33 @@ export default function Home() {
               top: 0;
               left: 0;
               width: 100%;
-              height: 100vh;
-              padding: 6rem 2rem 2rem;
-              gap: 1.5rem;
+              height: 100dvh;
+              padding: 5rem 2rem 2rem;
+              gap: 2rem;
               z-index: 100;
               overflow-y: auto;
               transition: all 0.3s ease;
-              justify-content: flex-start;
+              justify-content: space-between;
+            }
+            .mobile-nav-links {
+              display: flex;
+              flex-direction: column;
+              gap: 1.5rem;
               align-items: flex-start;
             }
             .mobile-nav a {
               width: 100%;
               text-align: left;
-              padding-left: 1rem;
+              padding-left: 0.5rem;
+              font-weight: 600;
+              font-size: 1rem;
             }
             .mobile-nav hr {
               width: 100%;
               border: none;
               height: 1px;
               background: #ccc;
-              margin: 2rem 0 1rem;
+              margin: 1rem 0;
             }
             .mobile-nav-footer {
               display: flex;
@@ -79,7 +86,7 @@ export default function Home() {
               align-items: center;
               gap: 1rem;
               width: 100%;
-              margin-top: auto;
+              padding-bottom: 1rem;
             }
           }
           .hero-button {
@@ -114,11 +121,13 @@ export default function Home() {
 
       {menuOpen && (
         <nav className="mobile-nav">
-          <a href="#sobremi" onClick={() => setMenuOpen(false)}>Sobre mí</a>
-          <a href="#testimonios" onClick={() => setMenuOpen(false)}>Testimonios</a>
-          <a href="#before" onClick={() => setMenuOpen(false)}>Resultados</a>
-          <a href="#faq" onClick={() => setMenuOpen(false)}>Preguntas</a>
-          <a href="#formulario" onClick={() => setMenuOpen(false)}>Contacto</a>
+          <div className="mobile-nav-links">
+            <a href="#sobremi" onClick={() => setMenuOpen(false)}>Sobre mí</a>
+            <a href="#testimonios" onClick={() => setMenuOpen(false)}>Testimonios</a>
+            <a href="#before" onClick={() => setMenuOpen(false)}>Resultados</a>
+            <a href="#faq" onClick={() => setMenuOpen(false)}>Preguntas</a>
+            <a href="#formulario" onClick={() => setMenuOpen(false)}>Contacto</a>
+          </div>
           <hr />
           <div className="mobile-nav-footer">
             <div style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
