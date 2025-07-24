@@ -152,13 +152,13 @@ export default function Home() {
         </section>
 
         {/* Sobre mí */}
-        <section id="sobremi" style={{ padding: '4rem 2rem', backgroundColor: '#94715F', textAlign: 'center' }}>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Conóceme un poco más</h2>
-            <p style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-              Soy Genesis, entrenadora certificada especializada en transformar la vida de mujeres reales a través de entrenamientos accesibles y adaptados a tu ritmo. Más que ejercicios, mi objetivo es ayudarte a construir una relación sana con tu cuerpo, tu mente y tu bienestar general. He acompañado a decenas de mujeres en su proceso de cambio físico y emocional, y estoy lista para ayudarte también a ti.
-              <br /><br />
-              Cada cuerpo es distinto, por eso mis planes son personalizados y están diseñados para motivarte, inspirarte y sobre todo acompañarte en cada paso del proceso. No necesitas experiencia previa, solo ganas de empezar.
+        <section id="sobremi" style={{ padding: '5rem 2rem', background: '#E5D1C2', color: '#2D2D2D' }}>
+          <div style={{ maxWidth: '850px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Conóceme un poco más</h2>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, maxWidth: '700px' }}>
+              ¡Hola! Soy Genesis, una entrenadora que entiende lo que significa empezar desde cero, dudar y aun así seguir. Estoy aquí para guiarte, motivarte y darte herramientas reales para lograr cambios sostenibles. <br /><br />
+              Mi enfoque es empático, humano y efectivo. No importa tu punto de partida: juntas construiremos un camino que respete tu cuerpo, tus tiempos y tus objetivos. No se trata de ser perfecta, sino de ser constante. <br /><br />
+              Aquí no trabajamos por presión, sino por convicción. Porque mereces sentirte bien contigo misma. 💪
             </p>
           </div>
         </section>
