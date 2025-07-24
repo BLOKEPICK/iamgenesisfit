@@ -32,13 +32,12 @@ export default function Home() {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 const inputStyle = {
-  padding: '0.75rem 1rem',
-  border: '1px solid #ccc',
+  padding: '0.85rem',
   borderRadius: '6px',
+  border: '1px solid #ccc',
   fontSize: '1rem',
-  fontFamily: 'inherit',
+  outline: 'none',
   width: '100%',
-  resize: 'none'
 };
 
   return (
@@ -306,7 +305,6 @@ const inputStyle = {
 
 
         {/* Formulario */}
-        {/* Formulario */}
 <section id="formulario" style={{ padding: '5rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
   <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Formulario de Aplicación</h2>
   <p style={{ marginBottom: '2.5rem', color: '#4A3B36' }}>
@@ -332,38 +330,82 @@ const inputStyle = {
       name="nombre"
       placeholder="Nombre completo"
       required
-      style={inputStyle}
+      style={{
+        padding: '0.75rem 1rem',
+        border: '1px solid #ccc',
+        borderRadius: '6px',
+        fontSize: '1rem',
+        fontFamily: 'inherit',
+        width: '100%'
+      }}
     />
     <input
       type="email"
       name="email"
       placeholder="Correo electrónico"
       required
-      style={inputStyle}
+      style={{
+        padding: '0.75rem 1rem',
+        border: '1px solid #ccc',
+        borderRadius: '6px',
+        fontSize: '1rem',
+        fontFamily: 'inherit',
+        width: '100%'
+      }}
     />
     <input
       type="text"
       name="dias"
       placeholder="¿Cuántos días deseas entrenar?"
-      style={inputStyle}
+      style={{
+        padding: '0.75rem 1rem',
+        border: '1px solid #ccc',
+        borderRadius: '6px',
+        fontSize: '1rem',
+        fontFamily: 'inherit',
+        width: '100%'
+      }}
     />
     <input
       type="text"
       name="condicion"
       placeholder="¿Alguna condición física?"
-      style={inputStyle}
+      style={{
+        padding: '0.75rem 1rem',
+        border: '1px solid #ccc',
+        borderRadius: '6px',
+        fontSize: '1rem',
+        fontFamily: 'inherit',
+        width: '100%'
+      }}
     />
     <textarea
       name="meta"
       placeholder="¿Cuál es tu meta que buscas lograr?"
       rows={3}
-      style={inputStyle}
+      style={{
+        padding: '0.75rem 1rem',
+        border: '1px solid #ccc',
+        borderRadius: '6px',
+        fontSize: '1rem',
+        fontFamily: 'inherit',
+        width: '100%',
+        resize: 'none'
+      }}
     ></textarea>
     <textarea
       name="actividad"
       placeholder="¿Realizas alguna actividad física actualmente?"
       rows={3}
-      style={inputStyle}
+      style={{
+        padding: '0.75rem 1rem',
+        border: '1px solid #ccc',
+        borderRadius: '6px',
+        fontSize: '1rem',
+        fontFamily: 'inherit',
+        width: '100%',
+        resize: 'none'
+      }}
     ></textarea>
     <button
       type="submit"
@@ -375,8 +417,7 @@ const inputStyle = {
         fontWeight: '600',
         fontSize: '1rem',
         border: 'none',
-        cursor: 'pointer',
-        transition: 'background-color 0.3s ease'
+        cursor: 'pointer'
       }}
       onMouseOver={(e) => e.target.style.backgroundColor = '#B89E90'}
       onMouseOut={(e) => e.target.style.backgroundColor = '#94715F'}
@@ -386,6 +427,7 @@ const inputStyle = {
   </form>
 </section>
 
+      </main>
 
       {/* Footer estilo Alofoke */}
       <footer style={{ backgroundColor: '#000', color: '#fff', padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', textAlign: 'center' }}>
