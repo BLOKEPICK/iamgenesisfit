@@ -2,7 +2,7 @@
 
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -186,21 +186,17 @@ export default function Home() {
       </main>
 
       {/* Footer estilo Alofoke */}
-      <footer style={{ backgroundColor: '#000', color: '#fff', padding: '3rem 2rem', textAlign: 'center' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <a href="https://www.instagram.com/GenesisFit" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.2rem' }}>Instagram</a>
-            <a href="https://www.tiktok.com/@genesisfit" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.2rem' }}>TikTok</a>
-          </div>
-          <div style={{ fontSize: '0.9rem', color: '#ccc', marginTop: '1rem' }}>
-            © Copyright 2025 Genesis Fit. Todos los derechos reservados.
-          </div>
-          <div style={{ fontSize: '0.85rem', color: '#aaa', display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <a href="/privacidad" style={{ color: '#aaa', textDecoration: 'underline' }}>Política de Privacidad</a>
-            <a href="/terminos" style={{ color: '#aaa', textDecoration: 'underline' }}>Términos y Condiciones</a>
-            <span>Diseñado por <a href="https://www.instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', textDecoration: 'underline' }}>@GeorgeValdezR</a></span>
-          </div>
+      <footer style={{ backgroundColor: '#000', color: '#fff', padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', textAlign: 'center' }}>
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <a href="https://instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><FaTiktok size={24} /></a>
         </div>
+        <div style={{ fontSize: '0.9rem' }}>© Copyright 2025 Genesis Fit. Todos los derechos reservados.</div>
+        <div style={{ fontSize: '0.9rem', display: 'flex', gap: '1rem' }}>
+          <a href="/privacy">Política de Privacidad</a>
+          <a href="/terms">Términos y Condiciones</a>
+        </div>
+        <div style={{ fontSize: '0.9rem' }}>Diseñado por <a href="https://instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer">@GeorgeValdezR</a></div>
       </footer>
     </>
   );
