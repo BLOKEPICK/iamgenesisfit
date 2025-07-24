@@ -73,6 +73,24 @@ export default function Home() {
               z-index: 100;
               overflow-y: auto;
               transition: all 0.3s ease;
+              align-items: center;
+              justify-content: flex-start;
+            }
+
+            .mobile-nav hr {
+              width: 100%;
+              border: none;
+              height: 1px;
+              background: #ccc;
+              margin: 2rem 0 1rem;
+            }
+
+            .mobile-nav-footer {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 1rem;
+              margin-top: auto;
             }
           }
 
@@ -118,6 +136,14 @@ export default function Home() {
           <a href="#before" onClick={() => setMenuOpen(false)}>Resultados</a>
           <a href="#faq" onClick={() => setMenuOpen(false)}>Preguntas</a>
           <a href="#formulario" onClick={() => setMenuOpen(false)}>Contacto</a>
+          <hr />
+          <div className="mobile-nav-footer">
+            <div style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <a href="https://instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><FaTiktok size={24} /></a>
+            </div>
+          </div>
         </nav>
       )}
 
@@ -138,34 +164,6 @@ export default function Home() {
             <a href="#formulario" className="hero-button">Comienza Ahora</a>
           </div>
           <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: '400px', borderRadius: '1rem', objectFit: 'cover' }} />
-        </section>
-
-        {/* Sobre mí */}
-        <section id="sobremi" style={{ padding: '4rem 2rem', textAlign: 'center', background: '#F3EDEB' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Sobre mí</h2>
-          <p style={{ maxWidth: '700px', margin: '0 auto' }}>Soy Genesis, entrenadora personal especializada en mujeres. Mi enfoque va más allá del físico: busco que cada mujer se sienta fuerte, segura y en control de su vida.</p>
-        </section>
-
-        {/* Testimonios */}
-        <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Testimonios</h2>
-          <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
-            {[1, 2, 3].map(i => (
-              <div key={i} style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden' }}>
-                <img src={`/testimonial_${i}.webp`} alt={`Testimonio ${i}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Before & After */}
-        <section id="before" style={{ padding: '4rem 2rem', background: '#F3EDEB', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '2rem' }}>Resultados Reales</h2>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
-            {[1, 2, 3].map(i => (
-              <img key={i} src={`/before_after_${i}.webp`} alt={`Resultado ${i}`} style={{ width: '280px', height: '360px', objectFit: 'cover', borderRadius: '1rem' }} />
-            ))}
-          </div>
         </section>
 
         {/* FAQ */}
