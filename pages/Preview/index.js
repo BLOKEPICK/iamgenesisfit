@@ -78,7 +78,6 @@ export default function Home() {
         `}</style>
       </Head>
 
-      {/* Menú Sticky con hamburguesa solo en móvil */}
       <header style={{
         position: 'sticky', top: 0, zIndex: 102, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
       }}>
@@ -108,7 +107,6 @@ export default function Home() {
       )}
 
       <main>
-        {/* Hero Section */}
         <section id="hero" style={{ background: '#fff', padding: '5rem 2rem', display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
           <div style={{ maxWidth: '500px' }}>
             <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Únete al cambio con <strong>Genesis Fit</strong></h1>
@@ -117,7 +115,6 @@ export default function Home() {
           </div>
           <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: '400px', borderRadius: '1rem', objectFit: 'cover' }} />
         </section>
-      </main>
 
         {/* Sobre mí */}
         <section id="sobremi" style={{ padding: '4rem 2rem', textAlign: 'center', background: '#F3EDEB' }}>
