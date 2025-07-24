@@ -152,17 +152,16 @@ export default function Home() {
         </section>
 
         {/* Sobre mí */}
-        <section id="sobremi" style={{ padding: '5rem 2rem', backgroundColor: '#94715F', color: '#fff', textAlign: 'left', display: 'flex', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '900px' }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Conóceme, soy Genesis</h2>
+        <section id="sobremi" style={{ padding: '4rem 2rem', backgroundColor: '#94715F', textAlign: 'center' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Conóceme un poco más</h2>
             <p style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-              Mi pasión es ayudarte a alcanzar tu mejor versión. Como entrenadora personal, mi enfoque va más allá de lo físico: me interesa conectar contigo, conocer tu historia y acompañarte paso a paso en este camino de transformación. Trabajo exclusivamente con mujeres porque conozco sus desafíos, sus miedos, pero también su fuerza y determinación.
+              Soy Genesis, entrenadora certificada especializada en transformar la vida de mujeres reales a través de entrenamientos accesibles y adaptados a tu ritmo. Más que ejercicios, mi objetivo es ayudarte a construir una relación sana con tu cuerpo, tu mente y tu bienestar general. He acompañado a decenas de mujeres en su proceso de cambio físico y emocional, y estoy lista para ayudarte también a ti.
               <br /><br />
-              Cada programa que diseño tiene como objetivo empoderarte, devolverte la confianza y ayudarte a construir una vida más saludable sin caer en dietas extremas ni entrenamientos imposibles. Esta es tu oportunidad de cambiar desde adentro hacia afuera.
+              Cada cuerpo es distinto, por eso mis planes son personalizados y están diseñados para motivarte, inspirarte y sobre todo acompañarte en cada paso del proceso. No necesitas experiencia previa, solo ganas de empezar.
             </p>
           </div>
         </section>
-      </main>
 
         {/* Testimonios */}
         <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
