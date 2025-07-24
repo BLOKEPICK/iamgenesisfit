@@ -1,8 +1,12 @@
 // ✅ Página completa en un solo archivo para Genesis Fit - VERSIÓN FINAL COMPLETA
 
 import Head from "next/head";
+import { useState } from "react";
+import { FaBars } from "react-icons/fa";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -24,22 +28,53 @@ export default function Home() {
             color: #fff;
           }
           a { color: inherit; text-decoration: none; }
+          @media (max-width: 768px) {
+            nav.desktop-menu { display: none; }
+            .mobile-menu-icon { display: block; cursor: pointer; }
+            .mobile-nav {
+              display: flex;
+              flex-direction: column;
+              background: #fff;
+              position: absolute;
+              top: 70px;
+              left: 0;
+              width: 100%;
+              border-top: 1px solid #eee;
+              padding: 1rem 2rem;
+              gap: 1rem;
+            }
+          }
         `}</style>
       </Head>
 
-      {/* Menú Sticky Transparente */}
+      {/* Menú Sticky Transparente con hamburguesa */}
       <header style={{
         position: 'sticky', top: 0, zIndex: 99, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
       }}>
         <a href="#hero" style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</a>
-        <nav style={{ display: 'flex', gap: '1.5rem', fontSize: '0.95rem', fontWeight: 600 }}>
+
+        <nav className="desktop-menu" style={{ display: 'flex', gap: '1.5rem', fontSize: '0.95rem', fontWeight: 600 }}>
           <a href="#sobremi">Sobre mí</a>
           <a href="#testimonios">Testimonios</a>
           <a href="#before">Resultados</a>
           <a href="#faq">Preguntas</a>
           <a href="#formulario">Contacto</a>
         </nav>
+
+        <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          <FaBars size={22} />
+        </div>
       </header>
+
+      {menuOpen && (
+        <nav className="mobile-nav">
+          <a href="#sobremi" onClick={() => setMenuOpen(false)}>Sobre mí</a>
+          <a href="#testimonios" onClick={() => setMenuOpen(false)}>Testimonios</a>
+          <a href="#before" onClick={() => setMenuOpen(false)}>Resultados</a>
+          <a href="#faq" onClick={() => setMenuOpen(false)}>Preguntas</a>
+          <a href="#formulario" onClick={() => setMenuOpen(false)}>Contacto</a>
+        </nav>
+      )}
 
       <main>
         {/* Hero Section */}
