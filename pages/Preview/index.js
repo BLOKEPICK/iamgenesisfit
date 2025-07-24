@@ -32,33 +32,18 @@ export default function Home() {
             color: #fff;
           }
           a { color: inherit; text-decoration: none; }
-
           .desktop-menu {
             display: flex;
             gap: 1.5rem;
             font-size: 0.95rem;
             font-weight: 600;
           }
-
-          .mobile-menu-icon {
-            display: none;
-          }
-
-          .mobile-nav {
-            display: none;
-          }
+          .mobile-menu-icon { display: none; }
+          .mobile-nav { display: none; }
 
           @media (max-width: 768px) {
-            .desktop-menu {
-              display: none !important;
-            }
-
-            .mobile-menu-icon {
-              display: block !important;
-              cursor: pointer;
-              z-index: 101;
-            }
-
+            .desktop-menu { display: none !important; }
+            .mobile-menu-icon { display: block !important; cursor: pointer; z-index: 101; }
             .mobile-nav {
               display: flex;
               flex-direction: column;
@@ -76,7 +61,6 @@ export default function Home() {
               align-items: center;
               justify-content: flex-start;
             }
-
             .mobile-nav hr {
               width: 100%;
               border: none;
@@ -84,7 +68,6 @@ export default function Home() {
               background: #ccc;
               margin: 2rem 0 1rem;
             }
-
             .mobile-nav-footer {
               display: flex;
               flex-direction: column;
@@ -93,7 +76,6 @@ export default function Home() {
               margin-top: auto;
             }
           }
-
           .hero-button {
             background-color: #94715F;
             color: #fff;
@@ -104,18 +86,14 @@ export default function Home() {
             cursor: pointer;
             transition: background-color 0.3s ease;
           }
-
           .hero-button:hover {
             background-color: #B89E90;
           }
         `}</style>
       </Head>
 
-      <header style={{
-        position: 'sticky', top: 0, zIndex: 102, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem'
-      }}>
+      <header style={{ position: 'sticky', top: 0, zIndex: 102, background: 'rgba(255,255,255,0.95)', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem' }}>
         <a href="#hero" style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</a>
-
         <nav className="desktop-menu">
           <a href="#sobremi">Sobre mí</a>
           <a href="#testimonios">Testimonios</a>
@@ -123,7 +101,6 @@ export default function Home() {
           <a href="#faq">Preguntas</a>
           <a href="#formulario">Contacto</a>
         </nav>
-
         <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
         </div>
@@ -140,24 +117,15 @@ export default function Home() {
           <div className="mobile-nav-footer">
             <div style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <a href="https://instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><FaTiktok size={24} /></a>
+              <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
+              <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
             </div>
           </div>
         </nav>
       )}
 
       <main>
-        <section id="hero" style={{ 
-          background: 'linear-gradient(to right, #fff 60%, rgba(183, 158, 144, 0.15))', 
-          padding: '5rem 2rem', 
-          display: 'flex', 
-          alignItems: 'center', 
-          flexWrap: 'wrap', 
-          justifyContent: 'center', 
-          gap: '2rem', 
-          textAlign: 'center' 
-        }}>
+        <section id="hero" style={{ background: 'linear-gradient(to right, #fff 60%, rgba(183, 158, 144, 0.15))', padding: '5rem 2rem', display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', textAlign: 'center' }}>
           <div style={{ maxWidth: '500px' }}>
             <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Únete al cambio con <strong>Genesis Fit</strong></h1>
             <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>Entrenamiento personalizado para mujeres que desean transformar su cuerpo y su mente.</p>
