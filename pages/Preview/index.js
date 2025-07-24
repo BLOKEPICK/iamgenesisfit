@@ -6,6 +6,27 @@ import { FaBars, FaTimes, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+    setLightboxIndex((prev) => (prev + 1) % 10);
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setLightboxIndex((prev) => (prev - 1 + 10) % 10);
+  };
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
@@ -18,6 +39,7 @@ export default function Home() {
         <meta name="description" content="Acompaña a Genesis Fit en tu proceso de cambio físico y mental. Programas únicos, testimonios reales, asesoría personalizada." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+
         <style>{`
           html { scroll-behavior: smooth; }
           body {
@@ -102,6 +124,48 @@ export default function Home() {
           .hero-button:hover {
             background-color: #B89E90;
           }
+            .lightbox-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  flex-direction: column;
+}
+.lightbox-image {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+.lightbox-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.lightbox-button {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
         `}</style>
       </Head>
 
@@ -163,23 +227,37 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonios */}
+{/* Testimonios */}
 <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
   <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Testimonios</h2>
   <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
-    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => (
-      <div key={i} style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden' }}>
-        <a href={`/testimonial_${i}.webp`} target="_blank" rel="noopener noreferrer">
-          <img
-            src={`/testimonial_${i}.webp`}
-            alt={`Testimonio ${i}`}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        </a>
+    {[...Array(10)].map((_, i) => (
+      <div
+        key={i}
+        style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden', cursor: 'pointer' }}
+        onClick={() => openLightbox(i)}
+      >
+        <img
+          src={`/testimonial_${i + 1}.webp`}
+          alt={`Testimonio ${i + 1}`}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
       </div>
     ))}
   </div>
+
+  {lightboxOpen && (
+    <div className="lightbox-overlay" onClick={closeLightbox}>
+      <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
+      <img src={`/testimonial_${lightboxIndex + 1}.webp`} alt={`Testimonio ${lightboxIndex + 1}`} className="lightbox-image" />
+      <div className="lightbox-controls">
+        <button className="lightbox-button" onClick={prevImage}>Anterior</button>
+        <button className="lightbox-button" onClick={nextImage}>Siguiente</button>
+      </div>
+    </div>
+  )}
 </section>
+
 
 
 
