@@ -87,7 +87,6 @@ export default function Home() {
               gap: 1rem;
               width: 100%;
               padding-bottom: 2rem;
-              margin-top: auto;
             }
           }
           .hero-button {
@@ -132,7 +131,7 @@ export default function Home() {
             </div>
             <hr />
             <div className="mobile-nav-footer">
-              <div style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
+              <div style={{ fontWeight: 700, fontSize: '2.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
               <div style={{ display: 'flex', gap: '1rem' }}>
                 <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
                 <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
@@ -152,6 +151,7 @@ export default function Home() {
           <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: '400px', borderRadius: '1rem', objectFit: 'cover' }} />
         </section>
 
+        {/* Sobre mí */}
         <section id="sobremi" style={{ padding: '5rem 2rem', backgroundColor: '#94715F', color: '#fff', textAlign: 'left', display: 'flex', justifyContent: 'center' }}>
           <div style={{ maxWidth: '900px' }}>
             <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Conóceme, soy Genesis</h2>
