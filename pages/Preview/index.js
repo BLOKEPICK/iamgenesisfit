@@ -31,6 +31,15 @@ export default function Home() {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
+const inputStyle = {
+  padding: '0.75rem 1rem',
+  border: '1px solid #ccc',
+  borderRadius: '6px',
+  fontSize: '1rem',
+  fontFamily: 'inherit',
+  width: '100%',
+  resize: 'none'
+};
 
   return (
     <>
@@ -297,20 +306,86 @@ export default function Home() {
 
 
         {/* Formulario */}
-        <section id="formulario" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '1rem' }}>Formulario de Aplicación</h2>
-          <p style={{ marginBottom: '2rem' }}>Responde este formulario para iniciar tu transformación.</p>
-          <form action="https://formspree.io/f/mayzrwry" method="POST" style={{ maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <input type="text" name="nombre" placeholder="Nombre" required />
-            <input type="email" name="email" placeholder="Correo" required />
-            <input type="text" name="dias" placeholder="¿Cuántos días deseas entrenar?" />
-            <input type="text" name="condicion" placeholder="¿Alguna condición física?" />
-            <textarea name="meta" placeholder="¿Cuál es tu meta que buscas lograr?" rows={3}></textarea>
-            <textarea name="actividad" placeholder="¿Realiza usted alguna actividad física? ¿Cuáles?" rows={3}></textarea>
-            <button type="submit" style={{ backgroundColor: '#94715F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '6px', fontWeight: 600, border: 'none', cursor: 'pointer' }}>Enviar</button>
-          </form>
-        </section>
-      </main>
+        {/* Formulario */}
+<section id="formulario" style={{ padding: '5rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
+  <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Formulario de Aplicación</h2>
+  <p style={{ marginBottom: '2.5rem', color: '#4A3B36' }}>
+    Responde este formulario para iniciar tu transformación. ¡Estoy aquí para acompañarte en cada paso!
+  </p>
+  <form
+    action="https://formspree.io/f/mayzrwry"
+    method="POST"
+    style={{
+      maxWidth: '600px',
+      margin: '0 auto',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.25rem',
+      background: '#fff',
+      padding: '2rem',
+      borderRadius: '12px',
+      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)'
+    }}
+  >
+    <input
+      type="text"
+      name="nombre"
+      placeholder="Nombre completo"
+      required
+      style={inputStyle}
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Correo electrónico"
+      required
+      style={inputStyle}
+    />
+    <input
+      type="text"
+      name="dias"
+      placeholder="¿Cuántos días deseas entrenar?"
+      style={inputStyle}
+    />
+    <input
+      type="text"
+      name="condicion"
+      placeholder="¿Alguna condición física?"
+      style={inputStyle}
+    />
+    <textarea
+      name="meta"
+      placeholder="¿Cuál es tu meta que buscas lograr?"
+      rows={3}
+      style={inputStyle}
+    ></textarea>
+    <textarea
+      name="actividad"
+      placeholder="¿Realizas alguna actividad física actualmente?"
+      rows={3}
+      style={inputStyle}
+    ></textarea>
+    <button
+      type="submit"
+      style={{
+        backgroundColor: '#94715F',
+        color: '#fff',
+        padding: '0.85rem',
+        borderRadius: '6px',
+        fontWeight: '600',
+        fontSize: '1rem',
+        border: 'none',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease'
+      }}
+      onMouseOver={(e) => e.target.style.backgroundColor = '#B89E90'}
+      onMouseOut={(e) => e.target.style.backgroundColor = '#94715F'}
+    >
+      Enviar
+    </button>
+  </form>
+</section>
+
 
       {/* Footer estilo Alofoke */}
       <footer style={{ backgroundColor: '#000', color: '#fff', padding: '3rem 2rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', textAlign: 'center' }}>
