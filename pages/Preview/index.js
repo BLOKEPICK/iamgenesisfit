@@ -32,13 +32,15 @@ export default function Home() {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 const inputStyle = {
-  padding: '0.85rem',
+  padding: '0.75rem 1rem',
   borderRadius: '6px',
   border: '1px solid #ccc',
   fontSize: '1rem',
   outline: 'none',
   width: '100%',
+  boxSizing: 'border-box',
 };
+
 
   return (
     <>
