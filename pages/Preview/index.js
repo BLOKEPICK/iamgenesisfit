@@ -117,8 +117,6 @@ export default function Home() {
           </div>
           <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: '400px', borderRadius: '1rem', objectFit: 'cover' }} />
         </section>
-
-        {/* ... el resto del contenido permanece igual ... */}
       </main>
 
         {/* Sobre mí */}
