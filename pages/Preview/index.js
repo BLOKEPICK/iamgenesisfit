@@ -75,6 +75,21 @@ export default function Home() {
               transition: all 0.3s ease;
             }
           }
+
+          .hero-button {
+            background-color: #94715F;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+
+          .hero-button:hover {
+            background-color: #B89E90;
+          }
         `}</style>
       </Head>
 
@@ -107,11 +122,11 @@ export default function Home() {
       )}
 
       <main>
-        <section id="hero" style={{ background: '#fff', padding: '5rem 2rem', display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
+        <section id="hero" style={{ background: '#fff', padding: '5rem 2rem', display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', textAlign: 'center' }}>
           <div style={{ maxWidth: '500px' }}>
             <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Únete al cambio con <strong>Genesis Fit</strong></h1>
             <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>Entrenamiento personalizado para mujeres que desean transformar su cuerpo y su mente.</p>
-            <a href="#formulario" style={{ backgroundColor: '#94715F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '6px', fontWeight: 600 }}>Comienza Ahora</a>
+            <a href="#formulario" className="hero-button">Comienza Ahora</a>
           </div>
           <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: '400px', borderRadius: '1rem', objectFit: 'cover' }} />
         </section>
