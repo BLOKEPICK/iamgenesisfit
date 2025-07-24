@@ -87,7 +87,6 @@ export default function Home() {
               gap: 1rem;
               width: 100%;
               padding-bottom: 2rem;
-              margin-top: auto;
             }
           }
           .hero-button {
@@ -132,7 +131,7 @@ export default function Home() {
             </div>
             <hr />
             <div className="mobile-nav-footer">
-              <div style={{ fontWeight: 700, fontSize: '1.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
+              <div style={{ fontWeight: 700, fontSize: '2.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
               <div style={{ display: 'flex', gap: '1rem' }}>
                 <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
                 <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
@@ -152,21 +151,17 @@ export default function Home() {
           <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: '400px', borderRadius: '1rem', objectFit: 'cover' }} />
         </section>
 
-        <section id="sobremi" style={{ padding: '5rem 2rem', backgroundColor: '#94715F', color: '#fff', textAlign: 'center' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Sobre Mí</h2>
+        {/* Sobre mí */}
+        <section id="sobremi" style={{ padding: '4rem 2rem', backgroundColor: '#94715F', textAlign: 'center' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Conóceme un poco más</h2>
             <p style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
-              Soy Genesis, entrenadora personal especializada en mujeres que desean transformar su cuerpo, mente y estilo de vida.
-              Mi enfoque combina entrenamiento funcional, bienestar emocional y hábitos sostenibles.
+              Soy Genesis, entrenadora certificada especializada en transformar la vida de mujeres reales a través de entrenamientos accesibles y adaptados a tu ritmo. Más que ejercicios, mi objetivo es ayudarte a construir una relación sana con tu cuerpo, tu mente y tu bienestar general. He acompañado a decenas de mujeres en su proceso de cambio físico y emocional, y estoy lista para ayudarte también a ti.
               <br /><br />
-              He trabajado con decenas de mujeres que, como tú, buscaban una guía real, humana y efectiva. Aquí no se trata solo de bajar de peso,
-              sino de ganar confianza, energía y amor propio.
-              <br /><br />
-              Este espacio es para ti, para que te sientas segura, acompañada y motivada. No estás sola en este proceso. Vamos juntas.
+              Cada cuerpo es distinto, por eso mis planes son personalizados y están diseñados para motivarte, inspirarte y sobre todo acompañarte en cada paso del proceso. No necesitas experiencia previa, solo ganas de empezar.
             </p>
           </div>
         </section>
-      </main>
 
         {/* Testimonios */}
         <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
