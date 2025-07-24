@@ -1,4 +1,4 @@
-// ✅ Página completa en un solo archivo para Genesis Fit
+// ✅ Página completa en un solo archivo para Genesis Fit - VERSIÓN FINAL COMPLETA
 
 import Head from "next/head";
 
@@ -42,88 +42,81 @@ export default function Home() {
       </header>
 
       <main>
-        {/* Hero */}
-        <section id="hero" style={{ background: '#F3EDEB', padding: '6rem 2rem', textAlign: 'center' }}>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Transforma tu cuerpo y mente con <strong>Genesis Fit</strong></h1>
-          <p style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 2rem' }}>Acompañamiento real para mujeres reales. ¡Cambia tu vida desde hoy!</p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+        {/* Hero Section */}
+        <section id="hero" style={{ background: '#fff', padding: '5rem 2rem', display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
+          <div style={{ maxWidth: '500px' }}>
+            <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Únete al cambio con <strong>Genesis Fit</strong></h1>
+            <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>Entrenamiento personalizado para mujeres que desean transformar su cuerpo y su mente.</p>
             <a href="#formulario" style={{ backgroundColor: '#94715F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '6px', fontWeight: 600 }}>Comienza Ahora</a>
           </div>
+          <img src="/trainer_main.webp" alt="Genesis" style={{ maxWidth: '400px', borderRadius: '1rem', objectFit: 'cover' }} />
         </section>
 
         {/* Sobre mí */}
-        <section id="sobremi" style={{ padding: '5rem 2rem', backgroundColor: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <section id="sobremi" style={{ padding: '4rem 2rem', textAlign: 'center', background: '#F3EDEB' }}>
           <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Sobre mí</h2>
-          <p style={{ maxWidth: '700px', textAlign: 'center' }}>
-            Soy Genesis, entrenadora personal especializada en mujeres. Mi objetivo es ayudarte a transformar tu estilo de vida con rutinas efectivas, nutrición personalizada y un acompañamiento constante. ¡Juntas lograremos resultados duraderos!
-          </p>
+          <p style={{ maxWidth: '700px', margin: '0 auto' }}>Soy Genesis, entrenadora personal especializada en mujeres. Mi enfoque va más allá del físico: busco que cada mujer se sienta fuerte, segura y en control de su vida.</p>
         </section>
 
         {/* Testimonios */}
-        <section id="testimonios" style={{ background: '#f9f9f9', padding: '5rem 2rem' }}>
+        <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Testimonios</h2>
-          <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto' }}>
-            {[1,2,3,4].map(i => (
-              <div key={i} style={{ flex: '0 0 300px', background: '#fff', borderRadius: '8px', padding: '1rem', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }}>
-                <img src={`/testimonio${i}.webp`} alt={`Testimonio ${i}`} style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: '6px' }} />
+          <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
+            {[1, 2, 3].map(i => (
+              <div key={i} style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden' }}>
+                <img src={`/testimonial_${i}.webp`} alt={`Testimonio ${i}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             ))}
           </div>
         </section>
 
         {/* Before & After */}
-        <section id="before" style={{ padding: '5rem 2rem', backgroundColor: '#F3EDEB' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Resultados Reales</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+        <section id="before" style={{ padding: '4rem 2rem', background: '#F3EDEB', textAlign: 'center' }}>
+          <h2 style={{ marginBottom: '2rem' }}>Resultados Reales</h2>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
             {[1, 2, 3].map(i => (
-              <div key={i} style={{ background: '#fff', padding: '1rem', borderRadius: '8px', boxShadow: '0 0 10px rgba(0,0,0,0.05)' }}>
-                <img src={`/beforeafter${i}.webp`} alt={`Antes y después ${i}`} style={{ width: '100%', borderRadius: '6px' }} />
-              </div>
+              <img key={i} src={`/before_after_${i}.webp`} alt={`Resultado ${i}`} style={{ width: '280px', height: '360px', objectFit: 'cover', borderRadius: '1rem' }} />
             ))}
           </div>
         </section>
 
         {/* FAQ */}
-        <section id="faq" style={{ background: '#fff', padding: '5rem 2rem' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>Preguntas frecuentes</h2>
-          <p style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            Si tienes alguna otra pregunta, no dudes en <a href="https://wa.me/18292520244" style={{ color: '#94715F', fontWeight: 600 }}>escribirnos</a>.
-          </p>
+        <section id="faq" style={{ padding: '4rem 2rem', background: '#fff' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Preguntas Frecuentes</h2>
+          <p style={{ textAlign: 'center', marginBottom: '2rem' }}>Si tienes alguna otra pregunta, <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={{ color: '#94715F', textDecoration: 'underline' }}>escríbenos por WhatsApp</a>.</p>
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
-              {[
-                ['¿Este programa es solo para mujeres?', 'Sí, está enfocado 100% en mujeres.'],
-                ['¿Necesito experiencia previa?', 'No, trabajamos desde principiantes hasta avanzadas.'],
-                ['¿Incluye nutrición?', 'Sí, se adapta a tus metas y hábitos actuales.'],
-                ['¿Cuántos días a la semana?', 'Tú decides, pero te recomendamos mínimo 3.'],
-                ['¿Tengo que ir al gym?', 'No es obligatorio. Puedes entrenar en casa o gimnasio.'],
-                ['¿Hay seguimiento personalizado?', 'Sí, 100% personalizado y con contacto directo.']
-              ].map(([q, a], i) => (
-                <li key={i} style={{ marginBottom: '1.5rem' }}>
-                  <strong>{q}</strong>
-                  <p>{a}</p>
-                </li>
-              ))}
-            </ul>
+            {[
+              ["¿Necesito experiencia previa?", "No, todos los niveles son bienvenidos."],
+              ["¿Dónde se realizan los entrenamientos?", "Son rutinas que puedes seguir desde casa o en gimnasio."],
+              ["¿Los planes incluyen nutrición?", "Sí, se incluye una guía nutricional personalizada."],
+              ["¿Hay seguimiento semanal?", "Sí, tendrás contacto constante conmigo para evaluar tu progreso."],
+              ["¿Qué duración tiene el plan?", "Cada plan es mensual, renovable."],
+            ].map(([q, a], idx) => (
+              <details key={idx} style={{ marginBottom: '1rem' }}>
+                <summary style={{ cursor: 'pointer', fontWeight: '600', fontSize: '1rem' }}>{q}</summary>
+                <p style={{ marginTop: '0.5rem' }}>{a}</p>
+              </details>
+            ))}
           </div>
         </section>
 
         {/* Formulario */}
-        <section id="formulario" style={{ background: '#F3EDEB', padding: '5rem 2rem' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Contáctame</h2>
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style={{ maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <input type="text" name="nombre" placeholder="Nombre" required style={inputStyle} />
-            <input type="email" name="email" placeholder="Correo" required style={inputStyle} />
-            <input type="text" name="dias" placeholder="¿Cuántos días deseas entrenar?" style={inputStyle} />
-            <input type="text" name="condicion" placeholder="¿Alguna condición física?" style={inputStyle} />
-            <textarea name="meta" placeholder="¿Cuál es tu meta que buscas lograr?" rows={3} style={inputStyle}></textarea>
-            <textarea name="actividad" placeholder="¿Realiza alguna actividad física? ¿Cuáles?" rows={3} style={inputStyle}></textarea>
-            <button type="submit" style={{ background: '#94715F', color: '#fff', padding: '1rem', fontWeight: 600, border: 'none', borderRadius: '6px' }}>Enviar</button>
+        <section id="formulario" style={{ padding: '4rem 2rem', background: '#F3EDEB', textAlign: 'center' }}>
+          <h2 style={{ marginBottom: '1rem' }}>Formulario de Aplicación</h2>
+          <p style={{ marginBottom: '2rem' }}>Responde este formulario para iniciar tu transformación.</p>
+          <form action="https://formspree.io/f/mayzrwry" method="POST" style={{ maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input type="email" name="email" placeholder="Correo" required />
+            <input type="text" name="dias" placeholder="¿Cuántos días deseas entrenar?" />
+            <input type="text" name="condicion" placeholder="¿Alguna condición física?" />
+            <textarea name="meta" placeholder="¿Cuál es tu meta que buscas lograr?" rows={3}></textarea>
+            <textarea name="actividad" placeholder="¿Realiza usted alguna actividad física? ¿Cuáles?" rows={3}></textarea>
+            <button type="submit" style={{ backgroundColor: '#94715F', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '6px', fontWeight: 600, border: 'none', cursor: 'pointer' }}>Enviar</button>
           </form>
         </section>
       </main>
 
-      {/* Footer */}
+      {/* Footer estilo Alofoke */}
       <footer style={{ backgroundColor: '#000', color: '#fff', padding: '3rem 2rem', textAlign: 'center' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
@@ -143,10 +136,3 @@ export default function Home() {
     </>
   );
 }
-
-const inputStyle = {
-  padding: '0.75rem 1rem',
-  borderRadius: '6px',
-  border: 'none',
-  fontSize: '1rem'
-};
