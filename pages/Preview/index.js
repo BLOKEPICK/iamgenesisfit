@@ -196,7 +196,7 @@ const inputFocusStyle = `
           <a href="#testimonios">Testimonios</a>
           <a href="#before">Resultados</a>
           <a href="#faq">Preguntas</a>
-          <a href="#formulario">Contacto</a>
+          <a href="#formulario">Aplicación</a>
         </nav>
         <div className="mobile-menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
@@ -211,7 +211,7 @@ const inputFocusStyle = `
               <a href="#testimonios" onClick={() => setMenuOpen(false)}>Testimonios</a>
               <a href="#before" onClick={() => setMenuOpen(false)}>Resultados</a>
               <a href="#faq" onClick={() => setMenuOpen(false)}>Preguntas</a>
-              <a href="#formulario" onClick={() => setMenuOpen(false)}>Contacto</a>
+              <a href="#formulario" onClick={() => setMenuOpen(false)}>Aplicación</a>
             </div>
             <hr />
             <div className="mobile-nav-footer">
