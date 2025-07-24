@@ -39,7 +39,16 @@ const inputStyle = {
   outline: 'none',
   width: '100%',
   boxSizing: 'border-box',
+  transition: 'all 0.3s ease',
 };
+
+const inputFocusStyle = `
+  input:focus, textarea:focus {
+    border-color: #94715F;
+    box-shadow: 0 0 0 2px rgba(148, 113, 95, 0.25);
+  }
+`;
+
 
 
   return (
@@ -175,6 +184,7 @@ const inputStyle = {
   font-size: 2rem;
   cursor: pointer;
 }
+  ${inputFocusStyle}
 
         `}</style>
       </Head>
@@ -313,20 +323,23 @@ const inputStyle = {
     Responde este formulario para iniciar tu transformación. ¡Estoy aquí para acompañarte en cada paso!
   </p>
   <form
-    action="https://formspree.io/f/mayzrwry"
-    method="POST"
-    style={{
-      maxWidth: '600px',
-      margin: '0 auto',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '1.25rem',
-      background: '#fff',
-      padding: '2rem',
-      borderRadius: '12px',
-      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)'
-    }}
-  >
+  action="https://formspree.io/f/mayzrwry"
+  method="POST"
+  style={{
+    width: '100%',
+    maxWidth: '600px',
+    margin: '0 auto',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1.25rem',
+    background: '#fff',
+    padding: '2rem',
+    borderRadius: '12px',
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)',
+    boxSizing: 'border-box',
+  }}
+>
+
     <input
       type="text"
       name="nombre"
