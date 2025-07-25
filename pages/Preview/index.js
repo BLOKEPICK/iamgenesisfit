@@ -314,8 +314,7 @@ const inputFocusStyle = `
           maxWidth: '400px',
           height: '500px',
           overflow: 'hidden',
-          borderRadius: '12px',
-          touchAction: 'none'
+          borderRadius: '12px'
         }}
       >
         <img
@@ -327,37 +326,53 @@ const inputFocusStyle = `
           src={`/after_${i}.webp`}
           alt="Después"
           className="after-img"
-          style={{ width: '50%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, overflow: 'hidden' }}
+          style={{ width: '50%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
         />
-        <input
-          type="range"
-          min="0"
-          max="100"
-          defaultValue="50"
-          className="slider-range"
-          onInput={(e) => {
-            const slider = e.target;
-            const container = slider.closest('.slider-wrapper');
-            const afterImg = container.querySelector('.after-img');
-            const button = container.querySelector('.slider-button');
-            const percent = slider.value;
-
-            afterImg.style.width = `${percent}%`;
-            button.style.left = `${percent}%`;
-          }}
+        <div
+          className="slider-bar"
           style={{
             position: 'absolute',
             top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            appearance: 'none',
-            background: 'transparent',
-            cursor: 'ew-resize',
-            zIndex: 3,
-            margin: 0
+            bottom: 0,
+            left: '50%',
+            width: '20px',
+            transform: 'translateX(-50%)',
+            zIndex: 4,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            touchAction: 'none'
           }}
-        />
+        >
+          <input
+            type="range"
+            min="0"
+            max="100"
+            defaultValue="50"
+            onInput={(e) => {
+              const slider = e.target;
+              const container = slider.closest('.slider-wrapper');
+              const afterImg = container.querySelector('.after-img');
+              const button = container.querySelector('.slider-button');
+              const percent = slider.value;
+
+              afterImg.style.width = `${percent}%`;
+              button.style.left = `${percent}%`;
+            }}
+            style={{
+              width: '100%',
+              height: '100%',
+              transform: 'rotate(90deg)',
+              appearance: 'none',
+              background: 'transparent',
+              cursor: 'ew-resize',
+              opacity: 0,
+              position: 'absolute',
+              top: 0,
+              left: 0
+            }}
+          />
+        </div>
         <div
           className="slider-button"
           style={{
@@ -373,8 +388,8 @@ const inputFocusStyle = `
             fontWeight: 600,
             fontSize: '0.9rem',
             whiteSpace: 'nowrap',
-            zIndex: 4,
-            pointerEvents: 'none' // <- evita bloquear el slider
+            zIndex: 5,
+            pointerEvents: 'none'
           }}
         >
           ⇠ Antes | Después ⇢
@@ -383,6 +398,7 @@ const inputFocusStyle = `
     ))}
   </div>
 </section>
+
 
 
         {/* FAQ */}
