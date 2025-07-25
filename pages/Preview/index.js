@@ -3,9 +3,12 @@
 import Head from "next/head";
 import { FaBars, FaTimes, FaInstagram, FaTiktok } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
+
 function BeforeAfterSlider({ before, after }) {
   const containerRef = useRef(null);
   const [position, setPosition] = useState(50);
+  const startPos = useRef({ x: 0, y: 0 });
+  const isDragging = useRef(false);
 
   const updatePosition = (clientX) => {
     const rect = containerRef.current.getBoundingClientRect();
@@ -14,20 +17,39 @@ function BeforeAfterSlider({ before, after }) {
   };
 
   const handleStart = (e) => {
-    e.preventDefault();
+    const touch = e.touches?.[0];
+    const clientX = touch ? touch.clientX : e.clientX;
+    const clientY = touch ? touch.clientY : e.clientY;
+    startPos.current = { x: clientX, y: clientY };
+    isDragging.current = false;
+
     const move = (ev) => {
-      const x = ev.touches ? ev.touches[0].clientX : ev.clientX;
-      updatePosition(x);
+      const moveX = ev.touches?.[0].clientX ?? ev.clientX;
+      const moveY = ev.touches?.[0].clientY ?? ev.clientY;
+      const dx = Math.abs(moveX - startPos.current.x);
+      const dy = Math.abs(moveY - startPos.current.y);
+
+      // Solo activar si movimiento es principalmente horizontal
+      if (!isDragging.current && dx > dy && dx > 10) {
+        isDragging.current = true;
+      }
+
+      if (isDragging.current) {
+        ev.preventDefault();
+        updatePosition(moveX);
+      }
     };
+
     const end = () => {
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseup", end);
       window.removeEventListener("touchmove", move);
       window.removeEventListener("touchend", end);
     };
-    window.addEventListener("mousemove", move);
+
+    window.addEventListener("mousemove", move, { passive: false });
     window.addEventListener("mouseup", end);
-    window.addEventListener("touchmove", move);
+    window.addEventListener("touchmove", move, { passive: false });
     window.addEventListener("touchend", end);
   };
 
@@ -44,7 +66,7 @@ function BeforeAfterSlider({ before, after }) {
         overflow: "hidden",
         borderRadius: "16px",
         userSelect: "none",
-        touchAction: "none",
+        touchAction: "pan-y", // ✅ permite scroll vertical
         boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
         margin: "0 auto"
       }}
@@ -101,6 +123,7 @@ function BeforeAfterSlider({ before, after }) {
     </div>
   );
 }
+
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
