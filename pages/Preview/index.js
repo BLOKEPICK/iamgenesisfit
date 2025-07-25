@@ -1,7 +1,6 @@
 // ✅ Página completa en un solo archivo para Genesis Fit - VERSIÓN FINAL COMPLETA
 
 import Head from "next/head";
-import { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaInstagram, FaTiktok } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 function BeforeAfterSlider({ before, after }) {
