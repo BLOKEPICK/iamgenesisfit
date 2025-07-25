@@ -298,43 +298,38 @@ const inputFocusStyle = `
   )}
 </section>
 
-
-
-
-
-
-
         {/* Before & After */}
-        <section id="before" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
-          <h2 style={{ marginBottom: '2rem' }}>Resultados Reales</h2>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
-            {[1, 2, 3].map(i => (
-              <img key={i} src={`/before_after_${i}.webp`} alt={`Resultado ${i}`} style={{ width: '280px', height: '360px', objectFit: 'cover', borderRadius: '1rem' }} />
-            ))}
-          </div>
-        </section>
+<section id="before" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
+  <h2 style={{ marginBottom: '0.5rem', fontSize: '2rem' }}>Resultados Reales</h2>
+  <div style={{
+    width: '60px',
+    height: '3px',
+    backgroundColor: '#94715F',
+    margin: '0 auto 2rem',
+    borderRadius: '4px'
+  }}></div>
 
-        {/* FAQ */}
-<section id="faq" style={{ padding: '5rem 2rem', backgroundColor: '#fff', textAlign: 'center' }}>
-  <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Preguntas Frecuentes</h2>
-  <p style={{ marginBottom: '2.5rem', color: '#555' }}>
-    Si tienes alguna otra pregunta, <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={{ color: '#94715F', textDecoration: 'underline' }}>escríbenos por WhatsApp</a>.
-  </p>
-  <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-    {[
-      ["¿Necesito experiencia previa?", "No, todos los niveles son bienvenidos."],
-      ["¿Dónde se realizan los entrenamientos?", "Son rutinas que puedes seguir desde casa o en gimnasio."],
-      ["¿Los planes incluyen nutrición?", "Sí, se incluye una guía nutricional personalizada."],
-      ["¿Hay seguimiento semanal?", "Sí, tendrás contacto constante conmigo para evaluar tu progreso."],
-      ["¿Qué duración tiene el plan?", "Cada plan es mensual, renovable."],
-    ].map(([q, a], idx) => (
-      <details key={idx} style={{ background: '#f7f7f7', borderRadius: '8px', padding: '1rem 1.25rem' }}>
-        <summary style={{ cursor: 'pointer', fontWeight: '600', fontSize: '1rem', outline: 'none' }}>{q}</summary>
-        <p style={{ marginTop: '0.75rem', fontSize: '0.95rem', lineHeight: 1.6 }}>{a}</p>
-      </details>
+  <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
+    {[1, 2, 3].map(i => (
+      <img
+        key={i}
+        src={`/before_after_${i}.webp`}
+        alt={`Resultado ${i}`}
+        style={{
+          width: '280px',
+          height: '360px',
+          objectFit: 'cover',
+          borderRadius: '1rem',
+          boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+          transition: 'transform 0.3s ease'
+        }}
+        onMouseOver={e => e.currentTarget.style.transform = 'scale(1.03)'}
+        onMouseOut={e => e.currentTarget.style.transform = 'scale(1.0)'}
+      />
     ))}
   </div>
 </section>
+
 
 
         {/* Formulario */}
