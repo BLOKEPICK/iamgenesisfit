@@ -49,6 +49,104 @@ const inputFocusStyle = `
   }
 `;
 
+function BeforeAfterSlider({ before, after }) {
+  const containerRef = useRef(null);
+  const [position, setPosition] = useState(50);
+
+  const updatePosition = (clientX) => {
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = ((clientX - rect.left) / rect.width) * 100;
+    setPosition(Math.min(100, Math.max(0, x)));
+  };
+
+  const handleStart = (e) => {
+    e.preventDefault();
+    const move = (ev) => {
+      const x = ev.touches ? ev.touches[0].clientX : ev.clientX;
+      updatePosition(x);
+    };
+    const end = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', end);
+      window.removeEventListener('touchmove', move);
+      window.removeEventListener('touchend', end);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', end);
+    window.addEventListener('touchmove', move);
+    window.addEventListener('touchend', end);
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      onMouseDown={handleStart}
+      onTouchStart={handleStart}
+      style={{
+        position: 'relative',
+        width: '100%',
+        maxWidth: '420px',
+        height: '500px',
+        overflow: 'hidden',
+        borderRadius: '16px',
+        userSelect: 'none',
+        touchAction: 'none',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
+      }}
+    >
+      <img
+        src={before}
+        alt="Antes"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          top: 0,
+          left: 0,
+          pointerEvents: 'none'
+        }}
+        draggable={false}
+      />
+      <img
+        src={after}
+        alt="Después"
+        style={{
+          position: 'absolute',
+          width: `${position}%`,
+          height: '100%',
+          objectFit: 'cover',
+          top: 0,
+          left: 0,
+          pointerEvents: 'none',
+          borderRight: '2px solid #94715F'
+        }}
+        draggable={false}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: `${position}%`,
+          transform: 'translate(-50%, -50%)',
+          background: '#fff',
+          border: '2px solid #94715F',
+          borderRadius: '100px',
+          padding: '0.4rem 1rem',
+          fontWeight: 600,
+          fontSize: '0.85rem',
+          color: '#94715F',
+          whiteSpace: 'nowrap',
+          zIndex: 5,
+          pointerEvents: 'none'
+        }}
+      >
+        ⇠ Antes | Después ⇢
+      </div>
+    </div>
+  );
+}
+
   return (
     <>
       <Head>
@@ -300,111 +398,20 @@ const inputFocusStyle = `
 
         {/* Before & After */}
 <section id="before" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
-  <h2 style={{ marginBottom: '2rem' }}>Resultados Reales</h2>
+  <h2 style={{ marginBottom: '2rem', fontSize: '2rem' }}>Resultados Reales</h2>
   <hr style={{ width: '80px', height: '4px', backgroundColor: '#94715F', border: 'none', margin: '0 auto 3rem' }} />
 
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', alignItems: 'center' }}>
-    {[1, 2, 3].map(i => (
-      <div
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', alignItems: 'center' }}>
+    {[1, 2, 3].map((i) => (
+      <BeforeAfterSlider
         key={i}
-        className="slider-wrapper"
-        style={{
-          position: 'relative',
-          width: '100%',
-          maxWidth: '400px',
-          height: '500px',
-          overflow: 'hidden',
-          borderRadius: '12px',
-          userSelect: 'none', // 🔒 evita selección de texto
-          touchAction: 'none'  // 🖐️ asegura buen comportamiento táctil
-        }}
-      >
-        <img
-          src={`/before_${i}.webp`}
-          alt="Antes"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, userSelect: 'none' }}
-          draggable="false"
-        />
-        <img
-          src={`/after_${i}.webp`}
-          alt="Después"
-          className="after-img"
-          style={{ width: '50%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, userSelect: 'none' }}
-          draggable="false"
-        />
-        <div
-          className="slider-bar"
-          style={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            left: '50%',
-            width: '20px',
-            transform: 'translateX(-50%)',
-            zIndex: 4,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            touchAction: 'none',
-            userSelect: 'none'
-          }}
-        >
-          <input
-            type="range"
-            min="0"
-            max="100"
-            defaultValue="50"
-            onInput={(e) => {
-              const slider = e.target;
-              const container = slider.closest('.slider-wrapper');
-              const afterImg = container.querySelector('.after-img');
-              const button = container.querySelector('.slider-button');
-              const percent = slider.value;
-
-              afterImg.style.width = `${percent}%`;
-              button.style.left = `${percent}%`;
-            }}
-            style={{
-              width: '100%',
-              height: '100%',
-              transform: 'rotate(90deg)',
-              appearance: 'none',
-              background: 'transparent',
-              cursor: 'ew-resize',
-              opacity: 0,
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              userSelect: 'none'
-            }}
-          />
-        </div>
-        <div
-          className="slider-button"
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            background: '#fff',
-            border: '2px solid #94715F',
-            color: '#94715F',
-            padding: '0.4rem 1rem',
-            borderRadius: '20px',
-            fontWeight: 600,
-            fontSize: '0.9rem',
-            whiteSpace: 'nowrap',
-            zIndex: 5,
-            pointerEvents: 'none',
-            userSelect: 'none'
-          }}
-        >
-          ⇠ Antes | Después ⇢
-        </div>
-      </div>
+        before={`/before_${i}.webp`}
+        after={`/after_${i}.webp`}
+      />
     ))}
   </div>
 </section>
+
 
         {/* FAQ */}
 <section id="faq" style={{ padding: '5rem 2rem', backgroundColor: '#fff', textAlign: 'center' }}>
