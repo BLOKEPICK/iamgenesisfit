@@ -299,36 +299,88 @@ const inputFocusStyle = `
 </section>
 
         {/* Before & After */}
-<section id="before" style={{ padding: '5rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
-  <h2 style={{ marginBottom: '2rem', fontSize: '2rem' }}>Resultados Reales</h2>
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
+<section id="before" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
+  <h2 style={{ marginBottom: '2rem' }}>Resultados Reales</h2>
+  <hr style={{ width: '80px', height: '4px', backgroundColor: '#94715F', border: 'none', margin: '0 auto 3rem' }} />
+
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', alignItems: 'center' }}>
     {[1, 2, 3].map(i => (
-      <div key={i} style={{ position: 'relative', width: '100%', maxWidth: '600px', height: '400px', overflow: 'hidden', borderRadius: '1rem' }}>
-        <img src={`/before_${i}.webp`} alt={`Before ${i}`} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, zIndex: 1 }} />
-        <img src={`/after_${i}.webp`} alt={`After ${i}`} style={{ width: '50%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, zIndex: 2, overflow: 'hidden', clipPath: 'inset(0 50% 0 0)' }} />
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 3,
-          background: '#fff',
-          borderRadius: '2rem',
-          padding: '0.5rem 1.2rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '1rem',
-          boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
-          fontWeight: 600
-        }}>
-          <span>Antes</span>
-          <div style={{ width: '2px', height: '30px', background: '#000' }}></div>
-          <span>Después</span>
+      <div key={i} style={{ maxWidth: '400px', width: '100%' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
+          <div style={{ position: 'relative', width: '100%' }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              overflow: 'hidden'
+            }}>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                defaultValue="50"
+                onInput={(e) => {
+                  const slider = e.target;
+                  const container = slider.closest('.slider-container');
+                  const afterImg = container.querySelector('.after-img');
+                  afterImg.style.width = `${slider.value}%`;
+                }}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: 0,
+                  width: '100%',
+                  transform: 'translateY(-50%)',
+                  zIndex: 5,
+                  appearance: 'none',
+                  height: '100%',
+                  background: 'transparent',
+                  cursor: 'ew-resize',
+                }}
+              />
+              <img src={`/after_${i}.webp`} className="after-img" alt="Después" style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                height: '100%',
+                width: '50%',
+                objectFit: 'cover',
+                zIndex: 2,
+                transition: 'width 0.2s ease'
+              }} />
+              <img src={`/before_${i}.webp`} alt="Antes" style={{
+                display: 'block',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                zIndex: 1,
+              }} />
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                background: '#fff',
+                border: '2px solid #94715F',
+                color: '#94715F',
+                padding: '0.5rem 1rem',
+                borderRadius: '50px',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                zIndex: 10
+              }}>
+                Mueve para ver el cambio
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     ))}
   </div>
 </section>
+
 
         {/* FAQ */}
 <section id="faq" style={{ padding: '5rem 2rem', backgroundColor: '#fff', textAlign: 'center' }}>
