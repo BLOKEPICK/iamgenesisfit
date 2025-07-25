@@ -51,17 +51,18 @@ const inputFocusStyle = `
 
 <h2
   style={{
-    fontSize: '2rem',
+    fontSize: 'clamp(1.3rem, 4vw, 2rem)',
     marginBottom: '1rem',
     textAlign: 'center',
-    wordSpacing: '2px',
     fontWeight: 600,
-    overflowWrap: 'normal',
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
   }}
 >
   Conóceme un&nbsp;poco&nbsp;más
 </h2>
+
 
 
 
