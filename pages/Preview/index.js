@@ -239,8 +239,9 @@ const inputFocusStyle = `
 
         {/* Sobre mí */}
         <section id="sobremi" style={{ padding: '5rem 2rem', background: '#E5D1C2', color: '#2D2D2D' }}>
-          <div style={{ maxWidth: '850px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Conóceme un poco más</h2>
+  <div style={{ maxWidth: '850px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+    <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Conóceme un poco más</h2>
+    <hr style={{ width: '60px', height: '3px', backgroundColor: '#94715F', border: 'none', marginBottom: '2rem' }} />
             <p style={{ fontSize: '1.05rem', lineHeight: 1.8, maxWidth: '700px' }}>
               ¡Hola! Soy Genesis, una entrenadora que entiende lo que significa empezar desde cero, dudar y aun así seguir. Estoy aquí para guiarte, motivarte y darte herramientas reales para lograr cambios sostenibles. <br /><br />
               Mi enfoque es empático, humano y efectivo. No importa tu punto de partida: juntas construiremos un camino que respete tu cuerpo, tus tiempos y tus objetivos. No se trata de ser perfecta, sino de ser constante. <br /><br />
