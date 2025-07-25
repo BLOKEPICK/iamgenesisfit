@@ -49,6 +49,17 @@ const inputFocusStyle = `
   }
 `;
 
+<h2
+  style={{
+    fontSize: 'clamp(1.4rem, 5vw, 2rem)',
+    marginBottom: '1rem',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
+  }}
+>
+  Conóceme un poco más
+</h2>
 
 
   return (
