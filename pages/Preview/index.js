@@ -331,6 +331,28 @@ const inputFocusStyle = `
 </section>
 
 
+        {/* FAQ */}
+<section id="faq" style={{ padding: '5rem 2rem', backgroundColor: '#fff', textAlign: 'center' }}>
+  <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Preguntas Frecuentes</h2>
+  <p style={{ marginBottom: '2.5rem', color: '#555' }}>
+    Si tienes alguna otra pregunta, <a href="https://wa.me/18292520244" target="_blank" rel="noopener noreferrer" style={{ color: '#94715F', textDecoration: 'underline' }}>escríbenos por WhatsApp</a>.
+  </p>
+  <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    {[
+      ["¿Necesito experiencia previa?", "No, todos los niveles son bienvenidos."],
+      ["¿Dónde se realizan los entrenamientos?", "Son rutinas que puedes seguir desde casa o en gimnasio."],
+      ["¿Los planes incluyen nutrición?", "Sí, se incluye una guía nutricional personalizada."],
+      ["¿Hay seguimiento semanal?", "Sí, tendrás contacto constante conmigo para evaluar tu progreso."],
+      ["¿Qué duración tiene el plan?", "Cada plan es mensual, renovable."],
+    ].map(([q, a], idx) => (
+      <details key={idx} style={{ background: '#f7f7f7', borderRadius: '8px', padding: '1rem 1.25rem' }}>
+        <summary style={{ cursor: 'pointer', fontWeight: '600', fontSize: '1rem', outline: 'none' }}>{q}</summary>
+        <p style={{ marginTop: '0.75rem', fontSize: '0.95rem', lineHeight: 1.6 }}>{a}</p>
+      </details>
+    ))}
+  </div>
+</section>
+
 
         {/* Formulario */}
 <section id="formulario" style={{ padding: '5rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
