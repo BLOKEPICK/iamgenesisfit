@@ -199,6 +199,8 @@ const inputFocusStyle = `
 <meta property="og:image" content="https://www.iamgenesisfit.com/trainer_main.webp" />
 <meta property="og:url" content="https://www.iamgenesisfit.com/" />
 <meta name="twitter:image" content="https://www.iamgenesisfit.com/trainer_main.webp" />
+<meta name="image" content="https://www.iamgenesisfit.com/trainer_main.webp" />
+
 
 <meta property="og:type" content="website" />
 
