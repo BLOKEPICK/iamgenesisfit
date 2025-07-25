@@ -51,15 +51,19 @@ const inputFocusStyle = `
 
 <h2
   style={{
-    fontSize: 'clamp(1.4rem, 5vw, 2rem)',
+    fontSize: '2rem',
     marginBottom: '1rem',
     whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis'
+    display: 'inline-block',
+    maxWidth: '100%',
+    overflow: 'hidden'
   }}
 >
-  Conóceme un poco más
+  <span style={{ display: 'inline-block', transform: 'scale(0.9)', transformOrigin: 'left' }}>
+    Conóceme un poco más
+  </span>
 </h2>
+
 
 
   return (
