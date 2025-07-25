@@ -305,65 +305,62 @@ const inputFocusStyle = `
 
   <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', alignItems: 'center' }}>
     {[1, 2, 3].map(i => (
-      <div key={i} style={{ maxWidth: '400px', width: '100%' }}>
-        <div className="slider-container" style={{
+      <div
+        key={i}
+        className="slider-wrapper"
+        style={{
           position: 'relative',
-          overflow: 'hidden',
           width: '100%',
+          maxWidth: '400px',
           height: '500px',
-          borderRadius: '12px'
-        }}>
-          <img
-            src={`/before_${i}.webp`}
-            alt={`Antes ${i}`}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: 1,
-            }}
-          />
-          <img
-            src={`/after_${i}.webp`}
-            alt={`Después ${i}`}
-            className="after-img"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '50%',
-              height: '100%',
-              objectFit: 'cover',
-              zIndex: 2,
-            }}
-          />
-          <input
-            type="range"
-            min="0"
-            max="100"
-            defaultValue="50"
-            onInput={(e) => {
-              const slider = e.target;
-              const container = slider.closest('.slider-container');
-              const afterImg = container.querySelector('.after-img');
-              afterImg.style.width = `${slider.value}%`;
-            }}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              background: 'transparent',
-              appearance: 'none',
-              zIndex: 3,
-              cursor: 'ew-resize',
-            }}
-          />
-          <div style={{
+          overflow: 'hidden',
+          borderRadius: '12px',
+          touchAction: 'none'
+        }}
+      >
+        <img
+          src={`/before_${i}.webp`}
+          alt="Antes"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
+        />
+        <img
+          src={`/after_${i}.webp`}
+          alt="Después"
+          className="after-img"
+          style={{ width: '50%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, overflow: 'hidden' }}
+        />
+        <input
+          type="range"
+          min="0"
+          max="100"
+          defaultValue="50"
+          className="slider-range"
+          onInput={(e) => {
+            const slider = e.target;
+            const container = slider.closest('.slider-wrapper');
+            const afterImg = container.querySelector('.after-img');
+            const button = container.querySelector('.slider-button');
+            const percent = slider.value;
+
+            afterImg.style.width = `${percent}%`;
+            button.style.left = `${percent}%`;
+          }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            appearance: 'none',
+            background: 'transparent',
+            cursor: 'ew-resize',
+            zIndex: 3,
+            margin: 0
+          }}
+        />
+        <div
+          className="slider-button"
+          style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
@@ -371,19 +368,22 @@ const inputFocusStyle = `
             background: '#fff',
             border: '2px solid #94715F',
             color: '#94715F',
-            padding: '0.5rem 1rem',
-            borderRadius: '50px',
+            padding: '0.4rem 1rem',
+            borderRadius: '20px',
             fontWeight: 600,
             fontSize: '0.9rem',
-            zIndex: 4
-          }}>
-            Mueve para ver el cambio
-          </div>
+            whiteSpace: 'nowrap',
+            zIndex: 4,
+            pointerEvents: 'none' // <- evita bloquear el slider
+          }}
+        >
+          ⇠ Antes | Después ⇢
         </div>
       </div>
     ))}
   </div>
 </section>
+
 
         {/* FAQ */}
 <section id="faq" style={{ padding: '5rem 2rem', backgroundColor: '#fff', textAlign: 'center' }}>
