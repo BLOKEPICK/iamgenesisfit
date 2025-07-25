@@ -365,8 +365,8 @@ const inputFocusStyle = `
             <div className="mobile-nav-footer">
               <div style={{ fontWeight: 700, fontSize: '2.5rem' }}><span style={{ fontWeight: 400 }}>Genesis</span> Fit</div>
               <div style={{ display: 'flex', gap: '1rem' }}>
-                <a href="https://instagram.com/GeorgeValdezR" target="_blank"><FaInstagram size={24} /></a>
-                <a href="https://tiktok.com" target="_blank"><FaTiktok size={24} /></a>
+                <a href="https://www.instagram.com/iamgenesisfit/" target="_blank"><FaInstagram size={24} /></a>
+                <a href="https://www.tiktok.com/@iamgenesisfit" target="_blank"><FaTiktok size={24} /></a>
               </div>
             </div>
           </div>
@@ -620,18 +620,18 @@ const inputFocusStyle = `
       {/* Footer estilo moderno y claro */}
 <footer style={{ backgroundColor: '#F4ECE7', color: '#4A3B36', padding: '2rem 1.5rem', textAlign: 'center', fontSize: '0.9rem' }}>
   <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '1rem' }}>
-    <a href="https://instagram.com/GeorgeValdezR" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.instagram.com/iamgenesisfit/" target="_blank" rel="noopener noreferrer">
       <FaInstagram size={22} />
     </a>
-    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.tiktok.com/@iamgenesisfit" target="_blank" rel="noopener noreferrer">
       <FaTiktok size={22} />
     </a>
   </div>
   <div style={{ marginBottom: '0.5rem' }}>© 2025 Genesis Fit. Todos los derechos reservados.</div>
   <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-    <a href="/privacy" style={{ color: '#4A3B36', textDecoration: 'underline' }}>Privacidad</a>
-    <a href="/terms" style={{ color: '#4A3B36', textDecoration: 'underline' }}>Términos</a>
-    <a href="https://instagram.com/GVRFlex" target="_blank" style={{ color: '#4A3B36' }}>Diseñado por: GVRFlex</a>
+    <a href="/" style={{ color: '#4A3B36', textDecoration: 'underline' }}>Privacidad</a>
+    <a href="/" style={{ color: '#4A3B36', textDecoration: 'underline' }}>Términos</a>
+    <a href="https://instagram.com/GeorgeValdezRR" target="_blank" style={{ color: '#4A3B36' }}>Diseñado por: GeorgeValdezR</a>
   </div>
 </footer>
     </>
