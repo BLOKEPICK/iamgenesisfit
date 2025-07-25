@@ -458,7 +458,7 @@ const inputFocusStyle = `
   <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
     <a href="/privacy" style={{ color: '#4A3B36', textDecoration: 'underline' }}>Privacidad</a>
     <a href="/terms" style={{ color: '#4A3B36', textDecoration: 'underline' }}>Términos</a>
-    <a href="https://instagram.com/GeorgeValdezR" target="_blank" style={{ color: '#4A3B36' }}>Diseñado por @GeorgeValdezR</a>
+    <a href="https://instagram.com/GVRFlex" target="_blank" style={{ color: '#4A3B36' }}>Diseñado por: GVRFlex</a>
   </div>
 </footer>
     </>
