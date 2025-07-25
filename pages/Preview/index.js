@@ -4,6 +4,104 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaInstagram, FaTiktok } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
+function BeforeAfterSlider({ before, after }) {
+  const containerRef = useRef(null);
+  const [position, setPosition] = useState(50);
+
+  const updatePosition = (clientX) => {
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = ((clientX - rect.left) / rect.width) * 100;
+    setPosition(Math.min(100, Math.max(0, x)));
+  };
+
+  const handleStart = (e) => {
+    e.preventDefault();
+    const move = (ev) => {
+      const x = ev.touches ? ev.touches[0].clientX : ev.clientX;
+      updatePosition(x);
+    };
+    const end = () => {
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", end);
+      window.removeEventListener("touchmove", move);
+      window.removeEventListener("touchend", end);
+    };
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", end);
+    window.addEventListener("touchmove", move);
+    window.addEventListener("touchend", end);
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      onMouseDown={handleStart}
+      onTouchStart={handleStart}
+      style={{
+        position: "relative",
+        width: "100%",
+        maxWidth: "420px",
+        height: "500px",
+        overflow: "hidden",
+        borderRadius: "16px",
+        userSelect: "none",
+        touchAction: "none",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+        margin: "0 auto"
+      }}
+    >
+      <img
+        src={before}
+        alt="Antes"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          pointerEvents: "none"
+        }}
+        draggable={false}
+      />
+      <img
+        src={after}
+        alt="Después"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: `${position}%`,
+          height: "100%",
+          objectFit: "cover",
+          pointerEvents: "none",
+          borderRight: "2px solid #94715F"
+        }}
+        draggable={false}
+      />
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: `${position}%`,
+          transform: "translate(-50%, -50%)",
+          background: "#fff",
+          border: "2px solid #94715F",
+          borderRadius: "100px",
+          padding: "0.4rem 1rem",
+          fontWeight: 600,
+          fontSize: "0.85rem",
+          color: "#94715F",
+          whiteSpace: "nowrap",
+          zIndex: 5,
+          pointerEvents: "none"
+        }}
+      >
+        ⇠ Antes | Después ⇢
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,103 +148,6 @@ const inputFocusStyle = `
   }
 `;
 
-function BeforeAfterSlider({ before, after }) {
-  const containerRef = useRef(null);
-  const [position, setPosition] = useState(50);
-
-  const updatePosition = (clientX) => {
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = ((clientX - rect.left) / rect.width) * 100;
-    setPosition(Math.min(100, Math.max(0, x)));
-  };
-
-  const handleStart = (e) => {
-    e.preventDefault();
-    const move = (ev) => {
-      const x = ev.touches ? ev.touches[0].clientX : ev.clientX;
-      updatePosition(x);
-    };
-    const end = () => {
-      window.removeEventListener('mousemove', move);
-      window.removeEventListener('mouseup', end);
-      window.removeEventListener('touchmove', move);
-      window.removeEventListener('touchend', end);
-    };
-    window.addEventListener('mousemove', move);
-    window.addEventListener('mouseup', end);
-    window.addEventListener('touchmove', move);
-    window.addEventListener('touchend', end);
-  };
-
-  return (
-    <div
-      ref={containerRef}
-      onMouseDown={handleStart}
-      onTouchStart={handleStart}
-      style={{
-        position: 'relative',
-        width: '100%',
-        maxWidth: '420px',
-        height: '500px',
-        overflow: 'hidden',
-        borderRadius: '16px',
-        userSelect: 'none',
-        touchAction: 'none',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
-      }}
-    >
-      <img
-        src={before}
-        alt="Antes"
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          top: 0,
-          left: 0,
-          pointerEvents: 'none'
-        }}
-        draggable={false}
-      />
-      <img
-        src={after}
-        alt="Después"
-        style={{
-          position: 'absolute',
-          width: `${position}%`,
-          height: '100%',
-          objectFit: 'cover',
-          top: 0,
-          left: 0,
-          pointerEvents: 'none',
-          borderRight: '2px solid #94715F'
-        }}
-        draggable={false}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: `${position}%`,
-          transform: 'translate(-50%, -50%)',
-          background: '#fff',
-          border: '2px solid #94715F',
-          borderRadius: '100px',
-          padding: '0.4rem 1rem',
-          fontWeight: 600,
-          fontSize: '0.85rem',
-          color: '#94715F',
-          whiteSpace: 'nowrap',
-          zIndex: 5,
-          pointerEvents: 'none'
-        }}
-      >
-        ⇠ Antes | Después ⇢
-      </div>
-    </div>
-  );
-}
 
   return (
     <>
@@ -412,6 +413,7 @@ function BeforeAfterSlider({ before, after }) {
     ))}
   </div>
 </section>
+
 
 
         {/* FAQ */}
