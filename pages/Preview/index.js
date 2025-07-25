@@ -314,19 +314,23 @@ const inputFocusStyle = `
           maxWidth: '400px',
           height: '500px',
           overflow: 'hidden',
-          borderRadius: '12px'
+          borderRadius: '12px',
+          userSelect: 'none', // 🔒 evita selección de texto
+          touchAction: 'none'  // 🖐️ asegura buen comportamiento táctil
         }}
       >
         <img
           src={`/before_${i}.webp`}
           alt="Antes"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, userSelect: 'none' }}
+          draggable="false"
         />
         <img
           src={`/after_${i}.webp`}
           alt="Después"
           className="after-img"
-          style={{ width: '50%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
+          style={{ width: '50%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, userSelect: 'none' }}
+          draggable="false"
         />
         <div
           className="slider-bar"
@@ -341,7 +345,8 @@ const inputFocusStyle = `
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            touchAction: 'none'
+            touchAction: 'none',
+            userSelect: 'none'
           }}
         >
           <input
@@ -369,7 +374,8 @@ const inputFocusStyle = `
               opacity: 0,
               position: 'absolute',
               top: 0,
-              left: 0
+              left: 0,
+              userSelect: 'none'
             }}
           />
         </div>
@@ -389,7 +395,8 @@ const inputFocusStyle = `
             fontSize: '0.9rem',
             whiteSpace: 'nowrap',
             zIndex: 5,
-            pointerEvents: 'none'
+            pointerEvents: 'none',
+            userSelect: 'none'
           }}
         >
           ⇠ Antes | Después ⇢
@@ -398,8 +405,6 @@ const inputFocusStyle = `
     ))}
   </div>
 </section>
-
-
 
         {/* FAQ */}
 <section id="faq" style={{ padding: '5rem 2rem', backgroundColor: '#fff', textAlign: 'center' }}>
