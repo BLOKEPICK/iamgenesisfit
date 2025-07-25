@@ -196,8 +196,10 @@ const inputFocusStyle = `
         {/* Open Graph para compartir en redes */}
 <meta property="og:title" content="Genesis Fit | Transformación real para mujeres reales" />
 <meta property="og:description" content="Acompaña a Genesis Fit en tu proceso de cambio físico y mental. Programas únicos, testimonios reales, asesoría personalizada." />
-<meta property="og:image" content="https://iamgenesisfit.vercel.app/trainer_main.webp" />
-<meta property="og:url" content="https://iamgenesisfit.vercel.app/" />
+<meta property="og:image" content="https://www.iamgenesisfit.com/trainer_main.webp" />
+<meta property="og:url" content="https://www.iamgenesisfit.com/" />
+<meta name="twitter:image" content="https://www.iamgenesisfit.com/trainer_main.webp" />
+
 <meta property="og:type" content="website" />
 
 {/* Twitter Card para compartir en X */}
