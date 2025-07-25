@@ -250,7 +250,8 @@ const inputFocusStyle = `
 
 {/* Testimonios */}
 <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
-  <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Testimonios</h2>
+  <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Testimonios</h2>
+    <hr style={{ width: '60px', height: '3px', backgroundColor: '#94715F', border: 'none', marginBottom: '2rem' }} />
   <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
     {[...Array(10)].map((_, i) => (
       <div
