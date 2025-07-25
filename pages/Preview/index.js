@@ -303,27 +303,103 @@ const inputFocusStyle = `
   <h2 style={{ marginBottom: '0.5rem' }}>Resultados Reales</h2>
   <div style={{ width: '80px', height: '3px', backgroundColor: '#94715F', margin: '0 auto 2.5rem auto' }}></div>
 
-  <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
     {[1, 2, 3].map(i => (
-      <img
-        key={i}
-        src={`/before_after_${i}.webp`}
-        alt={`Transformación ${i}`}
-        style={{
-          width: '300px',
-          height: '360px',
-          objectFit: 'cover',
-          borderRadius: '12px',
-          boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
-          transition: 'transform 0.3s ease',
-          cursor: 'pointer'
-        }}
-        onMouseOver={e => e.currentTarget.style.transform = 'scale(1.02)'}
-        onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
-      />
+      <div key={i} className="slider-container">
+        <div className="slider-wrapper" id={`slider-${i}`}>
+          <img src={`/before_${i}.webp`} className="slider-image" />
+          <div className="slider-resize">
+            <img src={`/after_${i}.webp`} className="slider-image" />
+          </div>
+          <div className="slider-handle"></div>
+        </div>
+      </div>
     ))}
   </div>
+
+  <style>{`
+    .slider-container {
+      width: 300px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .slider-wrapper {
+      position: relative;
+      cursor: ew-resize;
+      user-select: none;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .slider-resize {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .slider-resize img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .slider-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background-color: #94715F;
+      z-index: 2;
+      transform: translateX(-50%);
+    }
+  `}</style>
+
+  <script dangerouslySetInnerHTML={{
+    __html: `
+      document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
+        const handle = wrapper.querySelector('.slider-handle');
+        const resize = wrapper.querySelector('.slider-resize');
+        let active = false;
+
+        const move = (x) => {
+          const bounds = wrapper.getBoundingClientRect();
+          let position = Math.min(Math.max(0, x - bounds.left), bounds.width);
+          let percent = (position / bounds.width) * 100;
+          handle.style.left = percent + '%';
+          resize.style.width = percent + '%';
+        };
+
+        wrapper.addEventListener('mousedown', e => {
+          active = true;
+          move(e.clientX);
+        });
+
+        window.addEventListener('mouseup', () => active = false);
+        window.addEventListener('mousemove', e => active && move(e.clientX));
+
+        wrapper.addEventListener('touchstart', e => {
+          active = true;
+          move(e.touches[0].clientX);
+        });
+
+        window.addEventListener('touchend', () => active = false);
+        window.addEventListener('touchmove', e => active && move(e.touches[0].clientX));
+      });
+    `
+  }} />
 </section>
+
 
 
 
