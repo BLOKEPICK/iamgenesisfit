@@ -228,7 +228,9 @@ const inputFocusStyle = `
       <main>
         <section id="hero" style={{ background: 'linear-gradient(to right, #fff 60%, rgba(183, 158, 144, 0.15))', padding: '5rem 2rem', display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', textAlign: 'center' }}>
           <div style={{ maxWidth: '500px' }}>
-            <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Únete al cambio con <strong>Genesis Fit</strong></h1>
+            <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', fontWeight: 700 }}>
+  Únete al cambio con <span style={{ fontWeight: 400 }}>Genesis</span> Fit
+</h1>
             <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>Entrenamiento personalizado para mujeres que desean transformar su cuerpo y su mente.</p>
             <a href="#formulario" className="hero-button">Comienza Ahora</a>
           </div>
