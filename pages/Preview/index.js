@@ -301,19 +301,30 @@ const inputFocusStyle = `
         {/* Before & After */}
 <section id="before" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
   <h2 style={{ marginBottom: '0.5rem' }}>Resultados Reales</h2>
-  <div style={{ width: '60px', height: '4px', backgroundColor: '#94715F', margin: '0 auto 2rem auto', borderRadius: '2px' }} />
-  <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '2rem' }}>
-    {[1, 3, 5].map((beforeIndex, idx) => {
-      const afterIndex = beforeIndex + 1;
-      return (
-        <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-          <img src={`/before_after_${beforeIndex}.webp`} alt={`Before ${idx + 1}`} style={{ width: '280px', height: '360px', objectFit: 'cover', borderRadius: '1rem' }} />
-          <img src={`/before_after_${afterIndex}.webp`} alt={`After ${idx + 1}`} style={{ width: '280px', height: '360px', objectFit: 'cover', borderRadius: '1rem' }} />
-        </div>
-      );
-    })}
+  <div style={{ width: '80px', height: '3px', backgroundColor: '#94715F', margin: '0 auto 2.5rem auto' }}></div>
+
+  <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
+    {[1, 2, 3].map(i => (
+      <img
+        key={i}
+        src={`/before_after_${i}.webp`}
+        alt={`Transformación ${i}`}
+        style={{
+          width: '300px',
+          height: '360px',
+          objectFit: 'cover',
+          borderRadius: '12px',
+          boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+          transition: 'transform 0.3s ease',
+          cursor: 'pointer'
+        }}
+        onMouseOver={e => e.currentTarget.style.transform = 'scale(1.02)'}
+        onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+      />
+    ))}
   </div>
 </section>
+
 
 
 
