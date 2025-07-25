@@ -299,110 +299,36 @@ const inputFocusStyle = `
 </section>
 
         {/* Before & After */}
-<section id="before" style={{ padding: '4rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
-  <h2 style={{ marginBottom: '0.5rem' }}>Resultados Reales</h2>
-  <div style={{ width: '80px', height: '3px', backgroundColor: '#94715F', margin: '0 auto 2.5rem auto' }}></div>
-
+<section id="before" style={{ padding: '5rem 2rem', background: '#E5D1C2', textAlign: 'center' }}>
+  <h2 style={{ marginBottom: '2rem', fontSize: '2rem' }}>Resultados Reales</h2>
   <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
     {[1, 2, 3].map(i => (
-      <div key={i} className="slider-container">
-        <div className="slider-wrapper" id={`slider-${i}`}>
-          <img src={`/before_${i}.webp`} className="slider-image" />
-          <div className="slider-resize">
-            <img src={`/after_${i}.webp`} className="slider-image" />
-          </div>
-          <div className="slider-handle"></div>
+      <div key={i} style={{ position: 'relative', width: '100%', maxWidth: '600px', height: '400px', overflow: 'hidden', borderRadius: '1rem' }}>
+        <img src={`/before_${i}.webp`} alt={`Before ${i}`} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, zIndex: 1 }} />
+        <img src={`/after_${i}.webp`} alt={`After ${i}`} style={{ width: '50%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, zIndex: 2, overflow: 'hidden', clipPath: 'inset(0 50% 0 0)' }} />
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 3,
+          background: '#fff',
+          borderRadius: '2rem',
+          padding: '0.5rem 1.2rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1rem',
+          boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
+          fontWeight: 600
+        }}>
+          <span>Antes</span>
+          <div style={{ width: '2px', height: '30px', background: '#000' }}></div>
+          <span>Después</span>
         </div>
       </div>
     ))}
   </div>
-
-  <style>{`
-    .slider-container {
-      width: 300px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .slider-wrapper {
-      position: relative;
-      cursor: ew-resize;
-      user-select: none;
-    }
-
-    .slider-image {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .slider-resize {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .slider-resize img {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .slider-handle {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 4px;
-      height: 100%;
-      background-color: #94715F;
-      z-index: 2;
-      transform: translateX(-50%);
-    }
-  `}</style>
-
-  <script dangerouslySetInnerHTML={{
-    __html: `
-      document.querySelectorAll('.slider-wrapper').forEach(wrapper => {
-        const handle = wrapper.querySelector('.slider-handle');
-        const resize = wrapper.querySelector('.slider-resize');
-        let active = false;
-
-        const move = (x) => {
-          const bounds = wrapper.getBoundingClientRect();
-          let position = Math.min(Math.max(0, x - bounds.left), bounds.width);
-          let percent = (position / bounds.width) * 100;
-          handle.style.left = percent + '%';
-          resize.style.width = percent + '%';
-        };
-
-        wrapper.addEventListener('mousedown', e => {
-          active = true;
-          move(e.clientX);
-        });
-
-        window.addEventListener('mouseup', () => active = false);
-        window.addEventListener('mousemove', e => active && move(e.clientX));
-
-        wrapper.addEventListener('touchstart', e => {
-          active = true;
-          move(e.touches[0].clientX);
-        });
-
-        window.addEventListener('touchend', () => active = false);
-        window.addEventListener('touchmove', e => active && move(e.touches[0].clientX));
-      });
-    `
-  }} />
 </section>
-
-
-
-
 
         {/* FAQ */}
 <section id="faq" style={{ padding: '5rem 2rem', backgroundColor: '#fff', textAlign: 'center' }}>
