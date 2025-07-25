@@ -250,13 +250,27 @@ const inputFocusStyle = `
 
 {/* Testimonios */}
 <section id="testimonios" style={{ padding: '4rem 2rem', background: '#fff' }}>
-  <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Testimonios</h2>
-    <hr style={{ width: '60px', height: '3px', backgroundColor: '#94715F', border: 'none', marginBottom: '2rem' }} />
+  <h2 style={{ textAlign: 'center', marginBottom: '0.5rem', fontSize: '2rem' }}>Testimonios</h2>
+  <div style={{
+    width: '60px',
+    height: '3px',
+    backgroundColor: '#94715F',
+    margin: '0 auto 2rem',
+    borderRadius: '4px'
+  }}></div>
+
   <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem' }}>
     {[...Array(10)].map((_, i) => (
       <div
         key={i}
-        style={{ minWidth: '280px', height: '360px', background: '#f5f5f5', borderRadius: '12px', overflow: 'hidden', cursor: 'pointer' }}
+        style={{
+          minWidth: '280px',
+          height: '360px',
+          background: '#f5f5f5',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          cursor: 'pointer'
+        }}
         onClick={() => openLightbox(i)}
       >
         <img
@@ -271,7 +285,11 @@ const inputFocusStyle = `
   {lightboxOpen && (
     <div className="lightbox-overlay" onClick={closeLightbox}>
       <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
-      <img src={`/testimonial_${lightboxIndex + 1}.webp`} alt={`Testimonio ${lightboxIndex + 1}`} className="lightbox-image" />
+      <img
+        src={`/testimonial_${lightboxIndex + 1}.webp`}
+        alt={`Testimonio ${lightboxIndex + 1}`}
+        className="lightbox-image"
+      />
       <div className="lightbox-controls">
         <button className="lightbox-button" onClick={prevImage}>Anterior</button>
         <button className="lightbox-button" onClick={nextImage}>Siguiente</button>
@@ -279,6 +297,7 @@ const inputFocusStyle = `
     </div>
   )}
 </section>
+
 
 
 
