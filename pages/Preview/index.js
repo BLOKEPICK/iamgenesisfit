@@ -29,7 +29,6 @@ function BeforeAfterSlider({ before, after }) {
       const dx = Math.abs(moveX - startPos.current.x);
       const dy = Math.abs(moveY - startPos.current.y);
 
-      // Solo activar si movimiento es principalmente horizontal
       if (!isDragging.current && dx > dy && dx > 10) {
         isDragging.current = true;
       }
@@ -66,14 +65,15 @@ function BeforeAfterSlider({ before, after }) {
         overflow: "hidden",
         borderRadius: "16px",
         userSelect: "none",
-        touchAction: "pan-y", // ✅ permite scroll vertical
+        touchAction: "pan-y",
         boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
         margin: "0 auto"
       }}
     >
+      {/* Imagen después (fondo completo) */}
       <img
-        src={before}
-        alt="Antes"
+        src={after}
+        alt="Después"
         style={{
           position: "absolute",
           top: 0,
@@ -85,21 +85,36 @@ function BeforeAfterSlider({ before, after }) {
         }}
         draggable={false}
       />
+      {/* Imagen antes (recortada desde la derecha) */}
       <img
-        src={after}
-        alt="Después"
+        src={before}
+        alt="Antes"
         style={{
           position: "absolute",
           top: 0,
-          left: 0,
-          width: `${position}%`,
+          right: 0,
+          width: `${100 - position}%`,
           height: "100%",
           objectFit: "cover",
           pointerEvents: "none",
-          borderRight: "2px solid #94715F"
+          borderLeft: "2px solid #94715F"
         }}
         draggable={false}
       />
+      {/* Línea divisoria */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: `${position}%`,
+          transform: "translateX(-50%)",
+          height: "100%",
+          width: "3px",
+          background: "#94715F",
+          zIndex: 2
+        }}
+      />
+      {/* Botón indicador */}
       <div
         style={{
           position: "absolute",
@@ -118,7 +133,7 @@ function BeforeAfterSlider({ before, after }) {
           pointerEvents: "none"
         }}
       >
-        ⇠ Antes | Después ⇢
+        ⇠ Después | Antes ⇢
       </div>
     </div>
   );
