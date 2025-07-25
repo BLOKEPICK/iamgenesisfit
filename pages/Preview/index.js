@@ -382,6 +382,7 @@ const inputFocusStyle = `
 </section>
 
 
+
         {/* FAQ */}
 <section id="faq" style={{ padding: '5rem 2rem', backgroundColor: '#fff', textAlign: 'center' }}>
   <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Preguntas Frecuentes</h2>
