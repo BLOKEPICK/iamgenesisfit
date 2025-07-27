@@ -499,106 +499,58 @@ const inputFocusStyle = `
   <p style={{ marginBottom: '2.5rem', color: '#4A3B36' }}>
     Responde este formulario para iniciar tu transformación. ¡Estoy aquí para acompañarte en cada paso!
   </p>
-  <form
-  action="https://formspree.io/f/xjkorboq"
-  method="POST"
-  style={{
-    width: '100%',
-    maxWidth: '600px',
-    margin: '0 auto',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1.25rem',
-    background: '#fff',
-    padding: '2rem',
-    borderRadius: '12px',
-    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)',
-    boxSizing: 'border-box',
-  }}
->
 
-    <input
-      type="text"
-      name="nombre"
-      placeholder="Nombre completo"
-      required
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '95%'
-      }}
-    />
-    <input
-      type="email"
-      name="email"
-      placeholder="Correo electrónico"
-      required
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '95%'
-      }}
-    />
-    <input
-      type="text"
-      name="dias"
-      placeholder="¿Cuántos días deseas entrenar?"
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '95%'
-      }}
-    />
-    <input
-      type="text"
-      name="condicion"
-      placeholder="¿Alguna condición física?"
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '95%'
-      }}
-    />
-    <textarea
-      name="meta"
-      placeholder="¿Cuál es tu meta que buscas lograr?"
-      rows={3}
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '95%',
-        resize: 'none'
-      }}
-    ></textarea>
-    <textarea
-      name="actividad"
-      placeholder="¿Realizas alguna actividad física actualmente?"
-      rows={3}
-      style={{
-        padding: '0.75rem 1rem',
-        border: '1px solid #ccc',
-        borderRadius: '6px',
-        fontSize: '1rem',
-        fontFamily: 'inherit',
-        width: '95%',
-        resize: 'none'
-      }}
-    ></textarea>
+  <form
+    onSubmit={async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const submitButton = form.querySelector("button");
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+
+      const response = await fetch("https://formspree.io/f/xjkorboq", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        form.insertAdjacentHTML(
+          "afterend",
+          `<p style="margin-top: 1.5rem; font-weight: 600; color: #2E7D32;">✅ Formulario enviado con éxito.</p>`
+        );
+        form.style.display = "none";
+      } else {
+        form.insertAdjacentHTML(
+          "afterend",
+          `<p style="margin-top: 1.5rem; font-weight: 600; color: red;">❌ Hubo un error al enviar. Inténtalo más tarde.</p>`
+        );
+      }
+    }}
+    style={{
+      width: '100%',
+      maxWidth: '600px',
+      margin: '0 auto',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '1.25rem',
+      background: '#fff',
+      padding: '2rem',
+      borderRadius: '12px',
+      boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)',
+      boxSizing: 'border-box',
+    }}
+  >
+    <input type="text" name="nombre" placeholder="Nombre completo" required style={inputStyle} />
+    <input type="email" name="email" placeholder="Correo electrónico" required style={inputStyle} />
+    <input type="text" name="dias" placeholder="¿Cuántos días deseas entrenar?" style={inputStyle} />
+    <input type="text" name="condicion" placeholder="¿Alguna condición física?" style={inputStyle} />
+    <textarea name="meta" placeholder="¿Cuál es tu meta que buscas lograr?" rows={3} style={inputStyle}></textarea>
+    <textarea name="actividad" placeholder="¿Realizas alguna actividad física actualmente?" rows={3} style={inputStyle}></textarea>
     <button
       type="submit"
       style={{
