@@ -500,7 +500,7 @@ const inputFocusStyle = `
     Responde este formulario para iniciar tu transformación. ¡Estoy aquí para acompañarte en cada paso!
   </p>
   <form
-  action="https://formspree.io/f/mayzrwry"
+  action="https://formspree.io/f/xjkorboq"
   method="POST"
   style={{
     width: '100%',
